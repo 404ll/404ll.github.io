@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Sui-学习笔记</title>
+      <link href="/2024/07/11/%E5%8C%BA%E5%9D%97%E9%93%BE/Sui-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <url>/2024/07/11/%E5%8C%BA%E5%9D%97%E9%93%BE/Sui-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>入门书籍（中文版）</p><p>Sui-Move语法参考手册(中文版）：</p><p>Sui-钱包安装（Google）</p><p>Sui-开发者文档</p><p>Sui-官方知识库（github)</p></blockquote><h1 id="letmove-notes"><a href="#letmove-notes" class="headerlink" title="letmove_notes"></a>letmove_notes</h1><hr><h2 id="区块链浏览器"><a href="#区块链浏览器" class="headerlink" title="区块链浏览器"></a><font color="Red"><strong>区块链浏览器</strong></font></h2><p>使用的时候记得切换至相应的网络，用终端部署后的<code>package id</code> 在区块链浏览器中搜索。</p><hr><h2 id="task1-报错篇"><a href="#task1-报错篇" class="headerlink" title="task1 报错篇"></a>task1 报错篇</h2><h3 id="网络不好，无法下载依赖"><a href="#网络不好，无法下载依赖" class="headerlink" title="网络不好，无法下载依赖"></a>网络不好，无法下载依赖</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs powershell">Failed to build <span class="hljs-built_in">Move</span> modules: Failed to resolve dependencies <span class="hljs-keyword">for</span> package <span class="hljs-string">&#x27;task1&#x27;</span><br><br>Caused by:<br>    <span class="hljs-number">0</span>: Fetching <span class="hljs-string">&#x27;Sui&#x27;</span><br>    <span class="hljs-number">1</span>: Failed to fetch to latest Git state <span class="hljs-keyword">for</span> package <span class="hljs-string">&#x27;Sui&#x27;</span>, to skip <span class="hljs-built_in">set</span> <span class="hljs-literal">--skip-fetch-latest-git-deps</span> | <span class="hljs-keyword">Exit</span> status: <span class="hljs-keyword">exit</span> code: <span class="hljs-number">128</span>.<br></code></pre></td></tr></table></figure><p>解决方法(个人认为魔法比较好用）：</p><ol><li>使用终端魔法，去Clash(window)中复制<code> powershell</code> 魔法后，再次部署</li><li>将<code>Move.toml</code>中的 [dependencies]<br>Sui &#x3D; { git &#x3D; “<a href="https://github.com/MystenLabs/sui.git">https://github.com/MystenLabs/sui.git</a>“ 的<code>github</code>替换为<code>gitee</code></li></ol><h3 id="gas不够（命令行中大概这么个意思）"><a href="#gas不够（命令行中大概这么个意思）" class="headerlink" title="gas不够（命令行中大概这么个意思）"></a>gas不够（命令行中大概这么个意思）</h3><p>解决方法：</p><ol><li>浏览器领水 <a href="http://getsui.com/address">http://getsui.com/address</a> 将<code>address</code>替换为命令行输入<code>sui client active-address</code>后生成的活跃地址。</li><li>找朋友给你发点，白嫖（bushi</li></ol><h3 id="模块名称错误"><a href="#模块名称错误" class="headerlink" title="模块名称错误"></a>模块名称错误</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs powershell">error[<span class="hljs-type">E03001</span>]: address with no value<br>  ┌─ \\?\D:\letsmove\mover\<span class="hljs-number">404</span>ll\code\task1\sources\hello_move.move:<span class="hljs-number">1</span>:<span class="hljs-number">8</span><br>  │<br><span class="hljs-number">1</span> │ module hello_move ::hello &#123;<br>  │        ^^^^^^^^^^ address <span class="hljs-string">&#x27;hello_move&#x27;</span> is not assigned a value. <span class="hljs-keyword">Try</span> assigning it a value when calling the compiler<br><br></code></pre></td></tr></table></figure><p>解决方法：将<code>module hello_move ::hello</code> 的第一个<code>hello_move</code>替换成Move.toml中显示的名称</p><p>例：</p><p>[package]</p><p>name &#x3D; “task1”</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Aptos学习资源</title>
       <link href="/2024/06/22/%E5%8C%BA%E5%9D%97%E9%93%BE/Aptos%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/"/>
       <url>/2024/06/22/%E5%8C%BA%E5%9D%97%E9%93%BE/Aptos%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</url>
@@ -14,7 +33,7 @@
       
         <tags>
             
-            <tag> Aptos </tag>
+            <tag> 资源收录 </tag>
             
         </tags>
       
