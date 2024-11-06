@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>扫盲小知识之 Roll-up | Elemen的象牙塔</title><meta name="author" content="Elemen"><meta name="copyright" content="Elemen"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="仅仅是基于看到的一篇“ETH强相关”的文章进行的扫盲，内容比较简单">
+<meta property="og:type" content="article">
+<meta property="og:title" content="扫盲小知识之 Roll-up">
+<meta property="og:url" content="http://example.com/2024/05/21/%E5%8C%BA%E5%9D%97%E9%93%BE/Roll-up/index.html">
+<meta property="og:site_name" content="Elemen的象牙塔">
+<meta property="og:description" content="仅仅是基于看到的一篇“ETH强相关”的文章进行的扫盲，内容比较简单">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/026ed5d4ea42f9b841e6436fd1c1a9f.jpg">
+<meta property="article:published_time" content="2024-05-21T14:38:21.000Z">
+<meta property="article:modified_time" content="2024-06-05T13:29:01.251Z">
+<meta property="article:author" content="Elemen">
+<meta property="article:tag" content="随笔">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/026ed5d4ea42f9b841e6436fd1c1a9f.jpg"><link rel="shortcut icon" href="../../../../../img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240418215601.jpg"><link rel="canonical" href="http://example.com/2024/05/21/%E5%8C%BA%E5%9D%97%E9%93%BE/Roll-up/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="../../../../../css/index.css?v=5.2.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '扫盲小知识之 Roll-up',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="../img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240418215601.jpg" onerror="onerror=null;src='/img/微信图片_20240421212358.jpg'" alt="avatar"/></div><div class="site-data text-center"><a href="/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="../tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="../categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="../index.html"><i class="fa-fw fas fa-home"></i><span> home</span></a></div><div class="menus_item"><a class="site-page" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> tags</span></a></div><div class="menus_item"><a class="site-page" href="../link/"><i class="fa-fw fas fa-link"></i><span> links</span></a></div><div class="menus_item"><a class="site-page" href="../messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> messageboard</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/026ed5d4ea42f9b841e6436fd1c1a9f.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="../../../../../index.html"><span class="site-name">Elemen的象牙塔</span></a><a class="nav-page-title" href="../../../../../index.html"><span class="site-name">扫盲小知识之 Roll-up</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="../index.html"><i class="fa-fw fas fa-home"></i><span> home</span></a></div><div class="menus_item"><a class="site-page" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> tags</span></a></div><div class="menus_item"><a class="site-page" href="../link/"><i class="fa-fw fas fa-link"></i><span> links</span></a></div><div class="menus_item"><a class="site-page" href="../messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> messageboard</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">扫盲小知识之 Roll-up</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-21T14:38:21.000Z" title="发表于 2024-05-21 22:38:21">2024-05-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-05T13:29:01.251Z" title="更新于 2024-06-05 21:29:01">2024-06-05</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">425</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="" itemprop="commentCount"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="什么是-Roll-up"><a href="#什么是-Roll-up" class="headerlink" title="什么是 Roll-up ?"></a>什么是 Roll-up ?</h1><blockquote>
+<p>Roll-up是一种Layer 2扩展解决方案，旨在提高以太坊网络的吞吐量和效率。<strong>它通过将大量的交易数据压缩成少量的摘要信息，然后将这些摘要信息提交到以太坊主链上，以实现高性能的链上交易处理。</strong></p>
+<p><strong>人话就是</strong> :  把以太坊上几百笔交易打包带走，并在验证通过后只向以太坊主网输出一笔交易。</p>
+</blockquote>
+<p> 具体可以看看这篇文章：<a target="_blank" rel="noopener" href="https://foresightnews.pro/article/h5Detail/59078">https://foresightnews.pro/article/h5Detail/59078</a></p>
+<p>Roll-up通常分为这几种类型：</p>
+<ol>
+<li><p><strong>Optimistic Roll-up（乐观 Roll-up）</strong>:  默认打包的这些交易每一笔都是准确无误的，因此会直接进入验证。但为了防止错误交易混入其中，乐观证明引入了挑战者机制，就是说在验证的一定期限内，其他人可以怀疑其中的交易并在以太坊上比对这笔交易是否合法。如果挑战成功，挑战者就可以获得收益，验证者就会被罚没质押在协议上的资金。</p>
+</li>
+<li><p><strong>ZK-Rollup（零知识 Roll-up）</strong></p>
+<p>​     在ZK-Rollup中，交易的验证过程使用了零知识证明技术，可以在不暴露具体交易内容的情况下证明交易的有效性。这样可以进一步减少在主链上的数据量，并提高隐私性和效率.</p>
+</li>
+</ol>
+<p>Roll-up技术的引入为以太坊网络提供了一种高效的扩展方案，可以大幅提升网络的吞吐量和性能，同时降低交易成本，并为更多的去中心化应用提供了支持。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Elemen</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/05/21/%E5%8C%BA%E5%9D%97%E9%93%BE/Roll-up/">http://example.com/2024/05/21/%E5%8C%BA%E5%9D%97%E9%93%BE/Roll-up/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">Elemen的象牙塔</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="../../../../../tags/%E9%9A%8F%E7%AC%94/">随笔</a></div><div class="post-share"><div class="social-share" data-image="../../../../../img/026ed5d4ea42f9b841e6436fd1c1a9f.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="../../../../../img/4db0d3377fd77db45b8334d9d48b4ff.jpg" target="_blank"><img class="post-qr-code-img" src="../../../../../img/4db0d3377fd77db45b8334d9d48b4ff.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="../2024-05-21-%E6%89%AB%E7%9B%B2%E5%B0%8F%E7%9F%A5%E8%AF%86%E4%B9%8B-%E8%B4%A8%E6%8A%BC%E4%B8%8E%E5%86%8D%E8%B4%A8%E6%8A%BC/" title="扫盲小知识之 质押与再质押"><img class="cover" src="../../../../../img/026ed5d4ea42f9b841e6436fd1c1a9f.jpg" onerror="onerror=null;src='../../../../../img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240421212358.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">扫盲小知识之 质押与再质押</div></div><div class="info-2"><div class="info-item-1">仅仅是基于看到的一篇“ETH强相关”的文章进行的扫盲，内容比较简单</div></div></div></a><a class="pagination-related" href="../%E4%BB%80%E4%B9%88%E6%98%AFLayer1-Layer2/" title="扫盲小知识之 L1 L2"><img class="cover" src="../../../../../img/026ed5d4ea42f9b841e6436fd1c1a9f.jpg" onerror="onerror=null;src='../../../../../img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240421212358.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">扫盲小知识之 L1 L2</div></div><div class="info-2"><div class="info-item-1">仅仅是基于看到的一篇“ETH强相关”的文章进行的扫盲，内容比较简单</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="../2024-05-21-%E6%89%AB%E7%9B%B2%E5%B0%8F%E7%9F%A5%E8%AF%86%E4%B9%8B-%E8%B4%A8%E6%8A%BC%E4%B8%8E%E5%86%8D%E8%B4%A8%E6%8A%BC/" title="扫盲小知识之 质押与再质押"><img class="cover" src="../../../../../img/026ed5d4ea42f9b841e6436fd1c1a9f.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-21</div><div class="info-item-2">扫盲小知识之 质押与再质押</div></div><div class="info-2"><div class="info-item-1">仅仅是基于看到的一篇“ETH强相关”的文章进行的扫盲，内容比较简单</div></div></div></a><a class="pagination-related" href="../%E4%BB%80%E4%B9%88%E6%98%AFLayer1-Layer2/" title="扫盲小知识之 L1 L2"><img class="cover" src="../../../../../img/026ed5d4ea42f9b841e6436fd1c1a9f.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-21</div><div class="info-item-2">扫盲小知识之 L1 L2</div></div><div class="info-2"><div class="info-item-1">仅仅是基于看到的一篇“ETH强相关”的文章进行的扫盲，内容比较简单</div></div></div></a><a class="pagination-related" href="../../../../04/25/%E5%89%8D%E7%AB%AF/HTML%E8%A1%A8%E5%8D%95/" title="HTML表单"><img class="cover" src="../../../../../img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240421212338.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-25</div><div class="info-item-2">HTML表单</div></div><div class="info-2"><div class="info-item-1">主要后面Javascript 的学习会涉及到表单</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="../img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240418215601.jpg" onerror="this.onerror=null;this.src='../img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240421212358.jpg'" alt="avatar"/></div><div class="author-info-name">Elemen</div><div class="author-info-description">博客的初衷是记录自己的学习情况，希望自己可以坚持下去</div><div class="site-data"><a href="/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="../tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="../categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/404ll"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/404ll" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">最新更新了评论功能和留言板，欢迎试用！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Roll-up"><span class="toc-number">1.</span> <span class="toc-text">什么是 Roll-up ?</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../2024/09/30/%E5%8C%BA%E5%9D%97%E9%93%BE/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="sui-move学习笔记">sui-move学习笔记</a><time datetime="2024-09-29T17:34:46.079Z" title="发表于 2024-09-30 01:34:46">2024-09-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../2024/09/18/%E5%89%8D%E7%AB%AF/react%E7%AC%94%E8%AE%B0/" title="React">React</a><time datetime="2024-09-18T03:31:52.000Z" title="发表于 2024-09-18 11:31:52">2024-09-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../2024/08/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/MYSQL%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="MYSQL入门学习笔记">MYSQL入门学习笔记</a><time datetime="2024-08-11T14:43:17.000Z" title="发表于 2024-08-11 22:43:17">2024-08-11</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/微信图片_20240421212350.jpg);"><div id="footer-wrap"><div class="copyright">&copy;2024 By Elemen</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="../../../../../js/utils.js?v=5.2.2"></script><script src="../../../../../js/main.js?v=5.2.2"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = null
+
+  const initValine = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyValine = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const valineConfig = {
+      el: '#vcomment',
+      appId: 'We4qLJm5B8b71IOGH2AcJTFL-gzGzoHsz',
+      appKey: 'AbRV66WL9wzhCWc4YbAOLtJs',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      visitor: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || window.location.pathname
+    }
+
+    new Valine(valineConfig)
+  }
+
+  const loadValine = async (el, path) => {
+    if (typeof Valine === 'function') {
+      initValine(el, path)
+    } else {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/valine@1.5.2/dist/Valine.min.js')
+      initValine(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Valine' === 'Valine'
+      ? window.shuoshuoComment = { loadComment: loadValine }
+      : window.loadOtherComment = loadValine
+    return
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
