@@ -1,180 +1,1899 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Elemen的象牙塔</title><meta name="author" content="Elemen"><meta name="copyright" content="Elemen"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Elemen的象牙塔</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Elemen的象牙塔">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Elemen的象牙塔">
 <meta property="og:description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240418215601.jpg">
 <meta property="article:author" content="Elemen">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240418215601.jpg"><link rel="shortcut icon" href="/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240418215601.jpg"><link rel="canonical" href="http://example.com/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="css/index.css?v=5.2.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/all.min.css"><script>
-    (() => {
-      
-    const saveToLocal = {
-      set: (key, value, ttl) => {
-        if (!ttl) return
-        const expiry = Date.now() + ttl * 86400000
-        localStorage.setItem(key, JSON.stringify({ value, expiry }))
-      },
-      get: key => {
-        const itemStr = localStorage.getItem(key)
-        if (!itemStr) return undefined
-        const { value, expiry } = JSON.parse(itemStr)
-        if (Date.now() > expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return value
-      }
-    }
-
-    window.btf = {
-      saveToLocal,
-      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
-        script.onload = script.onreadystatechange = () => {
-          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
-        }
-        script.onerror = reject
-        document.head.appendChild(script)
-      }),
-      getCSS: (url, id) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onload = link.onreadystatechange = () => {
-          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
-        }
-        link.onerror = reject
-        document.head.appendChild(link)
-      }),
-      addGlobalFn: (key, fn, name = false, parent = window) => {
-        if (!false && key.startsWith('pjax')) return
-        const globalFn = parent.globalFn || {}
-        globalFn[key] = globalFn[key] || {}
-        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
-        parent.globalFn = globalFn
-      }
-    }
   
-      
-      const activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      const activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-
-      btf.activateDarkMode = activateDarkMode
-      btf.activateLightMode = activateLightMode
-
-      const theme = saveToLocal.get('theme')
+    <link rel="alternate" href="/atom.xml" title="Elemen的象牙塔" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
     
-          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="css/style.css">
+
+  
+    
+<link rel="stylesheet" href="fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="index.html" id="logo">Elemen的象牙塔</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
         
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
-      }
-    
-      
-    const detectApple = () => {
-      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
+          <a class="main-nav-link" href="index.html">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
   
-    })()
-  </script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
-  copy: {
-    success: '复制成功',
-    error: '复制失败',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  dateSuffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'null',
-  Snackbar: undefined,
-  infinitegrid: {
-    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
-    buttonText: '加载更多'
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'Elemen的象牙塔',
-  isPost: false,
-  isHome: true,
-  isHighlightShrink: false,
-  isToc: false,
-  isShuoshuo: false
-}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="../img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240418215601.jpg" onerror="onerror=null;src='/img/微信图片_20240421212358.jpg'" alt="avatar"/></div><div class="site-data text-center"><a href="/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="../tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="../categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="../index.html"><i class="fa-fw fas fa-home"></i><span> home</span></a></div><div class="menus_item"><a class="site-page" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> tags</span></a></div><div class="menus_item"><a class="site-page" href="../link/"><i class="fa-fw fas fa-link"></i><span> links</span></a></div><div class="menus_item"><a class="site-page" href="../messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> messageboard</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/微信图片_20240421212350.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="index.html"><span class="site-name">Elemen的象牙塔</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="../index.html"><i class="fa-fw fas fa-home"></i><span> home</span></a></div><div class="menus_item"><a class="site-page" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> tags</span></a></div><div class="menus_item"><a class="site-page" href="../link/"><i class="fa-fw fas fa-link"></i><span> links</span></a></div><div class="menus_item"><a class="site-page" href="../messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> messageboard</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">Elemen的象牙塔</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/404ll" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="2024/09/30/%E5%8C%BA%E5%9D%97%E9%93%BE/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="sui-move学习笔记">sui-move学习笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-09-29T17:34:46.079Z" title="发表于 2024-09-30 01:34:46">2024-09-30</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-11T12:02:38.663Z" title="更新于 2024-10-11 20:02:38">2024-10-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="categories/move/">move</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="tags/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="content">sui-Move语法</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="2024/09/30/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/" title="sui-move2">sui-move2</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-09-29T17:33:48.000Z" title="发表于 2024-09-30 01:33:48">2024-09-30</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-12-05T07:17:57.809Z" title="更新于 2024-12-05 15:17:57">2024-12-05</time></span></div><div class="content">sui -moveSui-PTB （可编程交易模块）官方文档地址：https://docs.sui.io/concepts/transactions/prog-txn-blocks PTB概述PTB 全称 Programmable Transaction Block（可编程交易模块），在Sui上，交易不仅仅是资产流动的基本记录，交易由多个命令组成，这些命令在输入上执行，定义交易的结果。 PTB允许用户在单个交易中调用多个Move函数，管理其对象和管理其代币，而无需发布新的Move包，是生成交易的一种轻量灵活的方式，同时其执行组合的交易模式减少了gas fee 。 PTB 的组成每个PTB由单独的交易命令组成，这里的交易命令有：  TransferObjects  将一组对象转移到指定地址。   SplitCoins  将一个硬币拆分成多个硬币。   MakeMoveVec  构建一个 Move 类型的向量。   MoveCall  调用指定的 Move...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="2024/09/18/%E5%89%8D%E7%AB%AF/react%E7%AC%94%E8%AE%B0/" title="React">React</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-09-18T03:31:52.000Z" title="发表于 2024-09-18 11:31:52">2024-09-18</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-06T14:38:30.809Z" title="更新于 2024-11-06 22:38:30">2024-11-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="categories/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="tags/React/">React</a></span></div><div class="content">最近在学习前端，写一篇笔记来记录一些比较重要的知识点</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="2024/08/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/MYSQL%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="MYSQL入门学习笔记">MYSQL入门学习笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-11T14:43:17.000Z" title="发表于 2024-08-11 22:43:17">2024-08-11</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-11T14:52:48.228Z" title="更新于 2024-08-11 22:52:48">2024-08-11</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="tags/MYSQL/">MYSQL</a></span></div><div class="content">仅为个人初学mysql使用的笔记</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="2024/07/31/%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/" title="区块链概述">区块链概述</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-31T15:03:51.000Z" title="发表于 2024-07-31 23:03:51">2024-07-31</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-31T15:07:21.828Z" title="更新于 2024-07-31 23:07:21">2024-07-31</time></span></div><div class="content">个人整理的新手入门小文章step1</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="2024/07/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/http%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="http学习笔记">http学习笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-29T08:51:05.000Z" title="发表于 2024-07-29 16:51:05">2024-07-29</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-09T08:57:18.955Z" title="更新于 2024-08-09 16:57:18">2024-08-09</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="tags/http/">http</a></span></div><div class="content">简单学习http，语言比较通俗，内容也比较浅薄</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="2024/07/18/%E5%8C%BA%E5%9D%97%E9%93%BE/Sui-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" title="Sui-学习路径">Sui-学习路径</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-18T15:56:07.000Z" title="发表于 2024-07-18 23:56:07">2024-07-18</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-12T06:42:19.692Z" title="更新于 2024-10-12 14:42:19">2024-10-12</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="tags/sui/">sui</a></span></div><div class="content">sui资源整合</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="2024/07/12/%E5%8C%BA%E5%9D%97%E9%93%BE/move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="move 课程笔记">move 课程笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-11T16:00:00.000Z" title="发表于 2024-07-12 00:00:00">2024-07-12</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-20T18:00:38.867Z" title="更新于 2024-07-21 02:00:38">2024-07-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="categories/move/">move</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="tags/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="content">aptos-Move难点语法（个人向）</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="2024/06/22/%E5%8C%BA%E5%9D%97%E9%93%BE/Aptos%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/" title="Aptos学习资源">Aptos学习资源</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-22T06:21:39.593Z" title="发表于 2024-06-22 14:21:39">2024-06-22</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-11T04:59:32.703Z" title="更新于 2024-07-11 12:59:32">2024-07-11</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="tags/%E8%B5%84%E6%BA%90%E6%94%B6%E5%BD%95/">资源收录</a></span></div><div class="content">收录了一些学习资源</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="2024/06/20/%E5%8C%BA%E5%9D%97%E9%93%BE/Move-on-Aptos-%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%85%A5%E9%97%A8/" title="Move on Aptos 初入门-研报">Move on Aptos 初入门-研报</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-20T14:38:21.000Z" title="发表于 2024-06-20 22:38:21">2024-06-20</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-21T15:20:14.957Z" title="更新于 2024-06-21 23:20:14">2024-06-21</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="tags/%E7%A0%94%E6%8A%A5/">研报</a></span></div><div class="content">新手研报，可能不是很全面</div></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="page/2/#content-inner">2</a><a class="extend next" rel="next" href="page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="../img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240418215601.jpg" onerror="this.onerror=null;this.src='../img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240421212358.jpg'" alt="avatar"/></div><div class="author-info-name">Elemen</div><div class="author-info-description">博客的初衷是记录自己的学习情况，希望自己可以坚持下去</div><div class="site-data"><a href="/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="../tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="../categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/404ll"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/404ll" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">最新更新了评论功能和留言板，欢迎试用！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../2024/09/30/%E5%8C%BA%E5%9D%97%E9%93%BE/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="sui-move学习笔记">sui-move学习笔记</a><time datetime="2024-09-29T17:34:46.079Z" title="发表于 2024-09-30 01:34:46">2024-09-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../2024/09/30/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/" title="sui-move2">sui-move2</a><time datetime="2024-09-29T17:33:48.000Z" title="发表于 2024-09-30 01:33:48">2024-09-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../2024/09/18/%E5%89%8D%E7%AB%AF/react%E7%AC%94%E8%AE%B0/" title="React">React</a><time datetime="2024-09-18T03:31:52.000Z" title="发表于 2024-09-18 11:31:52">2024-09-18</time></div></div></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">16</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">27.3k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-12-05T07:18:51.599Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/微信图片_20240421212350.jpg);"><div id="footer-wrap"><div class="copyright">&copy;2024 By Elemen</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="js/utils.js?v=5.2.2"></script><script src="js/main.js?v=5.2.2"></script><div class="js-pjax"><script>window.typedJSFn = {
-  init: str => {
-    window.typed = new Typed('#subtitle', Object.assign({
-      strings: str,
-      startDelay: 300,
-      typeSpeed: 150,
-      loop: true,
-      backSpeed: 50,
-    }, null))
-  },
-  run: subtitleType => {
-    if (true) {
-      if (typeof Typed === 'function') {
-        subtitleType()
-      } else {
-        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js').then(subtitleType)
-      }
-    } else {
-      subtitleType()
-    }
-  }
-}
-btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
-</script><script>function subtitleType () {
-  if (true) {
-    typedJSFn.init(["脚踏实地，心无旁骛","我会变得更厉害"])
-  } else {
-    document.getElementById("subtitle").textContent = "脚踏实地，心无旁骛"
-  }
-}
-typedJSFn.run(subtitleType)</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
-POWERMODE.shake = true;
-POWERMODE.mobile = true;
-document.body.addEventListener('input', POWERMODE);
-</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+    <article id="post-区块链/sui-move学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2024/09/30/%E5%8C%BA%E5%9D%97%E9%93%BE/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2024-09-29T17:34:46.079Z" itemprop="datePublished">2024-09-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="categories/move/">move</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2024/09/30/%E5%8C%BA%E5%9D%97%E9%93%BE/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">sui-move学习笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>参考资料：</p>
+<ul>
+<li><p>基本语法 ：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Rm42177Kx/">https://www.bilibili.com/video/BV1Rm42177Kx/</a></p>
+</li>
+<li><p>相关书籍：</p>
+<ul>
+<li>轻松入门：<a target="_blank" rel="noopener" href="https://easy.sui-book.com/chapter_1.html">https://easy.sui-book.com/chapter_1.html</a> </li>
+<li>Move参考手册：<a target="_blank" rel="noopener" href="https://reference.sui-book.com/introduction.html">https://reference.sui-book.com/introduction.html</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p>变量这一章比较简单， <a target="_blank" rel="noopener" href="https://reference.sui-book.com/packages.html">轻松入门sui</a>: <a target="_blank" rel="noopener" href="https://reference.sui-book.com/packages.html">https://reference.sui-book.com/packages.html</a> 中写得也非常详细！</p>
+<p>let _a &#x3D; 10u32;&#x2F;&#x2F;下划线开头，表示后续没有使用</p>
+<h1 id="包-模块-方法"><a href="#包-模块-方法" class="headerlink" title="包-模块-方法"></a>包-模块-方法</h1><p><strong>包</strong>：包是同一个合约地址包含的全部代码的集合，由很多模块组成，也就是<code>sui move new &lt;name&gt;</code>生成的文件夹</p>
+<p>a_move_package<br>├── Move.toml      (必需)<br>├── Move.lock      (生成的)<br>├── sources        (必需)<br>├── doc_templates  (可选)<br>├── examples       (可选，测试和开发模式)<br>└── tests          (可选，测试模式)</p>
+<blockquote>
+<p>有关包下具体的配置信息，可以参见 </p>
+</blockquote>
+<p><strong>模块</strong>-module：代码模块是代码划分访问权限和代码的组织方式</p>
+<p>创建格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">module &lt;address&gt;::&lt;name&gt;&#123;<br>  use sui::tx_context::TxContext;<br>  fun init(ctx: &amp;mut TxContext) &#123;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="方法访问权限控制"><a href="#方法访问权限控制" class="headerlink" title="方法访问权限控制"></a><strong>方法访问权限控制</strong></h2><p>我把这里的方法理解为其他语言中的函数</p>
+<table>
+<thead>
+<tr>
+<th>方法签名</th>
+<th>调用范围</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>fun  call()</td>
+<td>只能模块内调用</td>
+<td>可以有</td>
+</tr>
+<tr>
+<td>public fun call()</td>
+<td>全部合约能调用</td>
+<td>可以有</td>
+</tr>
+<tr>
+<td>public entry fun call()</td>
+<td>全部合约和Dapp(RPC)能调用</td>
+<td>无</td>
+</tr>
+<tr>
+<td>entry fun call()</td>
+<td>只能Dapp(RPC)调用</td>
+<td>无</td>
+</tr>
+<tr>
+<td>public(package) fun call()</td>
+<td>只能当前的包能调用</td>
+<td>可以有</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">fun a()&#123;<br>&#125;<br>//全局可调用<br>public fun b()&#123;<br>&#125;<br>//只能声明package的包可调用（当前包也可调用） <br>public(package) fun c()&#123;&#125;<br>//全部合约和Dapp(RPC)能调用<br>public entry fun d()&#123;<br>&#125;<br><br>public  fun f(a:u32, b:u32): bool&#123;<br>   a &gt; b<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>init 方法</strong></p>
+<p>只能是私有的</p>
+<p>会在发布合约的是时候自动调用一次</p>
+<p>只有两种形式</p>
+<ul>
+<li><p><strong>fun</strong> <strong>init (ctx: &amp;mut TxContext){}</strong></p>
+</li>
+<li><p><strong>fun init (witness: Struct, ctx: &amp;mut TxContext) {}</strong></p>
+</li>
+</ul>
+<h1 id="引用-注释"><a href="#引用-注释" class="headerlink" title="引用-注释"></a>引用-注释</h1><p>mut: 可变引用 </p>
+<p>&amp;：不可变引用</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">let mut a: u32 = 32;//mut表示 后续会改变它<br>a = 64;<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h2><p>这里比较简单，与其他语言差不多，结合代码学习很快就能上手</p>
+<p>if-条件语句</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">if (condition) true_branch // implied default: else ()<br>if (condition) true_branch else ()<br><br><br>// x and y must be u64 integers<br>//这里意思为 x&gt;y时,返回x; x&lt;y时,返回y<br>let maximum: u64 = if (x &gt; y) x else y;<br><br>// ERROR! branches different types<br>let z = if (maximum &lt; 10) 10u8 else 100u64;<br><br></code></pre></td></tr></table></figure>
+
+<p>while-循环语句</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">fun sum(n: u64): u64 &#123;<br>   let mut sum = 0;<br>   let mut i = 1;<br>   while (i &lt;= n) &#123;<br>       sum = sum + i;<br>       i = i + 1<br>   &#125;;<br><br>   sum<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>break-跳出循环</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">fun min_factor(n: u64): u64 &#123;<br>   let mut i = 2;<br>   while (i &lt;= n) &#123;<br>       if (n % i == 0) break;<br>       i = i + 1<br>   &#125;;<br><br>   i<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>continue-跳过当前条件的循环，直接进入下一个<code>应该进入循环</code>的值</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">fun sum(n: u64): u64 &#123;<br>   let mut sum = 0;<br>   let mut i = 0;<br>   while (i &lt; n) &#123;<br>       i = i + 1;<br>       if (i % 20 == 0) continue;<br>       sum = sum + i;<br>   &#125;;<br><br>   sum<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p>loop-只有遇到break时才跳出循环</p>
+<p>相当于 c语言中的while(1)，这里等价于while(true)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">fun sum(n: u64): u64 &#123;<br>   let mut sum = 0;<br>   let mut i = 0;<br>   loop &#123;<br>       i = i + 1;<br>       if (i &gt; n) break;<br>       sum = sum + i<br>   &#125;;<br>   sum<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="结构体-所有权-对象"><a href="#结构体-所有权-对象" class="headerlink" title="结构体-所有权-对象"></a>结构体-所有权-对象</h1><h2 id="struct-结构体"><a href="#struct-结构体" class="headerlink" title="struct-结构体"></a>struct-结构体</h2><p>结构体是自定义类型，由字段组成，可以简单地理解成”key-value”存储，其中 key 是字段的名称，而 value 是存储的内容，使用关键字 struct 定义，可以为空。</p>
+<p>注：结构体只能在模块内部定义，并且以关键字 <strong>public</strong> <strong>struct</strong> 开头，结构体名称首字母需要大写</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move"> public struct NAME &#123;<br>    FIELD1: TYPE1,<br>    FIELD2: TYPE2,<br>    ...<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="UTXO"><a href="#UTXO" class="headerlink" title="*UTXO"></a>*UTXO</h2><p>每个交易产生一个或多个UTXO，每一个UTXO都对应者一个ID，代表未花费的金额，可以简单理解为你的零钱。</p>
+<p>sui基于UTXO模型</p>
+<h2 id="object-对象"><a href="#object-对象" class="headerlink" title="object-对象"></a>object-对象</h2><p>对象在Sui上存储，维护了一个全局的Map数据结构 Map&lt;ID,object&gt;， id 是唯一的，通过这个唯一的id 查找到object。</p>
+<p>sui上的<strong>资产</strong>都是对象，对象可以相互嵌套，所有的对象都是全局存储。</p>
+<h3 id="对象的定义"><a href="#对象的定义" class="headerlink" title="对象的定义"></a>对象的定义</h3><ul>
+<li><p><strong>必须有</strong> <strong>key</strong> <strong>能力</strong></p>
+</li>
+<li><p>必须第一个字段 是id,而且类型为<strong>sui::object::UID</strong></p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">module book::obj &#123;<br>    use sui::object::UID;<br>    public struct Obj has key &#123;<br>        id:UID,<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="所有权"><a href="#所有权" class="headerlink" title="所有权"></a>所有权</h1><h2 id="定义资产"><a href="#定义资产" class="headerlink" title="定义资产"></a>定义资产</h2><p>资产也就是个人拥有所有权的物品合集</p>
+<p> <strong>常见资产</strong>：银行余额，支付宝微信余额，房产等。</p>
+<h2 id="资产所有权"><a href="#资产所有权" class="headerlink" title="资产所有权"></a>资产所有权</h2><p>资产所有权可以分为：独有资产和共有资产，拥有所有权，则可以改变、删除、增加资产内容。</p>
+<p>在Object中可以用关键字来标记所有权的类型，也就是<strong>能力</strong>，具体在下一章</p>
+<p>分为：</p>
+<ul>
+<li>key</li>
+<li>copy </li>
+<li>drop</li>
+<li>store</li>
+</ul>
+<h2 id="所有权在函数之间的三种传递方式"><a href="#所有权在函数之间的三种传递方式" class="headerlink" title="所有权在函数之间的三种传递方式"></a>所有权在函数之间的三种传递方式</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">fun f(consume: T, write: &amp;mut T, read: &amp;T)<br>T: transfer, delete, write, read//权限最高<br>&amp;mut T: write, read<br>&amp;T: read<br>//示例<br>    public fun del(dog:Dog)&#123;<br>        let Dog&#123;id,gender,age&#125; = dog;<br>        object::delete(id);<br>    &#125;<br><br>    public fun transfer(dog: &amp;mut Dog,age:u8)&#123;<br>        dog.age = 18<br>    &#125;<br><br>    public fun view_dog(dog:Dog)&#123;<br>        dog.age<br>    &#125;<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="所有权的方法"><a href="#所有权的方法" class="headerlink" title="所有权的方法"></a>所有权的方法</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>生成的方法</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>transfer</td>
+<td>独享对象</td>
+<td>key</td>
+</tr>
+<tr>
+<td>public_transfer</td>
+<td>独享对象</td>
+<td>key + store</td>
+</tr>
+<tr>
+<td>freeze_object</td>
+<td>共享对象 - 常量</td>
+<td>key</td>
+</tr>
+<tr>
+<td>public_freeze_object</td>
+<td>共享对象 - 常量</td>
+<td>key + store</td>
+</tr>
+<tr>
+<td>share_object</td>
+<td>共享对象</td>
+<td>key</td>
+</tr>
+<tr>
+<td>public_share_object</td>
+<td>共享对象</td>
+<td>key + store</td>
+</tr>
+</tbody></table>
+<h1 id="能力-Event-常量错误处理"><a href="#能力-Event-常量错误处理" class="headerlink" title="能力-Event-常量错误处理"></a>能力-Event-常量错误处理</h1><h2 id="能力"><a href="#能力" class="headerlink" title="能力"></a>能力</h2><p>四种能力可以相互组合</p>
+<ul>
+<li>key - 被值修饰的键可以对全局进行访问。</li>
+<li>copy - 被修改的值可以被复制。</li>
+<li>drop - 被成员函数在作用域结束时被丢弃。</li>
+<li>store被修改的建议 存储在紧急情况下</li>
+</ul>
+<p>没有任何能力：只能存活在同一个交易中</p>
+<p>只有key：对象，自定义转移规则，对象有全局ID，可以被全局存储和查找（实现灵魂绑定）</p>
+<p>只有drop：被修饰的值在离开作用域的时候会被自动解构 (删除)，基本数据类型默认实现了drop</p>
+<p>只有store：没法使用所有权，可以通过放在其他结构体中来实现所有权的使用，实现结构体的嵌套</p>
+<p>key + store：对象，可以被任意转移，不被转移规则限定，对象有全局ID，可以被全局存储和查找</p>
+<p><font color="red">注<p>：</p>
+<ul>
+<li>key 和 dorp 不能同时存在，也就是对资产进行操作后，不会销毁资产</li>
+<li>key 和 copy不能同时存在，也就是资产不可复制</li>
+</ul>
+<h2 id="Event"><a href="#Event" class="headerlink" title="Event"></a>Event</h2><p>打印日志：copy+drop</p>
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>不会更改的量即为常量，创建常量<code>const Name : Type = Value</code></p>
+<h2 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h2><ul>
+<li><p>abort 配合if语句来终止程序</p>
+</li>
+<li><p>assert!(num&gt;10,ErrMustGet10) 断言，不满足条件时报错</p>
+</li>
+<li><p>debug 调试代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">module std::debug &#123;<br>//打印数值<br>   native public fun print&lt;T&gt;(x: &amp;T);<br>//打印当前堆栈<br>   native public fun print_stack_trace();<br>&#125;<br><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><p>泛型是具体类型或其他属性的抽象替代品，使得在编写 Move 代码时提供更强的灵活性，并避免逻辑重复。</p>
+<p>我理解的泛型，就是在起初定义结构体&#x2F;方法时<strong>不定义其类型</strong>，在后续使用时再定义类型。这样一个语句就能被多次使用，从而避免了重复定义类似的结构体。</p>
+<p>结构体泛型示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">module generics::obj_generics &#123;<br>    public struct Box&lt;T&gt; &#123;<br>        value: T<br>    &#125;<br><br>//定义多个泛型<br>public struct Box&lt;T,Y,X&gt; &#123;<br>        value1: T,<br>        value2: Y,<br>    &#125;<br>  &#125;<br>  <br> //使用泛型<br> fun init(ctx:&amp;mut TxContext)&#123;<br> <br> let box = Box&lt;u8,u16&gt;&#123;<br> 	value1:23,<br> 	value2:45,<br> 	&#125;;<br> &#125;<br></code></pre></td></tr></table></figure>
+
+<p>方法泛型示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">module generics::generics &#123;<br><br>   public struct Box&lt;T&gt; &#123;<br>       value: T<br>   &#125;<br>  <br>   public fun create_box&lt;T&gt;(value: T): Box&lt;T&gt; &#123;<br>       Box&lt;T&gt; &#123; value &#125;<br>   &#125;<br>   //伪代码<br>   let box:Box&lt;u32&gt; = create_box&lt;u32&gt;&#123;value:1u32&#125;<br>   let box:Box&lt;u32&gt; = create_box&lt;_&gt;&#123;value:1u32&#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="泛型的能力限制"><a href="#泛型的能力限制" class="headerlink" title="泛型的能力限制"></a>泛型的能力限制</h2><p>通过store、drop、key、copy，对泛型进行约束(区别一下泛型的约束和能力的约束)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">public struct Box3&lt;T: store + drop，Y:store&gt; has key, store &#123;<br>   id:UID,<br>   value: T,<br>   value2:X,<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="泛型如何传参"><a href="#泛型如何传参" class="headerlink" title="泛型如何传参"></a>泛型如何传参</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">sui client call --package $PACKAGE --module $MODULE --function &quot;create_box&quot; --args $OBJECT_ID --type-args &quot;0x2::coin::Coin&lt;0x2::sui::SUI&gt;&quot; --gas-budget 100000000<br></code></pre></td></tr></table></figure>
+
+<h2 id="phanton-泛型"><a href="#phanton-泛型" class="headerlink" title="phanton 泛型"></a>phanton 泛型</h2><p>申明一个类型参数但并不使用它，用于区分或者约束</p>
+<p>(这个我还不是很清晰，后续会补充一下)</p>
+<p>使用场景：</p>
+<ul>
+<li><p>泛型未被使用</p>
+</li>
+<li><p>容器能力规则不满足</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">public struct Box &lt;phanton T&gt; has store&#123;<br>	value: u64<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><blockquote>
+<p>这一节主要结合代码学习：<a target="_blank" rel="noopener" href="https://github.com/404ll/letsmove/tree/main/tutorial/bootcamp/08_design_pattern">https://github.com/404ll/letsmove/tree/main/tutorial/bootcamp/08_design_pattern</a></p>
+<p>我没有将过多的代码放上来，建议自己手搓学，多写注释。</p>
+</blockquote>
+<h2 id="Capability-权限设计模式"><a href="#Capability-权限设计模式" class="headerlink" title="Capability 权限设计模式"></a>Capability 权限设计模式</h2><p><code>public struct AdminCap has key &#123; id: UID &#125;</code></p>
+<p>当你需要对结构体进行一些操作时，必须由传入这个结构体的实例来<strong>验证你是不是有这个权限</strong>，这个权限一般来说是一个有key能力的object，同时可以适当加上store能力，可以多次使用。</p>
+<p>实际上就是实施权限控制，有权限的人才可以调用该操作</p>
+<p>具体示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">module design_pattern::capability &#123;<br>    use std::string::&#123;Self,String&#125;;<br>    use sui::transfer<br>    use sui::object::&#123;Self, UID&#125;;<br>    use sui::tx_context::&#123;Self,TxContext&#125;;<br>    <br>//生成管理员权限结构体<br>    public struct AdminCap has key &#123; id: UID &#125;<br>//类似于NFT的类型<br>    public struct Item has key, store &#123; id: UID, name: String &#125;<br>//创建一个管理员权限，并传递给发行者<br>    fun init(ctx: &amp;mut TxContext) &#123;<br>        let my_address =  ctx.sender();<br>        let addmin_cap = AdminCap &#123;<br>            id: object::new(ctx)<br>        &#125;;<br>        //将权限转移transfer::transfer(addmin_cap, my_address);<br>        let addmin_cap2 = AdminCap &#123;<br>            id: object::new(ctx)<br>        &#125;;        transfer::transfer(addmin_cap2, @0x1111);<br><br>    &#125;<br>    //运行示例<br>    public fun create_and_send(<br>    //检验<br>        _: &amp;AdminCap, name: vector&lt;u8&gt;, to: address, ctx: &amp;mut TxContext<br>    ) &#123;<br>        transfer::transfer(Item &#123;<br>            id: object::new(ctx),<br>            name: name.to_string()<br>        &#125;, to)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="witness-见证者设计模式"><a href="#witness-见证者设计模式" class="headerlink" title="witness 见证者设计模式"></a>witness 见证者设计模式</h2><p><code>public struct Name has drop &#123;&#125;</code></p>
+<p>简单理解为 这个结构体（资源）创建出来的实例是为了<code>见证</code>另一个资源的创建，类似于做标记。</p>
+<p><font color="red">注<font>：此结构体没有字段，只有drop（销毁）能力，实例只能使用一次</font></font></p>
+<p>示例代码:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move"><br>module design::guardian &#123;<br><br>    public struct Guardian&lt;phantom T: drop&gt; has key, store &#123;<br>        id: UID<br>    &#125;<br><br>    public fun create_guardian&lt;T: drop&gt;(<br>    //做标记，见证Guardian资源的创建<br>        _witness: T, ctx: &amp;mut TxContext<br>    ): Guardian&lt;T&gt; &#123;<br>        Guardian &#123; id: object::new(ctx) &#125;<br>    &#125;<br>    //结束后删除<br>&#125;<br><br>module design::peace_guardian &#123;<br>    use design::guardian;<br><br>    public struct PEACE has drop &#123;&#125;<br><br>    fun init(ctx: &amp;mut TxContext) &#123;<br>//生成对应的示例<br>        let peace = PEACE&#123;&#125;;<br>        transfer::public_transfer(<br>            guardian::create_guardian(peace, ctx),<br>            ctx.sender()<br>        )<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="one-time-witness-见证者模式"><a href="#one-time-witness-见证者模式" class="headerlink" title="one-time-witness 见证者模式"></a>one-time-witness 见证者模式</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">public struct OTW has drop &#123;&#125;<br>types::is_one_time_witness(&amp;witness)<br></code></pre></td></tr></table></figure>
+
+<p>该结构体是一个特殊的见证者：同一个包下面的同一个结构体，只能创建出来一个实例来做 ‘见证’ ，同一个结构体只能用一次，不然会报错。例如创建一个<code>Coin</code>，一条链对应一个<code>Coin</code></p>
+<p><font color="red">注<font>：名称必须与包的名字完全相同，并且全部大写；没有字段，只有drop（销毁）能力；通过<code>fun init (witness: Struct, ctx: &amp;mut TxContext) &#123;&#125;</code> 传入</font></font></p>
+<h3 id="Transferable-Witness-可以转移见证者模式"><a href="#Transferable-Witness-可以转移见证者模式" class="headerlink" title="Transferable Witness 可以转移见证者模式"></a>Transferable Witness 可以转移见证者模式</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">public struct WITNESS has store, drop &#123;&#125;<br>public struct WitnessBox has key &#123; id: UID, witness: WITNESS &#125;<br></code></pre></td></tr></table></figure>
+
+<p>这见证者结构体可以创建后放在一个容器里面，随着容器转移所有权，需要用到的时候在取出来做见证</p>
+<p><font color="red">注<font>： 结构体没有字段，只有drop（销毁）和store（实现存储）和能力，需要一个object的容器来包装，存储在链上。</font></font></p>
+<h2 id="hot-potato-设计模式"><a href="#hot-potato-设计模式" class="headerlink" title="hot-potato 设计模式"></a>hot-potato 设计模式</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">public struct Receipt &#123; price: u64 &#125;<br><br>public fun create(xx:XX,...):(Receipt&#123;&#125;,Coin&lt;x&gt;)<br><br>public fun burn(rece:Receipt,...)<br><br></code></pre></td></tr></table></figure>
+
+<p>用这个结构体<code>public struct Receipt &#123; price: u64 &#125;</code>来检测是否符合交易的条件，防止别人盗走资源。</p>
+<p>简单理解就是烫手的山芋，你拿到手里肯定处理不了，所以你只能还回去 </p>
+<p><font color="red">注<font>：结构体没有任何能力，提供对外方法来<strong>创建</strong>结构体和<strong>销毁</strong>结构体。</font></font></p>
+<h3 id="hot-potato具体例子-闪电贷"><a href="#hot-potato具体例子-闪电贷" class="headerlink" title="hot-potato具体例子-闪电贷"></a>hot-potato具体例子-闪电贷</h3><p>闪电贷的特点</p>
+<ul>
+<li><p>在一个交易里面必须完成借和还</p>
+</li>
+<li><p>无需抵押</p>
+</li>
+<li><p>不还款一定会报错</p>
+</li>
+<li><p>主要用于套利和加杠杆</p>
+</li>
+</ul>
+<p>借款人通过智能合约请求贷款，在同一交易中利用这笔贷款进行各种操作，如投资、交易或其他金融活动，同时借款人必须在同一交易中将贷款金额与利息（gas fee)还清。如果借款人未能按时还款或不按协议还款，整个交易将被取消，贷款金额将被返还给贷款提供方，这时借款人仍然需要支付<code>gas fee</code></p>
+<blockquote>
+<p>闪电贷的具体研究可以看看这篇文章：</p>
+<p>[闪电贷详解]: <a target="_blank" rel="noopener" href="https://academy.binance.com/zh/articles/what-are-flash-loans-in-defi#how-does-a-flash-loan-work">https://academy.binance.com/zh/articles/what-are-flash-loans-in-defi#how-does-a-flash-loan-work</a>	“什么是defi中的闪电贷？”</p>
+</blockquote>
+<h1 id="Sui-framework"><a href="#Sui-framework" class="headerlink" title="Sui_framework"></a>Sui_framework</h1><p>建议去官方的库中查看学习</p>
+<blockquote>
+</blockquote>
+<p>Sui_framework，是Sui-move编程功能的合集，有很多相关的库</p>
+<ul>
+<li>deepbook</li>
+<li>move-stdlib 标准库</li>
+<li>sui-framework</li>
+<li>sui-system</li>
+</ul>
+<h2 id="Balance-Coin-Token-定义及特点"><a href="#Balance-Coin-Token-定义及特点" class="headerlink" title="Balance&#x2F;Coin&#x2F;Token-定义及特点"></a>Balance&#x2F;Coin&#x2F;Token-定义及特点</h2><ul>
+<li>Balance：一个通用的余额可存储处理程序。在Coin 模块中用于允许余额操作，并可用于实现具有Supply 和 Balance 的自定义货币。</li>
+<li>Coin：定义了 Coin类型-表示可互换的令牌和货币的平台范围内的表示。Coin 可以被描述为围绕Balance 类型的安全包装器。</li>
+<li>Token: Token 模块实现了一个可配置的闭环令牌系统。该策略由一组规则定义，必须满足这些规则才能对令牌执行操作。</li>
+</ul>
+<p>Token的产生是由Coin抽象出来，限制<code>Coin的自由转发</code></p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Main type</th>
+<th>Capability</th>
+<th>Abilities</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>sui::balance</td>
+<td>Balance<T></T></td>
+<td>Supply<T></T></td>
+<td>store</td>
+</tr>
+<tr>
+<td>sui::coin</td>
+<td>Coin<T></T></td>
+<td>TreasuryCapT&gt;</td>
+<td>key + store</td>
+</tr>
+<tr>
+<td>sui:: token</td>
+<td>Token<T></T></td>
+<td>TreasuryCap<T></T></td>
+<td>key</td>
+</tr>
+</tbody></table>
+<h2 id="display-standard-NFT"><a href="#display-standard-NFT" class="headerlink" title="display standard -NFT"></a>display standard -NFT</h2><ul>
+<li><p><strong>name（名称）</strong> - 对象的名称。用户查看对象时显示此名称。</p>
+</li>
+<li><p><strong>description（描述）</strong> - 对象的描述。用户查看对象时显示此描述。</p>
+</li>
+<li><p><strong>link（链接）</strong> - 用于应用程序中的对象链接。</p>
+</li>
+<li><p><strong>image_url（图片链接）</strong> - 对象的图像链接，可以是URL或者图像的二进制数据。</p>
+</li>
+<li><p><strong>thumbnail_url（缩略图链接）</strong> - 用作钱包、浏览器和其他产品中的预览的小图像的URL。</p>
+</li>
+<li><p><strong>project_url（项目链接）</strong> - 与对象或创建者相关联的网站链接。</p>
+</li>
+<li><p><strong>creator（创建者）</strong> - 表示对象创建者的字符串信息。</p>
+</li>
+</ul>
+<p>NFT &#x3D; Object + Display</p>
+<p>Sui Object Display 是一种模板引擎，可以实现对类型的链上管理与链下表示（显示）的模板化。通过它，你可以将对象的数据替换为模板字符串。该标准不限制你可以设置的字段。你可以使用｛property｝语法访问所有对象属性，然后将它们作为模板字符串的一部分插入其中。</p>
+<h3 id="Kiosk"><a href="#Kiosk" class="headerlink" title="Kiosk"></a>Kiosk</h3><blockquote>
+<p>具体介绍：<a target="_blank" rel="noopener" href="https://docs.sui.io/standards/kiosk">https://docs.sui.io/standards/kiosk</a></p>
+</blockquote>
+<h2 id="Unit-Test-单元测试"><a href="#Unit-Test-单元测试" class="headerlink" title="Unit Test(单元测试)"></a>Unit Test(单元测试)</h2><ul>
+<li>#[test]-只跑一遍某个函数</li>
+<li>#[test_only]-工具函数，只在测试的时候才被编译</li>
+<li>#[expect_failure(abort_code &#x3D; test_sui_hello ::my_coin::ENotlmplemented)]-测试指定函数，报出指定的错误，可以理解为用错误条件来检验程序是否正确</li>
+</ul>
+<p>使用前文的Print()来调试</p>
+<h1 id="Coin协议"><a href="#Coin协议" class="headerlink" title="Coin协议"></a>Coin协议</h1><p>Coin有两种所有权：</p>
+<ul>
+<li>独有所有权：<code>public_transfer(treasury_cap,sender(ctx))</code></li>
+<li>共享所有权： <code>public_share_object(treasury_cap)</code></li>
+</ul>
+<p>ps: 代码来自官方标准库</p>
+<p>生成一个Coin</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">module examples::my_coin &#123;<br>    use sui::coin::&#123;Self, TreasuryCap&#125;;<br><br>    public struct MY_COIN has drop &#123;&#125;<br>//采用一次见证<br>    fun init(witness: MY_COIN, ctx: &amp;mut TxContext) &#123;<br>        let (treasury, metadata) = coin::create_currency(witness, 6, b&quot;MY_COIN&quot;, b&quot;&quot;, b&quot;&quot;, option::none(), ctx);<br>        //所有权共享 不可变共享<br>        transfer::public_freeze_object(metadata);<br>        //向合约发布者共享所有权<br>        transfer::public_transfer(treasury, ctx.sender())<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>接下来我们一步一步的认识这个函数</p>
+<p>使用<code>coin::create_currency</code>时，创建硬币的智能合约的发布者会收到一个<code>TreasuryCap</code>对象和<code>Coin元数据</code>。该<code>TreasuryCap</code>对象是铸造新硬币或销毁现有硬币所必需的。</p>
+<p>同时<code>TreasuryCap</code>对象是可转让的，因此如果您转让该对象，第三方可以接管您创建的代币的管理<code>TreasuryCap</code>。但是，在转让该功能后，您将无法再自行铸造和销毁代币。</p>
+<p>还有很多其他功能：这里就不一一列举了，建议用文档学习 </p>
+</font></p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/09/30/%E5%8C%BA%E5%9D%97%E9%93%BE/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="cm360h2mc000kyoisc87r53h5" data-title="sui-move学习笔记" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-sui-move学习笔记（进阶版）/sui-move学习笔记（进阶版）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2024/09/30/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2024-09-29T17:33:48.000Z" itemprop="datePublished">2024-09-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2024/09/30/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/">sui-move2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="sui-move"><a href="#sui-move" class="headerlink" title="sui -move"></a>sui -move</h1><h2 id="Sui-PTB-（可编程交易模块）"><a href="#Sui-PTB-（可编程交易模块）" class="headerlink" title="Sui-PTB （可编程交易模块）"></a>Sui-PTB （可编程交易模块）</h2><p>官方文档地址：<a target="_blank" rel="noopener" href="https://docs.sui.io/concepts/transactions/prog-txn-blocks">https://docs.sui.io/concepts/transactions/prog-txn-blocks</a></p>
+<h3 id="PTB概述"><a href="#PTB概述" class="headerlink" title="PTB概述"></a>PTB概述</h3><p>PTB 全称 Programmable Transaction Block（可编程交易模块），在Sui上，交易不仅仅是资产流动的基本记录，交易由多个命令组成，这些命令在输入上执行，定义交易的结果。</p>
+<p>PTB允许用户在单个交易中调用多个Move函数，管理其对象和管理其代币，而无需发布新的Move包，是生成交易的一种轻量灵活的方式，同时其执行组合的交易模式减少了gas fee 。</p>
+<h3 id="PTB-的组成"><a href="#PTB-的组成" class="headerlink" title="PTB 的组成"></a>PTB 的组成</h3><p>每个PTB由单独的交易命令组成，这里的交易命令有：</p>
+<ol>
+<li><p><strong>TransferObjects</strong></p>
+<ul>
+<li>将一组对象转移到指定地址。</li>
+</ul>
+</li>
+<li><p><strong>SplitCoins</strong></p>
+<ul>
+<li>将一个硬币拆分成多个硬币。</li>
+</ul>
+</li>
+<li><p><strong>MakeMoveVec</strong></p>
+<ul>
+<li>构建一个 Move 类型的向量。</li>
+</ul>
+</li>
+<li><p><strong>MoveCall</strong></p>
+<ul>
+<li>调用指定的 Move 函数。</li>
+</ul>
+</li>
+<li><p><strong>Publish</strong></p>
+<ul>
+<li>发布指定的模块。</li>
+</ul>
+</li>
+<li><p><strong>Upgrade</strong></p>
+<ul>
+<li>升级已有的模块或包。</li>
+</ul>
+</li>
+</ol>
+<p>每个交易命令按顺序执行，您可以在任何后续交易命令中使用前一个交易命令的结果。所有交易命令在一个块中的效果，特别是对象修改或转移，会在事务结束时以原子方式应用。如果一个交易命令失败，整个块都会失败，并且命令的任何效果都不会被应用</p>
+<p>主要通过前端来整合并连续实施多个操作，即操作前端来实现交易的添加和合约的调用</p>
+<h3 id="PTB的使用"><a href="#PTB的使用" class="headerlink" title="PTB的使用"></a>PTB的使用</h3><h4 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//创建可编程事务块 (PTB)</span><br><span class="hljs-keyword">const</span> txb = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Transaction</span>();<br><span class="hljs-comment">//设置输入参数</span><br><span class="hljs-keyword">const</span> arg1 = txb.<span class="hljs-title function_">object</span>(objectId0);<br><span class="hljs-keyword">const</span> arg2 = txb.<span class="hljs-title function_">object</span>(objectId1);<br><span class="hljs-keyword">const</span> arg3 = txb.<span class="hljs-property">pure</span>.<span class="hljs-title function_">u8</span>(<span class="hljs-number">0</span>);<br><span class="hljs-keyword">const</span> arg4 = txb.<span class="hljs-property">pure</span>.<span class="hljs-title function_">bool</span>(<span class="hljs-literal">true</span>);<br><span class="hljs-keyword">const</span> arg5 = txb.<span class="hljs-title function_">pure</span>(bcs.<span class="hljs-title function_">vector</span>(bcs.<span class="hljs-property">U64</span>).<span class="hljs-title function_">serialize</span>([<span class="hljs-number">123</span>, <span class="hljs-number">456</span>]));<br><br><span class="hljs-keyword">const</span> myCoin = txb.<span class="hljs-title function_">object</span>(myCoinId);<br> <span class="hljs-comment">//通过命令调用 Move 函数拿到输出的资产</span><br><span class="hljs-keyword">const</span> coinOut = txb.<span class="hljs-title function_">moveCall</span>(&#123;<br>  <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;$&#123;packageId&#125;::$&#123;moduleName&#125;::$&#123;funcName&#125;*&#x27;</span>,<br>  <span class="hljs-attr">typeArguments</span>: [type1, type2],<br>  <span class="hljs-attr">arguments</span>: [arg1, arg2, arg3, arg4, arg5]<br>&#125;);<br><span class="hljs-comment">// 拆分Coin为coinOut0和 coinOut1</span><br><span class="hljs-keyword">const</span> [coinOut0, coinOut1] = txb.<span class="hljs-title function_">splitCoins</span>(coinOut, [<span class="hljs-number">100</span>, <span class="hljs-number">200</span>]);<br><span class="hljs-comment">// 将coin合并到自己的资产中</span><br>txb.<span class="hljs-title function_">mergeCoins</span>(myCoin, [coinOut]);<br><span class="hljs-comment">// 转移对象</span><br><span class="hljs-keyword">if</span> (coinOut0) txb.<span class="hljs-title function_">transferObjects</span>([coinOut0], recipient);<br><br><span class="hljs-keyword">if</span> (coinOut1) txb.<span class="hljs-title function_">transferObjects</span>([coinOut1], recipient1);<br><br></code></pre></td></tr></table></figure>
+
+<h4 id="terminal"><a href="#terminal" class="headerlink" title="terminal"></a>terminal</h4><figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs powershell">sui client ptb <br><span class="hljs-literal">--assign</span> kapy @<span class="hljs-number">0</span>xa8f224924c9570c0bed020606be889fd46373e80c3a6b9547aeb33e646b4d540 <br><span class="hljs-literal">--assign</span> cfg @<span class="hljs-number">0</span>x80ff28774e3056f00e130a2dedda8be83c04acf3ab0697395bd37ee022001d15 <br><span class="hljs-literal">--move-call</span> <span class="hljs-number">0</span>xf61cffb662dda6c8ac484f299361b0d85464d06e46603321ad0b7311f0594490::exercise_3::buy_with_kapy kapy <br><span class="hljs-literal">--assign</span> dv <br><span class="hljs-literal">--move-call</span> <span class="hljs-number">0</span>xf61cffb662dda6c8ac484f299361b0d85464d06e46603321ad0b7311f0594490::exercise_3::pay <span class="hljs-string">&quot;&lt;sui::sui::SUI&gt;&quot;</span> @<span class="hljs-number">0</span>xd4fb85849ac089d5df317663b818dda0cf35a9f8b3c68ec81f941d010019bf7d cfg dv @<span class="hljs-number">0</span>x5617dbcfdea83576ae108ce03ea4fdebf2c505c53eec6e8c1130366f5bbb2eac <br><span class="hljs-literal">--assign</span> org <br><span class="hljs-literal">--move-call</span> <span class="hljs-number">0</span>xcbfbdaaa8e8a70556c0cf1a038ddb3d9cc86cdaeb1add61abf7ebd2becac7b9d::kapy::carry kapy org <span class="hljs-literal">--gas-budget</span> <span class="hljs-number">10000000</span> <br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="Sui-client-命令速查"><a href="#Sui-client-命令速查" class="headerlink" title="Sui -client 命令速查"></a>Sui -client 命令速查</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.sui.io/references/cli/cheatsheet">https://docs.sui.io/references/cli/cheatsheet</a></li>
+</ul>
+<h2 id="Sui-Dapp-kit-套件"><a href="#Sui-Dapp-kit-套件" class="headerlink" title="Sui-Dapp kit 套件"></a>Sui-Dapp kit 套件</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://sdk.mystenlabs.com/dapp-kit">https://sdk.mystenlabs.com/dapp-kit</a></li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs powershell">npm i <span class="hljs-literal">--save</span> @mysten/dapp<span class="hljs-literal">-kit</span> @mysten/sui @tanstack/react<span class="hljs-literal">-query</span><br>npm creat @mysten/dapp <br>npm install <span class="hljs-literal">--legacy-peer-deps</span><br>npm run dev<br></code></pre></td></tr></table></figure>
+
+<h2 id="创建-Dapp"><a href="#创建-Dapp" class="headerlink" title="创建 Dapp"></a>创建 Dapp</h2><p><a target="_blank" rel="noopener" href="https://sdk.mystenlabs.com/dapp-kit/create-dapp">https://sdk.mystenlabs.com/dapp-kit/create-dapp</a></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs powershell">npm create @mysten/dapp<br>选择<span class="hljs-number">1</span>：react<span class="hljs-literal">-client-dapp</span> - 一个基本的 React dApp，用于获取连接的钱包所拥有的对象列表。<br>选择<span class="hljs-number">2</span>：react<span class="hljs-literal">-e2e-counter</span> - 包含 <span class="hljs-built_in">Move</span> 代码和简单计数器应用程序 UI 的端到端示例<br>输入Dapp<span class="hljs-literal">-name</span><br><span class="hljs-built_in">cd</span> Dapp<span class="hljs-literal">-name</span><br>npm install  // 产生冲突 npm install <span class="hljs-literal">--legacy-peer-deps</span><br>npm run dev - 运行<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="Typescript-SDK"><a href="#Typescript-SDK" class="headerlink" title="Typescript SDK"></a>Typescript SDK</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://sdk.mystenlabs.com/typescript">https://sdk.mystenlabs.com/typescript</a></li>
+</ul>
+<h4 id="coin-value-和-coin-into-balance-不同："><a href="#coin-value-和-coin-into-balance-不同：" class="headerlink" title="coin::value 和 coin::into_balance 不同："></a><strong><code>coin::value</code> 和 <code>coin::into_balance</code> 不同</strong>：</h4><ol>
+<li><p><strong><code>coin::value</code></strong>:</p>
+<ul>
+<li><p>用于获取一个 <code>Coin</code> 的<strong>数值</strong>。</p>
+</li>
+<li><p>它是一个公共的 getter 函数，可以返回 <code>Coin</code> 的具体数值。</p>
+</li>
+<li><p>代码签名为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">public fun value&lt;T&gt;(self: &amp;coin::Coin&lt;T&gt;): u64<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>这个函数不会改变 <code>Coin</code> 的状态，只是读取其数值。</p>
+</li>
+</ul>
+</li>
+<li><p><strong><code>coin::into_balance</code></strong>:</p>
+<ul>
+<li><p>用于将一个 <code>Coin</code> 解构为 <code>Balance</code>。</p>
+</li>
+<li><p>这个函数会消耗 <code>Coin</code> 对象，并返回其内部的 <code>Balance</code>。</p>
+</li>
+<li><p>代码签名为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">public fun into_balance&lt;T&gt;(coin: coin::Coin&lt;T&gt;): balance::Balance&lt;T&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>使用这个函数后，**<code>Coin</code> 不再存在，而是转换为了 <code>Balance</code>**。</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>这两个函数的主要区别在于一个是读取操作（<code>value</code>），另一个是转换操作（<code>into_balance</code>）。如果你想获取 <code>Coin</code> 的数值而不改变其状态，使用 <code>value</code>；如果你需要将 <code>Coin</code> 转换为 <code>Balance</code>，使用 <code>into_balance</code>。</p>
+<h4 id="和直接传参和-mut-的区别"><a href="#和直接传参和-mut-的区别" class="headerlink" title="&amp; 和直接传参和&amp;mut 的区别"></a><strong>&amp; 和直接传参和&amp;mut 的区别</strong></h4><p>在 Move 中，<code>&amp;</code>、直接传参和 <code>&amp;mut</code> 的区别主要在于所有权和可变性：</p>
+<ol>
+<li><p><strong>引用（&amp;）</strong>：</p>
+<ul>
+<li>传递的是对象的不可变引用。</li>
+<li>允许在函数中读取对象，但不能修改。</li>
+<li>不会转移对象的所有权。</li>
+</ul>
+</li>
+<li><p><strong>直接传参</strong>：</p>
+<ul>
+<li>传递的是对象本身。</li>
+<li>转移对象的所有权到函数中。</li>
+<li>函数可以消耗对象（例如，销毁或转移）。</li>
+</ul>
+</li>
+<li><p><strong>可变引用（&amp;mut）</strong>：</p>
+<ul>
+<li>传递的是对象的可变引用。</li>
+<li>允许在函数中读取和修改对象。</li>
+<li>不会转移对象的所有权，但允许修改其状态。</li>
+</ul>
+</li>
+</ol>
+<p>选择使用哪种方式取决于你的具体需求：</p>
+<ul>
+<li>使用 <code>&amp;</code> 当你只需要读取对象而不修改。</li>
+<li>使用 <code>&amp;mut</code> 当你需要在函数中修改对象。</li>
+<li>使用直接传参当你需要转移对象的所有权或消耗它。</li>
+</ul>
+<h2 id="各类transfer的区别与使用"><a href="#各类transfer的区别与使用" class="headerlink" title="各类transfer的区别与使用"></a>各类transfer的区别与使用</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>生成的方法</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>transfer</td>
+<td>独享对象</td>
+<td>key</td>
+</tr>
+<tr>
+<td>public_transfer</td>
+<td>独享对象</td>
+<td>key + store</td>
+</tr>
+<tr>
+<td>freeze_object</td>
+<td>共享对象-常量</td>
+<td>key</td>
+</tr>
+<tr>
+<td>public_freeze_object</td>
+<td>共享对象-常量</td>
+<td>key + store</td>
+</tr>
+<tr>
+<td>share_object</td>
+<td>共享对象</td>
+<td>key</td>
+</tr>
+<tr>
+<td>public_share_object</td>
+<td>共享对象</td>
+<td>key + store</td>
+</tr>
+</tbody></table>
+<p>源码地址：<a target="_blank" rel="noopener" href="https://github.com/MystenLabs/sui/blob/main/crates/sui-framework/packages/sui-framework/sources/transfer.move">https://github.com/MystenLabs/sui/blob/main/crates/sui-framework/packages/sui-framework/sources/transfer.move</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/09/30/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/" data-id="cm4azk67i000038ise3cocffo" data-title="sui-move2" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-前端/react笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2024/09/18/%E5%89%8D%E7%AB%AF/react%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2024-09-18T03:31:52.000Z" itemprop="datePublished">2024-09-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2024/09/18/%E5%89%8D%E7%AB%AF/react%E7%AC%94%E8%AE%B0/">React</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>学习视频</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1is4y167yY/?p=41&spm_id_from=pageDriver&vd_source=7815abf75f25008fd075daf46f5ff072">12. Props, Immutability, and One-Way Data Flow_哔哩哔哩_bilibili</a></p>
+</blockquote>
+<h1 id="React笔记"><a href="#React笔记" class="headerlink" title="React笔记"></a>React笔记</h1><hr>
+<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><p>这里写了常用到的 js知识 </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//对象解构赋值（Object Destructuring），允许你从对象中提取属性，并将它们赋值给变量</span><br><span class="hljs-keyword">const</span> &#123; title,author,publicationDate,hasMovieAdaptation,genres,reviews,translations &#125; = book; <br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(title, author);<br><br><span class="hljs-comment">//数组解构赋值允许你将数组中的值提取到单独的变量中，语法类似于对象解构赋值，但使用的是方括号 []；</span><br><span class="hljs-keyword">const</span> [firstBook, secondBook, ...otherBooks ] = books; <br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(firstBook, secondBook, otherBooks);<br><span class="hljs-comment">//添加新元素  在解构赋值中，... 操作符可以用来收集剩余的元素。它可以用于数组解构时将剩余的元素赋值给一个新数组</span><br><span class="hljs-keyword">const</span> newGenres = [...book.<span class="hljs-property">genres</span>, <span class="hljs-string">&quot;horror&quot;</span>];<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(newGenres);<br><br><span class="hljs-comment">//adding new genre to books可以覆盖原数组，也可以添加新的元素</span><br><span class="hljs-comment">//先展开</span><br><span class="hljs-keyword">const</span> updateBook = &#123; ...books, <span class="hljs-attr">data</span>:<span class="hljs-string">&quot;123&quot;</span> &#125;;<br>updateBook;<br><br><span class="hljs-comment">//模板字符串</span><br><span class="hljs-keyword">const</span> summary = <span class="hljs-string">`<span class="hljs-subst">$&#123;title&#125;</span> is a book,and published in <span class="hljs-subst">$&#123;publicationDate.split(<span class="hljs-string">&quot;-&quot;</span>)[<span class="hljs-number">0</span>]&#125;</span>`</span>;<br>summary;<br><br><span class="hljs-comment">//三元运算符</span><br><span class="hljs-keyword">const</span> hasMovie = books.<span class="hljs-property">hasMovieAdaptation</span> ? <span class="hljs-string">&quot;Yes&quot;</span> : <span class="hljs-string">&quot;No&quot;</span>;<br>hasMovie;<br><br><span class="hljs-comment">//箭头函数 split() 方法用于分割字符串，并返回一个包含分割后的子字符串的数组。</span><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">publicationDateYear</span> = (<span class="hljs-params">str</span>) =&gt; str.<span class="hljs-property">publicationDate</span>.<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot;-&quot;</span>)[<span class="hljs-number">0</span>];<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">publicationDateYear</span>(book));<br><span class="hljs-comment">//运算符</span><br><span class="hljs-comment">// &amp;&amp; 短路逻辑与 || 短路逻辑</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>( <span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-string">&quot;nihao&quot;</span>);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>( <span class="hljs-literal">false</span> || <span class="hljs-string">&quot;nihao&quot;</span>);<br><span class="hljs-comment">// console.log( true || &quot;nihao&quot;);</span><br><span class="hljs-comment">// console.log( false &amp;&amp; &quot;nihao&quot;);</span><br><br><span class="hljs-comment">//?? false短路逻辑 总评</span><br><span class="hljs-keyword">const</span> count = book.<span class="hljs-property">reviews</span>.<span class="hljs-property">librarything</span> ?? <span class="hljs-number">0</span>;<br>count;<br><br><span class="hljs-comment">//falsy values: false, null, undefined, 0, NaN, &quot;&quot;</span><br><span class="hljs-comment">//truthy values: true, non-empty string, non-empty array, object, function </span><br><br><br><span class="hljs-comment">//optonal chaining  </span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">getTotalReviewcount</span>(<span class="hljs-params">book</span>)&#123;<br>  <span class="hljs-keyword">const</span> goodreads = book.<span class="hljs-property">reviews</span>?.<span class="hljs-property">goodreads</span>;<br>  <span class="hljs-keyword">const</span> librarything = book.<span class="hljs-property">reviews</span>?.<span class="hljs-property">librarything</span> ?? <span class="hljs-number">0</span>;<br>  <span class="hljs-keyword">return</span> goodreads + librarything;<br>&#125;<br><span class="hljs-keyword">const</span> totalReviewCount = <span class="hljs-title function_">getTotalReviewcount</span>(book);<br>totalReviewCount;<br><br><span class="hljs-comment">//map会遍历数组中的每一个元素，并按照函数式，对原数组的每一项进行操作，返回一个新的数组</span><br><span class="hljs-keyword">const</span> x =[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>].<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">num</span> =&gt;</span> num * <span class="hljs-number">2</span>);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x);<br><br><span class="hljs-comment">// reduce 的效果 是将数组中的元素合并成一个值 相较于 filter、map</span><br><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>];<br><span class="hljs-keyword">const</span> sum = arr.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">sum, cur</span>) =&gt;</span> sum + cur, <span class="hljs-number">0</span>);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sum);<br><br><span class="hljs-comment">//filer 过滤数组中的元素，返回一个新的数组</span><br><span class="hljs-keyword">const</span> arr3 = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];<br><span class="hljs-keyword">const</span> filteredArr = arr3.<span class="hljs-title function_">filter</span>(<span class="hljs-function">(<span class="hljs-params">num</span>) =&gt;</span> num % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>);<br>filteredArr;<br><br><span class="hljs-comment">//sort 会改变原数组，返回排序后的数组</span><br><span class="hljs-keyword">const</span> arr1 = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];<br><span class="hljs-keyword">const</span> sortedArr = arr1.<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a - b);<br>sortedArr;<br>arr1;<br><br><span class="hljs-comment">// slice 可以返回一个新数组，不会改变原数组</span><br><span class="hljs-keyword">const</span> arr2 = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];<br><span class="hljs-keyword">const</span> slicedArr2 = arr2.<span class="hljs-title function_">slice</span>(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>).<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a - b);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(slicedArr2);<br>arr2;<br><br><span class="hljs-comment">//箭头函数 为了延迟执行 onDeleteItem(item.id)，即在点击时才调用它</span><br>onClick=&#123;<span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">onDeleteItem</span>(item.<span class="hljs-property">id</span>)&#125; <br><br><span class="hljs-comment">//回调函数 作为参数传递给另一个函数</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Hello!&quot;</span>);<br>&#125;<br><br><span class="hljs-built_in">setTimeout</span>(greet, <span class="hljs-number">2000</span>);  <span class="hljs-comment">// 2秒后调用greet函数</span><br><br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><strong>React</strong> 是用于构建用户界面的 JavaScript 库。</p>
+<p>它提供了组件、状态管理、生命周期方法等功能来帮助开发者构建复杂的前端应用</p>
+<p>其主要功能是实现后端数据与前端页面的即时更新，同时减少单一使用<code>js</code>时的繁冗工作量</p>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><h4 id="创建项目："><a href="#创建项目：" class="headerlink" title="创建项目："></a>创建项目：</h4><h5 id="方法1："><a href="#方法1：" class="headerlink" title="方法1："></a>方法1：</h5><p>a. 安装 Node.js 和 npm（Node.js 包管理器）。</p>
+<p>b. 打开终端或命令提示符。</p>
+<p>c. 运行以下命令来创建一个新的 React 应用程序：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">npx create-react-app my-app<br>cd my-app<br>npm start<br></code></pre></td></tr></table></figure>
+
+<h5 id="方法2：使用-Vite"><a href="#方法2：使用-Vite" class="headerlink" title="方法2：使用 Vite"></a>方法2：使用 Vite</h5><p>Vite 是一个轻量级的构建工具，它提供了快速的冷启动和热更新。它支持 TypeScript、CSS 预处理器和许多其他功能。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">npm init vite@latest my-app -- --template react<br>cd my-app<br>npm install<br>npm run dev<br></code></pre></td></tr></table></figure>
+
+<p>文件结构如下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">my-app/<br>├── node_modules/         <span class="hljs-comment"># 项目依赖的第三方库</span><br>├── public/<br>│   ├── favicon.ico       <span class="hljs-comment"># 网站图标</span><br>│   ├── index.html        <span class="hljs-comment"># HTML 入口文件</span><br>│   ├── manifest.json     <span class="hljs-comment"># PWA 应用配置文件</span><br>│   └── robots.txt        <span class="hljs-comment"># 爬虫协议文件</span><br>├── src/<br>│   ├── App.css           <span class="hljs-comment"># 应用的样式文件</span><br>│   ├── App.tsx           <span class="hljs-comment"># 应用的主组件文件 (或 .js)</span><br>│   ├── App.test.tsx      <span class="hljs-comment"># 测试文件，使用 Jest 测试框架</span><br>│   ├── index.css         <span class="hljs-comment"># 全局样式文件</span><br>│   ├── index.tsx         <span class="hljs-comment"># 应用入口文件 (或 .js)</span><br>│   ├── logo.svg          <span class="hljs-comment"># 应用 logo 图标</span><br>│   ├── reportWebVitals.ts <span class="hljs-comment"># 性能报告 (可选)</span><br>│   └── setupTests.ts     <span class="hljs-comment"># 设置测试环境的配置文件</span><br>├── .gitignore            <span class="hljs-comment"># Git 忽略文件配置</span><br>├── package.json          <span class="hljs-comment"># 项目配置文件，包含依赖信息和脚本</span><br>├── README.md             <span class="hljs-comment"># 项目的 README 文件</span><br>├── tsconfig.json         <span class="hljs-comment"># TypeScript 配置文件（如果使用 TypeScript）</span><br>└── yarn.lock / package-lock.json  <span class="hljs-comment"># 锁定依赖版本的文件</span><br><br></code></pre></td></tr></table></figure>
+
+<h2 id="React-三要素"><a href="#React-三要素" class="headerlink" title="React 三要素"></a>React 三要素</h2><h3 id="1-组件（Component）"><a href="#1-组件（Component）" class="headerlink" title="1. 组件（Component）"></a>1. <strong>组件（Component）</strong></h3><p>组件是 React 的基础构建块，每个 React 应用都是由一个个组件组合而成的。React为每一个组件渲染一个视图，这些视图组成UI。每个组件都拥有自己的 “<strong>数据</strong>”  “<strong>（js）逻辑</strong>”  “<strong>外观</strong>”</p>
+<ul>
+<li><img src="https://raw.githubusercontent.com/404ll/My-images/main//img202411052000182.png" alt="image-20240920204607063-17268363750311"><strong>类组件</strong>：通过 ES6 的类来定义，包含状态（state)和生命周期方法。</li>
+<li><strong>函数组件</strong>：React 16.8 之后推荐的方式，使用函数定义组件并结合钩子（Hooks）来管理状态和生命周期。</li>
+</ul>
+<p>组件不可嵌套</p>
+<p><strong>示例</strong>：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><code class="hljs jsx"><span class="hljs-comment">// 函数组件</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">Welcome</span>(<span class="hljs-params">props</span>) &#123;<br>  <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello, &#123;props.name&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="什么是-JSX"><a href="#什么是-JSX" class="headerlink" title="什么是 JSX ?"></a>什么是 JSX ?</h4><p>jsx是一种声明语法，用来描述组件的外观，根据数据和逻辑工作。通常与 React 一起使用，允许在 JavaScript 代码中编写类似 HTML 的标签</p>
+<ol>
+<li><strong>类 HTML 的语法</strong>：</li>
+</ol>
+<ul>
+<li>JSX 允许在 JavaScript 代码中嵌入类似 HTML 的标签，使得编写用户界面时更加直观和简洁。虽然看起来像 HTML，但 JSX 实际上会被编译成 JavaScript 函数调用。</li>
+</ul>
+<ol start="2">
+<li><strong>支持表达式</strong>：</li>
+</ol>
+<ul>
+<li><p>JSX 中可以使用 JavaScript 表达式，通过{}包裹</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">const name = &#x27;Alice&#x27;;<br>const element = &lt;h1&gt;Hello, &#123;name&#125;!&lt;/h1&gt;;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<ol start="3">
+<li><strong>必须返回一个父元素</strong>：</li>
+</ol>
+<ul>
+<li><p>在 JSX 中，所有标签必须被一个父级元素包裹。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">return (<br>  &lt;div&gt;<br>    &lt;h1&gt;Title&lt;/h1&gt;<br>    &lt;p&gt;Description&lt;/p&gt;<br>  &lt;/div&gt;<br>);<br></code></pre></td></tr></table></figure></li>
+</ul>
+<ol start="4">
+<li><strong>样式和属性的处理</strong>：</li>
+</ol>
+<ul>
+<li><p>在 JSX 中，class属性被替换为<code>className</code>，style属性接受一个对象。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">&lt;div className=&quot;container&quot; style=&#123;&#123; color: &#x27;red&#x27; &#125;&#125;&gt;Hello&lt;/div&gt;<br></code></pre></td></tr></table></figure></li>
+</ul>
+</blockquote>
+<h3 id="2-状态（State）"><a href="#2-状态（State）" class="headerlink" title="2. 状态（State）"></a>2. <strong>状态（State）</strong></h3><p>状态是组件内部的数据，它决定了组件的行为和显示的内容。</p>
+<p>状态是可变的，随着用户的交互或其他事件触发，它会发生变化并<strong>重新渲染</strong>组件。</p>
+<p>在类组件中，状态通过 <code>this.state</code> 来管理，在函数组件中使用 <code>useState</code> <strong>钩子</strong>来管理。</p>
+<blockquote>
+<p>什么是钩子？</p>
+<p>在 React 中，钩子就是use开头的状态组件，允许你在函数组件中使用状态和其他 React 特性，而不需要编写类组件。</p>
+<p>常见的 React 钩子有：</p>
+<ul>
+<li><code>useState</code>：用于在函数组件中添加状态变量。</li>
+<li><code>useEffect</code>：用于执行副作用操作（如数据获取、订阅或手动更改 DOM）。</li>
+<li><code>useContext</code>：用于在组件树中共享数据，而无需逐层传递 props。</li>
+</ul>
+</blockquote>
+<h4 id="怎么使用状态"><a href="#怎么使用状态" class="headerlink" title="怎么使用状态"></a>怎么使用状态</h4><p><strong>什么时候创建状态？</strong></p>
+<ol>
+<li><p>需要存储数据？</p>
+</li>
+<li><p>数据会发生变化吗 </p>
+<ul>
+<li>不会 &#x3D;&gt; const 常量即可</li>
+</ul>
+</li>
+<li><p>是否可以从现有的道具&#x2F;状态中计算？</p>
+<ul>
+<li>会 &#x3D;&gt; 派生状态(derive state)</li>
+</ul>
+</li>
+<li><p>更新状态是否需要重新渲染组件？</p>
+</li>
+</ol>
+<ul>
+<li>不会 &#x3D;&gt; 使用Ref （像普通状态一样持久的保持数据，但无需重新渲染组件）</li>
+</ul>
+<ol start="5">
+<li>使用useState创建一个状态，并放置在组件中</li>
+</ol>
+<p><strong>在哪里使用状态？</strong></p>
+<p><strong>当前组件</strong>、通过道具传递给<strong>子组件</strong>、将状态传递给同级组件的<strong>公共父组件</strong>中去（状态上移）、所有组件使用（<strong>全局状态</strong>）</p>
+<h4 id="派生状态"><a href="#派生状态" class="headerlink" title="派生状态"></a>派生状态</h4><p>派生状态就是简单地从一个现有状态或者道具中计算出来的状态</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">const</span> [total,setTotal] = <span class="hljs-title function_">useState</span>(<span class="hljs-number">0</span>);<br><span class="hljs-keyword">const</span> tip = total /<span class="hljs-number">2</span>;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-属性（Props）"><a href="#3-属性（Props）" class="headerlink" title="3. 属性（Props）"></a>3. <strong>属性（Props）</strong></h3><p><code>props</code> 是组件之间传递数据的方式。</p>
+<p>父组件可以通过 <code>props</code> 向子组件传递数据，子组件无法修改 <code>props</code>，它们是只读的。<code>props</code> 的主要作用是让组件的渲染更加灵活和<strong>可复用</strong>。</p>
+<p>在传递中，我们可以使用 js 中的<code>重构</code>来传递对象的名称而不是<code>props</code>，但是不要忘记使用<code>&#123;&#125;</code></p>
+<p color="red">注 : React是单向数据流，数据只能从父组件流向子组件</p>
+
+<p><strong>示例</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">// 父组件向子组件传递数据<br>function Menu() &#123;<br>  return (<br>      &lt;main className=&quot;menu&quot;&gt;<br>        &lt;h2&gt;our pizzas&lt;/h2&gt;<br>        &lt;Pizza name= &quot;Focaccia&quot; <br>        ingredients= &quot;Bread with italian olive oil and rosemary&quot; <br>        price=&quot;6&quot; <br>        photoName=&quot;pizzas/focaccia.jpg&quot;/&gt;<br>       &lt;/main&gt;<br><br>function Pizza(props) &#123;<br>  return (<br>      &lt;div className=&quot;pizza&quot;&gt;<br>        &lt;img src=&#123;props.photoName&#125; alt=&#123;props.name&#125; /&gt;<br>        &lt;div className=&quot;pizzas&quot;&gt;<br>        &lt;h3&gt;&#123;props.name&#125;&lt;/h3&gt;<br>        &lt;p&gt;&#123;props.ingredients&#125;&lt;/p&gt;<br>        &lt;span&gt;&#123;props.price&#125;&lt;/span&gt;<br>        &lt;/div&gt;<br>      &lt;/div&gt;<br>  );<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="子代道具"><a href="#子代道具" class="headerlink" title="子代道具"></a>子代道具</h4><p>在 React 中，<strong>子代道具（Children Props）</strong> 是指通过 <code>props.children</code> 传递的内容，它允许父组件将嵌套在其内部的 JSX 代码或组件传递给子组件。它提供了一种灵活的方式来构建可复用的组件，使得父组件可以决定子组件的内部内容，而不需要在子组件中明确指定。</p>
+<p>示例：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><code class="hljs jsx"><span class="hljs-comment">//子组件</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">Wrapper</span>(<span class="hljs-params">props</span>) &#123;<br>  <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;wrapper&quot;</span>&gt;</span>&#123;props.children&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;<br>&#125;<br><br><span class="hljs-comment">//父组件</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">App</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Wrapper</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello, World!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This is a paragraph inside the Wrapper component.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">Wrapper</span>&gt;</span></span><br>  );<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="三要素关系总结："><a href="#三要素关系总结：" class="headerlink" title="三要素关系总结："></a>三要素关系总结：</h3><ul>
+<li><strong>组件</strong> 是 UI 的基本单元，通过组合形成完整的应用。</li>
+<li><strong>状态</strong> 是组件内部的动态数据，控制着组件的行为和显示。</li>
+<li><strong>属性（props）</strong> 用于在组件间传递数据，通常是父组件传递给子组件的数据。</li>
+</ul>
+<blockquote>
+<p>状态与道具有什么区别？</p>
+<p><strong>状态（state）</strong>：状态是组件内部管理的数据，数据归创建他的组件所有，它可以看作组件的存储，可以用来长期保存数据。状态可以在组件内部被修改（通过<code>setState</code>或<code>useState</code>），并会在变化时触发组件重新渲染，用来控制组件的行为、渲染和交互。</p>
+<ul>
+<li>用于存储组件内部<strong>动态变化的数据</strong>，比如用户输入的表单值、加载数据的结果、组件的交互状态（如打开或关闭某个UI元素）。</li>
+<li>当状态发生变化时，React会自动触发两个组件的重新渲染</li>
+</ul>
+<p><strong>道具（props）</strong>：道具是从父组件传递给子组件的数据，数据被父组件所有，可以把它想象函数参数。因为它是只读的，<strong>子组件无法直接修改它</strong>。当子组件收到更新的props时，也会重新渲染组件</p>
+<ul>
+<li>道具主要用来让组件间进行<strong>静态数据传</strong>递，通常是父组件将数据通过道具传递给子组件，子组件根据道具的值渲染。</li>
+<li>当道具的值在父组件中发生变化时，子组件会重新渲染。</li>
+</ul>
+</blockquote>
+<h2 id="怎么渲染列表（rendering-a-list）"><a href="#怎么渲染列表（rendering-a-list）" class="headerlink" title="怎么渲染列表（rendering a list）"></a>怎么渲染列表（rendering a list）</h2><p>概念：可以理解为创建一个数组，并为数组里的每个元素创建组件</p>
+<p>通常我们会使用数组的 <code>map()</code> 方法来生成列表项。每个列表项需要一个唯一的 <code>key</code> 属性，以帮助 React 识别和优化列表中的元素</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//const pizzaData = [&#123;...&#125;]</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">Menu</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">return</span> (<br>      <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;menu&quot;</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>our pizzas<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        &#123;pizzaData.map((pizzas) =&gt; (</span><br><span class="language-xml">          <span class="hljs-tag">&lt;<span class="hljs-name">Pizza</span> <span class="hljs-attr">pizzaObj</span>=<span class="hljs-string">&#123;pizzas&#125;</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&#123;pizzas.name&#125;</span> /&gt;</span> ))&#125;</span><br><span class="language-xml">  &#123;/*这一段代码是 React 中通过数组的 map() 方法渲染列表的常用方式。它的作用是遍历 pizzaData 数组，为数组中的每个对象生成一个对应的 Pizza 组件*/&#125;</span><br><span class="language-xml">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span></span><br>  );<br>&#125;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">Pizza</span>(<span class="hljs-params">props</span>) &#123;<br>  <span class="hljs-keyword">return</span> (<br>      <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;pizza&quot;</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&#123;props.pizzaObj.photoName&#125;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&#123;props.pizzaObj.name&#125;</span> /&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;pizzas&quot;</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>&#123;props.pizzaObj.name&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#123;props.pizzaObj.ingredients&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>&#123;props.pizzaObj.price&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>  );<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h3><p>方法一：使用 &amp;&amp; 运算符的<strong>短路逻辑</strong>，在特定条件下选择内容</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Footer</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">getHours</span>();<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);<br>  <span class="hljs-keyword">const</span> open = <span class="hljs-number">20</span>;<br>  <span class="hljs-keyword">const</span> close = <span class="hljs-number">22</span>;<br>  <span class="hljs-keyword">const</span> isOpen = data &gt;= open &amp;&amp; data &lt; close;<br>  <span class="hljs-keyword">return</span> ( <br>      <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">footer</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span></span><br><span class="language-xml">        &#123;isOpen &amp;&amp; <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span> Open<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span> &#125;</span><br><span class="language-xml">      <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span></span><br>  );<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>方法2：使用<strong>三元运算符</strong></p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Footer</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">getHours</span>();<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);<br>  <span class="hljs-keyword">const</span> open = <span class="hljs-number">20</span>;<br>  <span class="hljs-keyword">const</span> close = <span class="hljs-number">22</span>;<br>  <span class="hljs-keyword">const</span> isOpen = data &gt;= open &amp;&amp; data &lt; close;<br>  <span class="hljs-keyword">return</span> ( <br>      <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">footer</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span></span><br><span class="language-xml">        &#123;isOpen = true ?(<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Open<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>): null&#125;</span><br><span class="language-xml">      <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span></span><br>  );<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>方法三：多重返回</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Footer</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">getHours</span>();<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);<br>  <span class="hljs-keyword">const</span> open = <span class="hljs-number">20</span>;<br>  <span class="hljs-keyword">const</span> close = <span class="hljs-number">22</span>;<br>  <span class="hljs-keyword">const</span> isOpen = data &gt;= open &amp;&amp; data &lt; close;<br><br>  <span class="hljs-keyword">if</span> (!isOpen) &#123;<br>    <span class="hljs-keyword">return</span> (<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Close<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>);<br>  &#125;<br>  <br>  <span class="hljs-keyword">return</span> ( <br>      <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">footer</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span></span><br><span class="language-xml">        &#123;/* &#123;isOpen &amp;&amp;  */&#125;</span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;order&quot;</span>&gt;</span></span><br><span class="language-xml">          <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span> We&#x27;re open for orders from &#123;open&#125; to &#123;close&#125;. Call us at 123-456-7890.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;btn&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#123;&#123;color:</span> &#x27;<span class="hljs-attr">yellow</span>&#x27;&#125;&#125; &gt;</span>Order<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="language-xml">          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> </span><br><span class="language-xml">      <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span></span><br>  );<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="React-Fragment-react-片段"><a href="#React-Fragment-react-片段" class="headerlink" title="React Fragment(react 片段)"></a>React Fragment(react 片段)</h2><p>概念：<code>React.Fragment</code> 是 React 中用于<strong>包裹多个子元素</strong>而不额外生成 HTML 元素的组件。</p>
+<p>通常在 JSX 中，如果你返回多个元素，它们需要被一个父级元素<code>&lt;div&gt;&lt;/div&gt;</code>包裹，而 <code>React.Fragment</code> 可以在不生成额外 DOM 节点的情况下包裹这些元素。</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">App</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">react.fragment</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">Header</span>/&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">Menu</span> /&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">Footer</span>/&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">react.fragment</span>&gt;</span></span><br>  );<br>&#125;<br><span class="hljs-comment">//或者</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">App</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">Header</span>/&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">Menu</span> /&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">Footer</span>/&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;/&gt;</span></span><br>  );<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="如何在React中使用表单？"><a href="#如何在React中使用表单？" class="headerlink" title="如何在React中使用表单？"></a>如何在React中使用表单？</h2><h4 id="怎么判断是否需要使用表单？"><a href="#怎么判断是否需要使用表单？" class="headerlink" title="怎么判断是否需要使用表单？"></a>怎么判断是否需要使用表单？</h4><ol>
+<li><strong>用户输入</strong>：如果你需要用户输入数据，比如添加待办事项，那么你需要一个表单。表单可以包含输入框、文本域、选择框等元素，让用户输入信息。</li>
+<li><strong>提交操作</strong>：如果你需要用户提交数据，比如添加待办事项后保存到列表中，那么你需要一个表单。表单通常包含一个提交按钮，用户点击后触发数据提交。</li>
+<li><strong>数据验证</strong>：如果你需要对用户输入的数据进行验证，比如检查待办事项是否为空，那么你需要一个表单。表单可以包含验证逻辑，确保用户输入的数据符合要求。</li>
+<li><strong>状态管理</strong>：如果你需要管理用户输入的状态，比如输入框的值，那么你需要一个表单。表单可以包含状态管理逻辑，确保用户输入的数据能够被正确处理。</li>
+<li><strong>事件处理</strong>：如果你需要处理用户输入的事件，比如输入框的 <code>onChange</code> 事件，那么你需要一个表单。表单可以包含事件处理逻辑，响应用户的操作。</li>
+</ol>
+<p>表单完整代码（以ToDoList为例）：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Form</span> (<span class="hljs-params"></span>)&#123;<br>  <br>    <span class="hljs-keyword">const</span> [description, setDescription] = <span class="hljs-title function_">useState</span>(<span class="hljs-string">&#x27;&#x27;</span>);<br>  <span class="hljs-keyword">const</span> [quantity, setQuantity] = <span class="hljs-title function_">useState</span>(<span class="hljs-number">1</span>);<br><br>  <span class="hljs-keyword">function</span> <span class="hljs-title function_">handleSubmit</span>(<span class="hljs-params">e</span>)&#123;<br>    e.<span class="hljs-title function_">preventDefault</span>();<br>  &#125;<br>   <br>    <span class="hljs-keyword">return</span>(<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;add-form&quot;</span> <span class="hljs-attr">onSubmit</span>=<span class="hljs-string">&#123;handleSubmit&#125;</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>What do you need for your trip<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&#123;quantity&#125;</span> <span class="hljs-attr">onChange</span>=<span class="hljs-string">&#123;(e)</span> =&gt;</span> setQuantity(Number(e.target.value)&#125; &gt;</span><br><span class="language-xml">        &#123;Array.from(&#123;length: 20&#125;, (_, i) =&gt; i+1).map</span><br><span class="language-xml">        ((num) =&gt; (</span><br><span class="language-xml">          <span class="hljs-tag">&lt;<span class="hljs-name">option</span>  <span class="hljs-attr">value</span>=<span class="hljs-string">&#123;num&#125;</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&#123;num&#125;</span>&gt;</span></span><br><span class="language-xml">            &#123;num&#125;</span><br><span class="language-xml">            <span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>))&#125;</span><br><span class="language-xml">      <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> </span></span><br><span class="hljs-tag"><span class="language-xml">        <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Item...&quot;</span> </span></span><br><span class="hljs-tag"><span class="language-xml">        <span class="hljs-attr">value</span>=<span class="hljs-string">&#123;description&#125;</span> </span></span><br><span class="hljs-tag"><span class="language-xml">        <span class="hljs-attr">onChange</span>=<span class="hljs-string">&#123;(e)</span> =&gt;</span> setDescription(e.target.value)&#125;/&gt;</span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Add<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span><br>  );<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>渲染列表</p>
+<p><code> &#123;Array.from(&#123;length: 20&#125;, (_, i) =&gt; i+1).map         ((num) =&gt; (           &lt;option value=&#123;num&#125; key=&#123;num&#125;&gt;             &#123;num&#125;             &lt;/option&gt;))&#125;</code>:</p>
+<p>利用<code>Array.from()</code>生成一个数组，并通过<code>map()</code>来遍历数组，动态生成一组<code>&lt;option&gt;</code>标签</p>
+<p><code>onChange</code>：当用户在输入框中输入内容时，<code>onChange</code>事件会触发，更新React状态，从而动态更新表单值</p>
+<h3 id="如何将表单中的数据导入事件"><a href="#如何将表单中的数据导入事件" class="headerlink" title="如何将表单中的数据导入事件?"></a>如何将表单中的数据导入事件?</h3><blockquote>
+<h4 id="常见的React事件类型："><a href="#常见的React事件类型：" class="headerlink" title="常见的React事件类型："></a>常见的React事件类型：</h4><ul>
+<li>**<code>onClick</code>**：点击事件</li>
+<li>**<code>onChange</code>**：表单元素（如输入框、选择框）的值改变事件</li>
+<li>**<code>onSubmit</code>**：表单提交事件</li>
+<li>**<code>onKeyDown</code><strong>、</strong><code>onKeyUp</code>**：键盘按下、松开事件</li>
+<li>**<code>onMouseEnter</code><strong>、</strong><code>onMouseLeave</code>**：鼠标进入、离开事件</li>
+</ul>
+</blockquote>
+<h4 id="受控元素"><a href="#受控元素" class="headerlink" title="受控元素"></a>受控元素</h4><p>在React中，使用受控组件可以将HTML表单中的数据与组件的状态（<code>state</code>）直接绑定，从而避免直接操作DOM。这样做的好处是表单数据的更新和管理完全交由React来处理，无需手动获取DOM元素的值</p>
+<p>三个步骤：</p>
+<ul>
+<li><p>设置状态  <code>const [description, setDescription] = useState(&#39;&#39;);</code></p>
+<ul>
+<li><strong>目的</strong>：创建一个变量来存储用户输入的值，并在用户与表单交互时，React能够追踪和管理这个值。</li>
+</ul>
+</li>
+<li><p>绑定变量   通过<code>value</code>属性，将表单元素（例如<code>&lt;input&gt;</code>或<code>&lt;textarea&gt;</code>）的值与刚刚创建的状态变量绑定。这样，表单的值由状态控制，React状态和UI之间建立了双向绑定关系。</p>
+<ul>
+<li><strong>操作</strong>：在表单元素上使用<code>value=&#123;description&#125;</code>，使输入框的值与<code>description</code>状态保持同步</li>
+</ul>
+</li>
+<li><p>更新状态   <code> onChange=&#123;(e) =&gt; setDescription(e.target.value)&#125;</code>，当用户在表单元素中输入内容时，<code>onChange</code>事件会触发。此时，你可以使用<code>setDescription</code>函数更新状态，确保状态随用户输入的变化而改变。事件处理函数将接收事件对象，通过<code>e.target.value</code>获取表单元素的新值。</p>
+<ul>
+<li><p><strong>操作</strong>：在<code>onChange</code>事件处理函数中调用<code>setDescription(e.target.value)</code>，将表单的新值更新到状态中</p>
+</li>
+<li><blockquote>
+<h4 id="js小知识"><a href="#js小知识" class="headerlink" title="js小知识"></a>js小知识</h4><p>在 <code>onChange=&#123;(e) =&gt; setDescription(e.target.value)&#125;</code> 这段代码中，<code>e</code> 是一个事件对象（Event Object），它代表了当前正在发生的事件。在 JavaScript 中，当事件（如点击、输入等）发生时，浏览器会创建一个事件对象，该对象包含了与该事件相关的所有信息。</p>
+<p>在这个特定的例子中，<code>e</code> 是一个合成事件（Synthetic Event）对象，它是 React 为了兼容不同浏览器而创建的一个抽象层。合成事件对象封装了原生浏览器事件，并提供了一个统一的接口，使得开发者可以编写跨浏览器的代码。</p>
+<p><code>e.target</code> 是事件的目标元素（Event Target），即触发事件的 DOM 元素。在这个例子中，<code>e.target</code> 是输入框（input）元素。</p>
+<p><code>e.target.value</code> 是输入框元素的当前值（Value），即用户输入的内容。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/09/18/%E5%89%8D%E7%AB%AF/react%E7%AC%94%E8%AE%B0/" data-id="cm360h2mh0012yois0gcc1nmf" data-title="React" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/React/" rel="tag">React</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-计算机网络基础/MYSQL入门学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2024/08/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/MYSQL%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2024-08-11T14:43:17.000Z" itemprop="datePublished">2024-08-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2024/08/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/MYSQL%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">MYSQL入门学习笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>学习视频链接</p>
+<ul>
+<li></li>
+</ul>
+<hr>
+<h1 id="MYSQL入门学习笔记"><a href="#MYSQL入门学习笔记" class="headerlink" title="MYSQL入门学习笔记"></a>MYSQL入门学习笔记</h1><p>关联式数据库 &#x3D;&gt; tables and keys</p>
+<p>**primary key (主键)**：可以唯一区分资料</p>
+<p>:heavy_exclamation_mark:当有重复时，可以设定多个主键来唯一区分资料</p>
+<p>**foreign key(外键)**：实现table的互相关联(也可以和自己关联)    </p>
+<p> :heavy_exclamation_mark:但是只能关联table的主键</p>
+<blockquote>
+<p>可以将一个属性同时设定为不同table的主键和外键</p>
+</blockquote>
+<h2 id="SQL基础语法"><a href="#SQL基础语法" class="headerlink" title="SQL基础语法"></a>SQL基础语法</h2><p> :heavy_exclamation_mark:  后文中的” &lt;&gt; “ 代表 “ &#96; “，同时SQL中遵循属性名用  &#96;&#96;包裹，值用 ‘’ 或者 “” 包裹的潜规则</p>
+<h3 id="数据库相关操作"><a href="#数据库相关操作" class="headerlink" title="数据库相关操作"></a>数据库相关操作</h3><p>创建数据库 <code>CREATE DATABASE  &lt;name&gt; </code>；</p>
+<p>展示数据库 <code>SHOW DATABASES;</code></p>
+<p>关键字用大写，命名用&#96;&#96;包裹</p>
+<p>删除数据库 <code>DROP DATABASE &lt;db_name&gt;;</code></p>
+<h3 id="数据库常见类型"><a href="#数据库常见类型" class="headerlink" title="数据库常见类型"></a>数据库常见类型</h3><ul>
+<li><p>INT    –整数</p>
+</li>
+<li><p>DECYMAL(m,n)    –有小数点的数，m&#x3D;几个数字，n&#x3D;几个小数</p>
+</li>
+<li><p>VARCHAR(n)    –字串，n&#x3D;最多可以容纳几个字</p>
+</li>
+<li><p>BLOB    –(Binary Large Object) 图片 影片 档案等二进制资料</p>
+</li>
+<li><p>DATE    –’YYYY-MM-DD’ 记录日期</p>
+</li>
+<li><p>TIMESTAMP    –’YYYY-MM-DD HH:MM:SS’ 记录时间</p>
+</li>
+</ul>
+<h3 id="表格操作"><a href="#表格操作" class="headerlink" title="表格操作"></a>表格操作</h3><p>选择数据库 <code>USE &lt;db_name&gt;; </code></p>
+<p>创建表格</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-operator">&lt;</span>table_name<span class="hljs-operator">&gt;</span>(<br>    `属性名<span class="hljs-number">1</span>` 类型 限制类型,<br>    `属性名<span class="hljs-number">2</span>` 类型 限制类型<br>);<br></code></pre></td></tr></table></figure>
+
+<p>删除表格 <code>DROP TABLE &lt;table_name&gt;;</code></p>
+<p>新增属性 <code>ALTER TABLE &lt;name&gt; ADD &lt;属性名&gt; 类型;</code></p>
+<p>删除属性 <code>ALTER TABLE &lt;name&gt; DROP &lt;属性名&gt; 类型;</code></p>
+<p>查看表格属性 <code>DECRIBE &lt;table_name&gt;;</code></p>
+<p>加入内容 <code>INSERT INTO &lt;table_name&gt; VALUES(属性1-内容,属性2-内容);</code></p>
+<p>查找表格 <code>SELECT * FROM &lt;table_name&gt;;</code> 此条命令为查找当前数据库内所有名为table_name的表格，并完全展示出来</p>
+<h4 id="限制和限制的类型"><a href="#限制和限制的类型" class="headerlink" title="限制和限制的类型"></a>限制和限制的类型</h4><ul>
+<li>UNIQUE    –不允许重名</li>
+<li>AUTO_INCREMENT    –增加内容时自动加一，无需手动填写 （用于序号）</li>
+<li>DEFAULT    –预设值，不填写内容时，按照预设的填写</li>
+</ul>
+<h4 id="修改资料"><a href="#修改资料" class="headerlink" title="修改资料"></a>修改资料</h4><p>语法</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">UPDATE</span> `table_name`<br><span class="hljs-keyword">SET</span> `属性名` <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;目标值&#x27;</span>;<br><span class="hljs-keyword">WHERE</span> 条件 (可以不写);<br></code></pre></td></tr></table></figure>
+
+<p>示例</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">UPDATE</span> `student`<br><span class="hljs-keyword">SET</span> `major` <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;历史&#x27;</span>;<br><span class="hljs-keyword">WHERE</span> `major` <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;生物&#x27;</span> <span class="hljs-keyword">OR</span> `major` <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;物理&#x27;</span>;<br><span class="hljs-operator">/</span><span class="hljs-operator">/</span>将major为生物和物理的值，更新为历史<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="删除资料"><a href="#删除资料" class="headerlink" title="删除资料"></a>删除资料</h4><p>语法</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> `table_name`<br><span class="hljs-keyword">WHERE</span> 条件;<br></code></pre></td></tr></table></figure>
+
+<p>示例</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> `student`<br><span class="hljs-keyword">WHERE</span> `score` <span class="hljs-operator">&gt;</span> <span class="hljs-number">60</span>;<br><span class="hljs-operator">/</span><span class="hljs-operator">/</span>删除 score小于<span class="hljs-number">60</span>的方式<br></code></pre></td></tr></table></figure>
+
+<p><em>不写WHERE语句时，代表删除表格的所有资料</em></p>
+<h4 id="搜寻资料"><a href="#搜寻资料" class="headerlink" title="搜寻资料"></a>搜寻资料</h4><p><code>SELECT * FROM &lt;table_name&gt;;</code>  &#x3D;&gt; <code>*</code> 代表取得所有属性的意思</p>
+<p><code>SELECT * FROM &lt;table_name&gt; LIMIT n;</code> &#x3D;&gt; 仅仅显示前 n 笔资料</p>
+<p><code>SELECT * FROM &lt;table_name&gt; WHERE &lt;属性名&gt; ;</code>  &#x3D;&gt; 仅仅显示属性名为属性1的内容</p>
+<p><em>WHERE &lt;属性名&gt; IN (‘1’,’2’)  &#x3D; WHERE &lt;属性名&gt; &#x3D; ‘1’ OR &lt;属性名&gt; &#x3D; ‘2’</em>  </p>
+<p><code>SELECT &lt;属性1&gt; FROM &lt;table_name&gt;;</code> &#x3D;&gt;  代表取得属性名为属性1的内容，取得多个属性的时候用  <code>,</code> 隔开</p>
+<p><code>SELECT DISTINCT &lt;属性1&gt; FROM &lt;table_name&gt;;</code> &#x3D;&gt;去掉重复属性</p>
+<p><code>SELECT * FROM &lt;table_name&gt; ORDER BY  &lt;属性1&gt; DESC;</code> &#x3D;&gt;以属性1来排序表格</p>
+<blockquote>
+<p><code>DESC</code> 表示由高到低排序；不写时默认为<code>ASC</code>，代表由低到高排序</p>
+</blockquote>
+<p>示例</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span><br><span class="hljs-keyword">FROM</span> `student`<br><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> `score`,`student_id`<br><span class="hljs-operator">/</span><span class="hljs-operator">/</span>排序时，优先以score对表格内容进行从低到高的排序；当score相同时，以student_id作为基准排序<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>:heavy_exclamation_mark: 各种语句的条件可以混用</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-operator">&gt;</span><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span><br><span class="hljs-operator">&gt;</span><span class="hljs-keyword">FROM</span> `student`<br><span class="hljs-operator">&gt;</span><span class="hljs-keyword">WHERE</span> `major` <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;英语&#x27;</span> <span class="hljs-keyword">OR</span> `score` <span class="hljs-operator">&lt;&gt;</span> <span class="hljs-number">70</span><br><span class="hljs-operator">&gt;</span>LIMIT <span class="hljs-number">2</span>;<br><span class="hljs-operator">&gt;</span><span class="hljs-operator">/</span><span class="hljs-operator">/</span>回传major为英语和score不等于<span class="hljs-number">70</span>的前两个数据<br></code></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>增加外键</strong> </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-operator">/</span><span class="hljs-operator">/</span>将table2的对应属性名，设置为table1的外键<br><span class="hljs-keyword">FOREIGN</span> KEY(`table1`)<br><span class="hljs-keyword">REFERENCES</span> `table2`(`table2对应属性名`)<br><span class="hljs-keyword">ON</span> <span class="hljs-keyword">DELETE</span> CASCADE;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>ON DELETE CASCADE 是当“table2对应属性名”被删除后，将table1中对应的值删掉</p>
+<p>ON DELETE SET NULL 是当“table2对应属性名”被删除后，将table1中对应的值设置为NULL</p>
+<p>当该键为其他表的主键时，不可以使用 ON DELETE SET NULL</p>
+</blockquote>
+<p><strong>基本逻辑</strong></p>
+<p>新建表格时，先创建各个表格，再添加外键的关联</p>
+<p>增加资料时，先增加外键所在的表格的资料，再增加自己表格的资料</p>
+<h3 id="聚合函数-aggregate-functions"><a href="#聚合函数-aggregate-functions" class="headerlink" title="聚合函数 (aggregate functions)"></a>聚合函数 (aggregate functions)</h3><p>取得成员数   </p>
+<ul>
+<li><code>SELECT COUNT(&lt;属性名&gt;) FROM  &lt;table_name&gt;;</code></li>
+<li><code>SELECT COUNT(*) FROM  &lt;table_name&gt;;</code></li>
+</ul>
+<p>在限制条件下取数 示例</p>
+<ul>
+<li><pre><code class="sql">SELECT COUNT(*) 
+FROM  `employee`
+WHERE `birth_date` &gt; &#39;1980-01-02&#39; AND `sex` = &#39;F&#39;;
+//在employee表中取得birth_date 大于1980-01-02的女性
+</code></pre>
+</li>
+</ul>
+<p>取得员工的平均薪水 示例</p>
+<ul>
+<li>​	<code>SELECT AVG (&lt;salary&gt;) FROM &lt;employee&gt;;</code></li>
+</ul>
+<p>取得所有员工的薪水总和 示例</p>
+<ul>
+<li><code>SELECT SUM(&lt;salary&gt;) FROM &lt;employee&gt;;</code></li>
+</ul>
+<p>取得最高薪水</p>
+<ul>
+<li><code>SELECT MAX(&lt;salary&gt;) FROM &lt;employee&gt;;</code></li>
+</ul>
+<p>取得最低薪水</p>
+<ul>
+<li><code>SELECT MIN(&lt;salary&gt;) FROM &lt;employee&gt;;</code></li>
+</ul>
+<h3 id="万用字元-wildcards"><a href="#万用字元-wildcards" class="headerlink" title="万用字元 wildcards"></a>万用字元 wildcards</h3><p><strong>% 代表多个字元，_代表一个字元</strong></p>
+<p>取得电话号码是335连续的客户</p>
+<ul>
+<li><code>SELECT * FROM &lt;cient&gt; WHERE &lt;phone&gt; LIKE &#39;%335%&#39;;</code></li>
+</ul>
+<p>取得姓艾的客户</p>
+<ul>
+<li><code>SELECT *FROM &lt;client&gt; WHERE &lt;phone&gt; LIKE &#39;艾%&#39;;</code></li>
+</ul>
+<p>取得生日在12月的员工 生日格式YYYY-MM-DD</p>
+<ul>
+<li><code>SELECT * FROM &lt;employee&gt; WHERE &lt;birth_data&gt; LIKE &#39;_________12%&#39;;	</code></li>
+</ul>
+<h3 id="union-连接搜寻结果"><a href="#union-连接搜寻结果" class="headerlink" title="union 连接搜寻结果"></a>union 连接搜寻结果</h3><p>:heavy_exclamation_mark:  <strong>连接的属性数目和资料类型必须相同</strong></p>
+<p>员工名字 连接 客户名字</p>
+<ul>
+<li><pre><code class="sql">SELECT &lt;name&gt; FROM &lt;employee&gt;
+UNION
+SELECT &lt;client_name&gt; FROM &lt;client&gt;;
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext"><br>员工id+员工名字 连接 客户id+客户名字<br><br>- ```sql<br>  SELECT &lt;employee_id&gt;,&lt;name&gt; <br>  FROM &lt;employee&gt;<br>  UNION<br>  SELECT &lt;client_id&gt;,&lt;client_name&gt; <br>  FROM &lt;client&gt;;<br>  <br>  //改名<br>  SELECT &lt;employee_id&gt; AS &lt;total_id&gt;,&lt;name&gt; AS &lt;total_name&gt;<br>  FROM &lt;employee&gt;<br>  UNION<br>  SELECT &lt;client_id&gt;,&lt;client_name&gt; <br>  FROM &lt;client&gt;;<br></code></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+<h3 id="Join-连接表格"><a href="#Join-连接表格" class="headerlink" title="Join 连接表格"></a>Join 连接表格</h3><p>取得所有部门经理的资料 </p>
+<ul>
+<li><pre><code class="sql">//返回结果包含两个表格的所有属性
+SELECT * 
+FROM &lt;employee&gt; 
+JOIN &lt;branch&gt; 
+ON &lt;emp_id&gt; = &lt;manager_id&gt; //条件
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext"><br>- ```sql <br>  //返回结果只包含选中的属性<br>  SELECT &lt;emp_id&gt;,&lt;branch_name&gt;,&lt;name&gt; <br>  FROM &lt;employee&gt; <br>  JOIN &lt;branch&gt; <br>  ON &lt;emp_id&gt; = &lt;manager_id&gt;<br></code></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+<blockquote>
+<p>可以用<code>&lt;table_name&gt;.&lt;属性名&gt;</code> 来区分不同表格的相同属性名</p>
+</blockquote>
+<h4 id="left-关键字"><a href="#left-关键字" class="headerlink" title="left 关键字"></a>left 关键字</h4><p>不管条件是否成立，都会将JOIN左边的表格属性全部回传；右边的表格没有对应的属性时，就填写NULL</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <br><span class="hljs-keyword">FROM</span> <span class="hljs-operator">&lt;</span>employee<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span> <span class="hljs-operator">&lt;</span>branch<span class="hljs-operator">&gt;</span> <br><span class="hljs-keyword">ON</span> <span class="hljs-operator">&lt;</span>emp_id<span class="hljs-operator">&gt;</span> <span class="hljs-operator">=</span> <span class="hljs-operator">&lt;</span>manager_id<span class="hljs-operator">&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="right-关键字"><a href="#right-关键字" class="headerlink" title="right 关键字"></a>right 关键字</h4><p>和left正好相反，不在此赘述</p>
+<h3 id="subquery-子查询"><a href="#subquery-子查询" class="headerlink" title="subquery 子查询"></a>subquery 子查询</h3><p>在一个查询语句中插入另外一个查询语句，对前一个查询的结果进行查询</p>
+<p>示例  找出研发部门的经理名字</p>
+<ul>
+<li><pre><code class="sql">//从员工标准中查找其名字
+SELECT `name`
+FROM `employee`
+WHERE `emp_id` = (
+    //得到 研发部门经理的id
+    SELECT `manager_id`
+    FROM `branch`
+    WHERE `branch_name` = `研发`
+);
+</code></pre>
+</li>
+</ul>
+<p><em>把 WHERE 后的第一个”&#x3D;” 换为IN，可用于多个查询结果</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/08/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/MYSQL%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="cm360h2me000tyoiscr02bju0" data-title="MYSQL入门学习笔记" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/MYSQL/" rel="tag">MYSQL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-区块链/区块链概述/区块链概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2024/07/31/%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/" class="article-date">
+  <time class="dt-published" datetime="2024-07-31T15:03:51.000Z" itemprop="datePublished">2024-07-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2024/07/31/%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/">区块链概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="区块链概述"><a href="#区块链概述" class="headerlink" title="区块链概述"></a>区块链概述</h1><h2 id="互联网的发展趋势"><a href="#互联网的发展趋势" class="headerlink" title="互联网的发展趋势"></a>互联网的发展趋势</h2><p>互联网经历了2个阶段：</p>
+<ul>
+<li><p>Web1.0<br>起初的互联网只提供  “读”，数据流向是单向的，也就是只有输入没有输出</p>
+</li>
+<li><p>Web2.0<br>也正是目前的主流互联网，它 提供 “读” “写”的功能，但是用户没办法拥有自己的数据，即“谁存储谁拥有”并非“谁创造谁拥有”。</p>
+</li>
+<li><p>Web3.0<br>目标是创建一个用户 “可读、可写、可拥有信息”的世界，用户可以将自己的信息掌握在自己的手中</p>
+</li>
+</ul>
+<h2 id="为什么需要Web3？"><a href="#为什么需要Web3？" class="headerlink" title="为什么需要Web3？"></a>为什么需要Web3？</h2><p>这里需要提及两个概念&#x3D;&gt; 中心化和去中心化</p>
+<hr>
+<h3 id="中心化"><a href="#中心化" class="headerlink" title="中心化"></a>中心化</h3><p>概念：在中心化系统中，通常有一个或少数几个主要的决策者或实体负责管理和控制系统的运作和资源分配。</p>
+<p>我们现在就处在一个中心化的社会之中，举最简单的例子来说：买房子有中介、在短视频平台上发布视频的收益需要分成给平台，这些<strong>并非用户与用户之间的直接接触，需要第三方的参与</strong>，除此之外，大家应该都经历过，在某个平台上填写了个人信息之后，就骚扰电话和垃圾信息不断，个人隐私问题难以得到保证。</p>
+<p>中心化系统带来这些挑战：单点故障、信任问题、透明度不足以及对个人权利和隐私的侵犯。</p>
+<h3 id="去中心化"><a href="#去中心化" class="headerlink" title="去中心化"></a>去中心化</h3><p>概念：去中心化将权力、控制或决策权分散到多个节点或参与者之间，而不是集中在单一的中心化实体或个体手中，简单理解就是，去除中介。</p>
+<p>去中心化通过这样的手段来解决中心化带来的问题，实现了安全性的增强、公平的权力分配、更高的透明度和抗审查等能力。</p>
+<hr>
+<blockquote>
+<p>很多东西不是非黑即白的，因此中心化不是绝对的错，去中心化也不是绝对的好，大部分前辈们所奋斗的方向也只是在中心化没做好的地方进行改革，希望理性看待这些问题。</p>
+</blockquote>
+<p>去中心化引发了许多新技术产生，其中最引人注目的便是区块链技术</p>
+<h2 id="Web3的新技术-区块链"><a href="#Web3的新技术-区块链" class="headerlink" title="Web3的新技术 - 区块链"></a>Web3的新技术 - 区块链</h2><p>区块链通过一定的技术手段 ，实现了 “去中心化、可溯源、不可篡改”的特点，成为一个分布式的账本模型，在此之中，所有参与者共享同一个数据账本，每个参与者都可以查看完整的交易记录。</p>
+<p>根据使用权限、治理结构和应用范围等多个维度将区块链进行分类，可以分为以下几类：</p>
+<ol>
+<li><strong>公链（Public Blockchain）</strong>：<ul>
+<li>公链是一种开放的区块链网络，任何人都可以加入和参与其中，查看数据、验证交易，并可以自由创建和验证交易。典型的公链包括比特币（Bitcoin）和以太坊（Ethereum）等。</li>
+</ul>
+</li>
+<li><strong>私链（Private Blockchain）</strong>：<ul>
+<li>私链是一种受限制的区块链网络，参与者必须获得许可才能加入，通常由单个实体或组织管理和控制。私链可以提供更高的性能和隐私保护，常见于企业内部或特定联盟中。</li>
+</ul>
+</li>
+<li><strong>联盟链（Consortium Blockchain）</strong>：<ul>
+<li>联盟链是一种由多个组织或实体共同管理的区块链网络，参与者必须获得许可才能加入，但参与者之间有明确的信任关系。联盟链通常用于跨组织间的合作和数据共享。</li>
+</ul>
+</li>
+</ol>
+<p>现在的区块链仍然处于探索和发展的初期阶段，正需要新鲜血液来创新和参与，区块链世界欢迎你们-未来的开拓者。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/31/%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/" data-id="cm360h2mk001lyois1kzk9mf8" data-title="区块链概述" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-计算机网络基础/http学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2024/07/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/http%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2024-07-29T08:51:05.000Z" itemprop="datePublished">2024-07-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2024/07/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/http%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">http学习笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="HTTP学习笔记"><a href="#HTTP学习笔记" class="headerlink" title="HTTP学习笔记"></a>HTTP学习笔记</h1><blockquote>
+<p>推荐教程：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903673680789517">https://juejin.cn/post/6844903673680789517</a></p>
+</blockquote>
+<p>HTTP全称 <strong>超文本传输协议</strong>（HyperText Transfer Protocol），是一种用于在网络上进行数据传输的协议，可以通俗理解为 这是电脑与电脑之间的沟通方式，主要用于网页上。</p>
+<h2 id="HTTP的组成和基本概念"><a href="#HTTP的组成和基本概念" class="headerlink" title="HTTP的组成和基本概念"></a><strong>HTTP的组成和基本概念</strong></h2><ul>
+<li><strong>客户端和服务器</strong>：HTTP 通常工作在客户端（如网页浏览器）和服务器之间。客户端向服务器发送请求，服务器处理请求并返回响应。</li>
+<li><strong>请求和响应</strong>：HTTP 的工作方式基于请求-响应模型。客户端发送一个请求（包括请求行、请求头和请求体），服务器处理请求并返回一个响应（包括状态行、响应头和响应体）。</li>
+</ul>
+<p><strong>示例：</strong><a target="_blank" rel="noopener" href="http://www.google.com/">http://www.google.com</a>  </p>
+<p><code>http</code>定义了选择的协议方式    <code>www.google.com  </code> 则对应需要访问的ip地址</p>
+<p><em>ip地址可以理解为每个人的家庭住址</em></p>
+<p><strong>过程</strong>：当我们在浏览器上输入一段网址后，浏览器就会发送请求到服务器，服务器接受请求后回传数据，这个数据经过电脑处理后就会返回我们通常看到的网页。</p>
+<blockquote>
+<p>❗️ 并不是只有网址才会触发请求</p>
+<p>例如在购物平台购物时，当点击<code>购物</code>按钮时，就已经隐匿地向服务器发送了请求，此时架构是在应用中实现</p>
+</blockquote>
+<h2 id="HTTP-方法"><a href="#HTTP-方法" class="headerlink" title="HTTP 方法"></a><strong>HTTP 方法</strong></h2><p>HTTP 定义了一些常见的方法来执行不同的操作，包括：</p>
+<ul>
+<li><strong>GET</strong>：获取资料，通常用于从服务器获取数据。</li>
+<li><strong>POST</strong>：上传资料，用于创建或更新资源。</li>
+<li><strong>PUT</strong>：更新指定的资源。</li>
+<li><strong>DELETE</strong>：删除指定的资源。</li>
+<li><strong>PATCH：</strong>覆盖资料</li>
+</ul>
+<p>:star: 区别GET和POST方法：</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>GET</th>
+<th>POST</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>目的</strong></td>
+<td>从服务器获取数据或资源</td>
+<td>向服务器提交数据以处理或存储</td>
+</tr>
+<tr>
+<td><strong>数据位置</strong></td>
+<td>数据附加在 URL 的查询字符串中</td>
+<td>数据放在请求体（Body）中</td>
+</tr>
+<tr>
+<td><strong>数据量</strong></td>
+<td>数据量有限，受 URL 长度限制</td>
+<td>数据量没有严格限制，可以传输大量数据</td>
+</tr>
+<tr>
+<td><strong>安全性</strong></td>
+<td>数据暴露在 URL 中，相对不安全</td>
+<td>数据不暴露在 URL 中，相对较安全</td>
+</tr>
+<tr>
+<td><strong>缓存</strong></td>
+<td>请求可以被缓存</td>
+<td>请求一般不被缓存</td>
+</tr>
+<tr>
+<td><strong>书签</strong></td>
+<td>URL 可以被书签保存</td>
+<td>URL 不适合直接书签</td>
+</tr>
+<tr>
+<td><strong>适用场景</strong></td>
+<td>获取资源或数据，如读取页面或搜索内容</td>
+<td>提交表单、上传文件、修改或创建资源</td>
+</tr>
+<tr>
+<td><strong>示例请求</strong></td>
+<td><code>GET /page?name=value</code></td>
+<td><code>POST /submit</code> <br> <code>Content-Type: application/x-www-form-urlencoded</code> <br> <code>name=John&amp;age=30</code></td>
+</tr>
+</tbody></table>
+<h2 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a><strong>HTTP报文</strong></h2><p>报文就是客户端和服务器之间沟通所需要遵循的格式</p>
+<ul>
+<li><p><strong>请求结构</strong>：</p>
+<ul>
+<li><p><strong>请求行</strong>：包含请求方法（如 GET、POST）、请求目标（如 URL）和 HTTP 版本。</p>
+</li>
+<li><p><strong>请求头</strong>：包括客户端环境的信息，如浏览器类型、语言等。</p>
+</li>
+<li><p><strong>请求体</strong>：包含需要发送给服务器的数据。</p>
+</li>
+</ul>
+<p>:star2:<strong>示例</strong>：<a target="_blank" rel="noopener" href="http://api/shop.com/card">http://api/shop.com/card</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">POST /card HTTP/1.1  *请求行<br>---<br>Host:api.shop.com  *传送的目标地址与请求行组合成网址<br>User-Agent:Mozila/5.0(windows...)Chrome  *请求的发送地址<br>Accept:text/plain  *可接受的回传档案类型<br>Content-Type:text/plain  *传送的档案类型<br>Con-Length:43  *内容长度<br>---<br>&#123;&quot;card&quot;:1234567890.&quot;total_price&quot;:8787&#125;  *内容=&gt;可以推断为刷卡的请求<br></code></pre></td></tr></table></figure>
+
+
+</li>
+<li><p><strong>响应</strong>结构：</p>
+<ul>
+<li><strong>状态行</strong>：包含 HTTP 版本、状态码（如 200、404）和状态消息。</li>
+<li><strong>响应头</strong>：包含服务器的信息和响应的元数据，如内容类型、长度等。</li>
+<li><strong>响应体</strong>：实际返回给客户端的数据，如网页内容、图片等。</li>
+</ul>
+<p>:star2:<strong>示例：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">HTTP/1.1 200 OK<br>---<br>Server:nginx  *服务器软体类型<br>Content-Type:text/plain  *回传信息的类型<br>Content-Length:7  *回传信息的长度<br>Date:Fri,27 Aug 2021 20:09:07 GMT  *回传回去的时间<br>---<br>success<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>:eyes:因此我们可以将请求和相应简单理解为两个人在相互写信，当然写信是需要遵循信的格式的 !</p>
+<h2 id="HTTP-状态码"><a href="#HTTP-状态码" class="headerlink" title="HTTP 状态码"></a><strong>HTTP 状态码</strong></h2><p>HTTP 状态码用于表示请求的结果，常见的状态码包括：</p>
+<ul>
+<li><strong>200 OK</strong>：请求成功，服务器返回请求的数据。</li>
+<li><strong>201 Creat</strong>: 创建成功</li>
+<li><strong>301 Moved Permanently</strong>：请求的资源已被永久移动到新位置。</li>
+<li><strong>400 Bad Request</strong>: 发送的格式错误力</li>
+<li><strong>401 Unauthorized</strong>：请求的资源比较敏感，需要验证</li>
+<li><strong>403 Forbidden</strong>: 验证身份不合格</li>
+<li><strong>404 Not Found</strong>：请求的资源未找到。</li>
+<li><strong>500 Internal Server Error</strong>：服务器内部错误，无法完成请求。</li>
+</ul>
+<h2 id="HTTP与HTTPS的主要区别"><a href="#HTTP与HTTPS的主要区别" class="headerlink" title="HTTP与HTTPS的主要区别"></a><strong>HTTP与HTTPS的主要区别</strong></h2><ul>
+<li><strong>HTTP</strong> 是明文传输的，传送的资料都可以被看见，这意味着数据在传输过程中可能被第三方窃听或篡改，非常的不安全。</li>
+<li><strong>HTTPS</strong>（HyperText Transfer Protocol Secure超文本传输安全协议）是在 HTTP 的基础上加上了 <strong>SSL&#x2F;TLS</strong> 加密层，提供了加密和安全性，保护数据在传输过程中不被窃取或篡改，比较安全，也是目前的主要传输方式。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/http%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="cm360h2me000qyois50ir5bxk" data-title="http学习笔记" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/http/" rel="tag">http</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-区块链/Sui-学习路径" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2024/07/18/%E5%8C%BA%E5%9D%97%E9%93%BE/Sui-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" class="article-date">
+  <time class="dt-published" datetime="2024-07-18T15:56:07.000Z" itemprop="datePublished">2024-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2024/07/18/%E5%8C%BA%E5%9D%97%E9%93%BE/Sui-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/">Sui-学习路径</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="学习路径"><a href="#学习路径" class="headerlink" title="学习路径"></a>学习路径</h1><h2 id="步骤一：前置安装"><a href="#步骤一：前置安装" class="headerlink" title="步骤一：前置安装"></a>步骤一：前置安装</h2><h3 id="安装Sui-Wallet"><a href="#安装Sui-Wallet" class="headerlink" title="安装Sui Wallet"></a>安装Sui Wallet</h3><p>采用Google插件<br><a target="_blank" rel="noopener" href="https://chromewebstore.google.com/detail/sui-wallet/opcgpfmipidbgpenhmajoajpbobppdil">https://chromewebstore.google.com/detail/sui-wallet/opcgpfmipidbgpenhmajoajpbobppdil</a></p>
+<h3 id="安装Nodejs"><a href="#安装Nodejs" class="headerlink" title="安装Nodejs"></a>安装Nodejs</h3><p>具体安装过程需要自行探索<br><a target="_blank" rel="noopener" href="https://nodejs.org/en">https://nodejs.org/en</a>  </p>
+<h3 id="安装编译器"><a href="#安装编译器" class="headerlink" title="安装编译器"></a>安装编译器</h3><p>VSCODE 和 RustRover 二选一即可</p>
+<h4 id="RustRover"><a href="#RustRover" class="headerlink" title="RustRover"></a>RustRover</h4><p>RustRover的报错和提示比较友好，也有成熟的插件<br><a target="_blank" rel="noopener" href="https://www.jetbrains.com.cn/rust/">https://www.jetbrains.com.cn/rust/</a></p>
+<h4 id="VSCODE"><a href="#VSCODE" class="headerlink" title="VSCODE"></a>VSCODE</h4><p>容易上手，通用性强<br><a target="_blank" rel="noopener" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
+<h3 id="配置开发环境"><a href="#配置开发环境" class="headerlink" title="配置开发环境"></a>配置开发环境</h3><p><a target="_blank" rel="noopener" href="https://docs.sui.io/guides/developer/getting-started/sui-install">https://docs.sui.io/guides/developer/getting-started/sui-install</a><br>建议采用从Github下载二进制文件，对小白更友好</p>
+<h2 id="步骤二：基本语法学习"><a href="#步骤二：基本语法学习" class="headerlink" title="步骤二：基本语法学习"></a>步骤二：基本语法学习</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Rm42177Kx/">bilibili教学视频</a> (视频包括基本语法的学习和实战演练  )<br>课程相关代码库:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/404ll/letsmove/tree/main/tutorial/bootcamp">https://github.com/404ll/letsmove/tree/main/tutorial/bootcamp</a></li>
+<li>Swap以及Coin的代码库 <a target="_blank" rel="noopener" href="https://github.com/uvd/sui-swap-course">https://github.com/uvd/sui-swap-course</a></li>
+</ul>
+<p>完整入门手册，非常详细</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://easy.sui-book.com/">轻松入门move</a></li>
+</ul>
+<h2 id="步骤三：深入学习以及完成task"><a href="#步骤三：深入学习以及完成task" class="headerlink" title="步骤三：深入学习以及完成task"></a>步骤三：深入学习以及完成task</h2><p>区块链浏览器：<a target="_blank" rel="noopener" href="https://suivision.xyz/">https://suivision.xyz/</a></p>
+<p>由于教学视频的时间限制，手把手教学来完成每一个task基本是不现实的，同时已有的学习资料已经完全足够从入门到熟练掌握<br>因此需要学员有强大的内驱力和学习能力，从已有的文档和代码库中，寻找和学习所需的知识点  </p>
+<p>基于官方标准库，可以查询和了解每一个函数的功能及使用方法</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/MystenLabs/sui/tree/main/crates/sui-framework">https://github.com/MystenLabs/sui/tree/main/crates/sui-framework</a></li>
+</ul>
+<p>探索官方文档（包括Coin协议等等）</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.sui.io/">https://docs.sui.io</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/18/%E5%8C%BA%E5%9D%97%E9%93%BE/Sui-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" data-id="cm360h2mb000gyois9mdj9kw0" data-title="Sui-学习路径" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/sui/" rel="tag">sui</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-区块链/move学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2024/07/12/%E5%8C%BA%E5%9D%97%E9%93%BE/move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2024-07-11T16:00:00.000Z" itemprop="datePublished">2024-07-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="categories/move/">move</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2024/07/12/%E5%8C%BA%E5%9D%97%E9%93%BE/move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">move 课程笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/aptos-labs/aptos-core/">https://github.com/aptos-labs/aptos-core/</a></p>
+</blockquote>
+<blockquote>
+<p>github代码参考：<a target="_blank" rel="noopener" href="https://github.com/aptos-labs/aptos-core/">https://github.com/aptos-labs/aptos-core/</a></p>
+</blockquote>
+<h2 id="模块交互与发布"><a href="#模块交互与发布" class="headerlink" title="模块交互与发布"></a>模块交互与发布</h2><h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><p>生成账户地址：aptos init</p>
+<p>领水：aptos account fund-with-faucet –account de fault </p>
+<p>编译：aptos move compile</p>
+<p>测试:  aptos move test</p>
+<p>发布：aptos move publish</p>
+<h3 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h3><p>Aptos 区块链浏览器:<a target="_blank" rel="noopener" href="https://explorer.aptoslabs.com/">https://explorer.aptoslabs.com/</a></p>
+<p>生成的<code>sender</code>来搜索（记得切换对应网络）</p>
+<p>点击 Modules-run 实施交互，进行基本调试</p>
+<h2 id="Vector-向量解析"><a href="#Vector-向量解析" class="headerlink" title="Vector 向量解析"></a>Vector 向量解析</h2><p>特性：vector 可以理解为其他语言的数组</p>
+<h3 id="查询功能"><a href="#查询功能" class="headerlink" title="查询功能"></a>查询功能</h3><table>
+<thead>
+<tr>
+<th>语法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>vector::is_empty<T>(): bool</T></td>
+<td>查询是否是空数组</td>
+</tr>
+<tr>
+<td>vector::length<T>(v: &amp;vector<T>): u64</T></T></td>
+<td>查询数组长度</td>
+</tr>
+<tr>
+<td>vector::borrow<T>(v: &amp;vector<T>, i: u64): &amp;T</T></T></td>
+<td>返回数组第n项的数据</td>
+</tr>
+<tr>
+<td>vector::borrow_mut<T>(v: &amp;mut vector<T>, i: u64): &amp;mut T</T></T></td>
+<td>返回数组第n项的可变引用</td>
+</tr>
+<tr>
+<td>vector::contains<T>(v: &amp;vector<T>, e: &amp;T): bool</T></T></td>
+<td>如果元素e在数组中，则返回true</td>
+</tr>
+<tr>
+<td>vector::index_of<T>(v: &amp;vector<T>, e: &amp;T): (bool, u64)</T></T></td>
+<td>如果元素e在数组中，则返回true和索引位置</td>
+</tr>
+</tbody></table>
+<h3 id="增删改"><a href="#增删改" class="headerlink" title="增删改"></a>增删改</h3><table>
+<thead>
+<tr>
+<th><strong>语法</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>vector::push_back<T>(v: &amp;mut vector<T>, t: T)</T></T></td>
+<td>添加尾部1个元素</td>
+</tr>
+<tr>
+<td>vector::append<T>(v1: &amp;mut vector<T>, v2: vector<T>)</T></T></T></td>
+<td>添加尾部1个数组</td>
+</tr>
+<tr>
+<td>vector::reverse_append<T>(lhs: &amp;mut vector<T>, other: vector<T>)</T></T></T></td>
+<td>添加尾部1个数组，并进行排序</td>
+</tr>
+<tr>
+<td>vector::pop_back<T>(v: &amp;mut vector<T>): T</T></T></td>
+<td>删掉尾部1个元素</td>
+</tr>
+<tr>
+<td>vector::destroy_empty<T>(v: vector<T>)</T></T></td>
+<td>删除数组</td>
+</tr>
+<tr>
+<td>vector::swap<T>(v: &amp;mut vector<T>, i: u64, j: u64)</T></T></td>
+<td>交换数组中两个元素的位置</td>
+</tr>
+<tr>
+<td>vector::reverse<T>(v: &amp;mut vector<T>)</T></T></td>
+<td>反转数组中元素的顺序</td>
+</tr>
+<tr>
+<td>vector::insert<T>(v: &amp;mut vector<T>, i: u64, e: T)</T></T></td>
+<td>在长度为i-1处插入一个元素</td>
+</tr>
+<tr>
+<td>vector::remove<T>(v: &amp;mut vector<T>, i: u64): T</T></T></td>
+<td>删除索引为i处的元素</td>
+</tr>
+</tbody></table>
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">module 0x42::lesson4&#123;<br>    use std::debug;<br>    use std::vector;<br>//create a vector of u64<br>    const ARR:vector&lt;u64&gt; = vector[1,2,3,4,5,6];<br><br>    #[test]<br>    fun test_vector()&#123;<br>        debug::print(&amp;ARR);<br>    &#125;<br><br>    #[test]<br>    fun test_empty_vector()&#123;<br>        let bools:bool = vector::is_empty(&amp;ARR);<br>        debug::print(&amp;bools);<br><br>    &#125;<br>    #[test]<br>    fun test_vector_length()&#123;<br>        let len:u64 = vector::length(&amp;ARR);<br>        debug::print(&amp;len);<br>    &#125;<br><br>    #[test]<br>    fun test_vector_borrow()&#123;<br>        let val = vector::borrow(&amp;ARR,3);<br>        debug::print(val);<br>    &#125;<br>    <br>    #[test]<br>    fun test_vector_borrow_mut()&#123;<br>        //change vector value<br>        let arr:vector&lt;u64&gt; = vector[1,2,3,4,5];<br>        let val = vector::borrow_mut(&amp;mut arr,3);<br>        *val = 100;<br>        debug::print(&amp;arr); <br>    &#125;<br>    #[test]<br>    fun test_vector_contains()&#123;<br>        let n2:u64 = 11;<br>        let n:u64 = 3;<br>        let bools:bool = vector::contains(&amp;ARR,&amp;n);<br>        let bools2:bool = vector::contains(&amp;ARR,&amp;n2);<br>        debug::print(&amp;bools);<br>        debug::print(&amp;bools2);<br>    &#125;<br>    #[test]<br>    fun test_vector_index_of()&#123;<br>        let n2:u64 = 11;<br>        let n:u64 = 3;<br>        let (isIndex,index) = vector::index_of(&amp;ARR,&amp;n);<br>        let (isIndex2,index2) = vector::index_of(&amp;ARR,&amp;n2);<br>        debug::print(&amp;index);<br>        debug::print(&amp;index2);<br>        debug::print(&amp;isIndex);<br>        debug::print(&amp;isIndex2);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="函数修饰符"><a href="#函数修饰符" class="headerlink" title="函数修饰符"></a>函数修饰符</h2><h3 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h3><p>函数修饰符是用来赋予函数特殊能力的一组关键字。</p>
+<p><strong>主要有以下几类</strong></p>
+<p>可见性</p>
+<ul>
+<li><p>无public，私有函数，仅限module内部调用</p>
+</li>
+<li><p>friend (public)，模块内部函数，同包模块之间可以调用</p>
+</li>
+<li><p>public，模块公开函数，所有模块都可以调用</p>
+</li>
+</ul>
+<p>全局存储引用</p>
+<ul>
+<li>acquires，当需要使用<code>move_from</code>、<code>borrow_global</code>、<code>borrow_global_mut</code> 访问地址下的资源的时候，需要用其修饰</li>
+</ul>
+<p>链下</p>
+<ul>
+<li><p>entry，修饰后，该方法可由链下脚本调用</p>
+<h4 id="代码示例1"><a href="#代码示例1" class="headerlink" title="代码示例1"></a>代码示例1</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">address 0x42&#123;<br>    module m&#123;<br>        friend 0x42::m3;<br><br>        fun f1() : u64&#123;<br>            1<br>        &#125;<br>        //public 可以被外部访问<br>        public fun f2() : u64&#123;<br>            2<br>        &#125;<br>        //外部模块无法直接调用，需要声明friend<br>        public(friend) fun f3() : u64&#123;<br>            3<br>        &#125;<br>    &#125;<br>    module m2&#123;<br>        fun f1() : u64&#123;<br>            0x42::m::f2()<br>        &#125;<br>    &#125;<br>    //view f2 f3<br>    module m3&#123;<br>        fun f1() : u64&#123;<br>            0x42::m::f3()<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="代码示例2"><a href="#代码示例2" class="headerlink" title="代码示例2"></a>代码示例2</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">module 0x42::Demo&#123;<br>    use std::debug;<br>   // 每个账户在 move 中都有一个唯一的 Signer，它通常是账户的创建者或者拥有者。<br>    use std::signer;<br><br>    struct Coin has key&#123;<br>        value:u64<br>    &#125;<br>    <br>//可以被链下调用<br>    public entry fun mint(account: &amp;signer, value: u64)&#123;<br>    //将Coin移动到用户的地址中去<br>        move_to(account, Coin&#123;value&#125;);<br>    &#125;<br>    <br>    #[test(account = @0x42)]<br>    //acquires<br>    public fun test_mint(account: &amp;signer)acquires Coin&#123;<br>    <br>    //获取account的地址<br>        let addr = signer::address_of(account);<br>        mint(account, 10);<br>        <br>     //从全局资源中借用指定地址addr处的Coin类型资源，并获取其value<br>        let coin = borrow_global&lt;Coin&gt;(addr).value;<br>        debug::print(&amp;coin)<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="struct-结构体"><a href="#struct-结构体" class="headerlink" title="struct 结构体"></a>struct 结构体</h2><h4 id="核心概念-1"><a href="#核心概念-1" class="headerlink" title="核心概念"></a>核心概念</h4><p>  Struct 结构体，用来存储具有结构化的数据，sturct可以相互嵌套（不能递归）可存储地址下作为资源，默认情况下，结构声明是线性且短暂的（也就是没办法引用）</p>
+<ol>
+<li>命名必须以大写字母开头</li>
+<li>可以通过has 关键词赋与能力</li>
+</ol>
+<h4 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h4><p>-Copy   值能够被复制<br>-Drop  值可以在作用域结束时删除<br>-Key   值可以用作全局存储操作的key，可以索引到相关结构体<br>-Store   值可以被全局存储，结合key使用，实现嵌套</p>
+<p>  除struct类型外，其他的类型默认具备 store,drop,copy 的能力，sturct 最终是存储在用户的地址上（或者被销毁），不存在aptos合约里，aptos合约是一个全纯的函数（相较于Solidity）</p>
+<h3 id="Object-对象"><a href="#Object-对象" class="headerlink" title="Object 对象"></a>Object 对象</h3><ol>
+<li>对象是单个地址的资源容器，用于储存资源；</li>
+<li>对象提供了一种集中式资源控制与所有权管理的方法；</li>
+</ol>
+<h3 id="创建并转移对象案例"><a href="#创建并转移对象案例" class="headerlink" title="创建并转移对象案例"></a>创建并转移对象案例</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">module my_addr::object_playgoud&#123;<br>	use std::signer;<br>	use aptos_framework::object::&#123;self,ObjectCore&#125;;<br>	<br>	entry fun create_and_transfer(caller:&amp;signer,destination:address)&#123;<br>	//接受拥有者地址<br>	let caller_adsress = signer::address_of(caller);<br>	//绑定地址和对象<br>	let constructor_ref = object::create_object(caller_address);<br>	<br>	//Set up the object<br>    <br>    //transfer to destination<br>    //转移所有权<br>    let object = object::object_from_constructor_ref&lt;ObjectCore&gt;(<br>    &amp;constructor_ref<br>    );<br>    object::transfer(caller,object,destination);<br>	&#125;<br>	<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="三种对象类型"><a href="#三种对象类型" class="headerlink" title="三种对象类型"></a>三种对象类型</h4><ul>
+<li>普通对象<strong>。</strong>可删除，且具有随机地址<code>object::create_object(owner_address: address)</code></li>
+<li>命名对象。不可删除，通过固定的signer和特定的seed生成唯一地址的对象，1个地址只能生成1个，具有确定性地址<code>object::create_named_object(creator: &amp;signer, seed: vector&lt;u8&gt;)</code></li>
+<li>粘性对象。不可删除，通过signer生成的对象，1个地址可以生成多个，具有随机地址<code>object::create_sticky_object(owner_address: address)</code></li>
+</ul>
+<p>示例代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">module 0x42::demo&#123;<br>    use std::debug::print;<br>    use aptos_framework::object;<br>    use aptos_framework::object::&#123;Object, ConstructorRef, ObjectCore&#125;;<br><br>    use std::signer;<br><br>    const NAME:vector&lt;u8&gt; = b&quot;myObject&quot;;<br> //can_delet<br>    public fun createDeleteableObject(caller: &amp;signer):ConstructorRef&#123;<br>       let caller_addr = signer::address_of(caller);<br>       let obj = object::create_object(caller_addr);<br>       obj<br>    &#125;   <br><br><br>   <br>    //aptos-labs/examples<br><br>//cannt<br>   public fun createNamedObject(caller: &amp;signer):ConstructorRef&#123;<br>       let obj = object::create_named_object(caller, NAME);<br>       obj<br>    &#125;   <br>   public fun createStickyObject(caller: &amp;signer):ConstructorRef&#123;<br>        let caller_addr = signer::address_of(caller);<br>       let obj = object::create_sticky_object(caller_addr);<br>       obj<br>    &#125;   <br> #[test(caller = @0x88)]<br>    fun test2(caller: &amp;signer)&#123;<br>       let obj = createNamedObject(caller);<br>       print(&amp;obj);<br>    &#125;<br><br><br>       #[test(caller = @0x88)]<br>    fun test(caller: &amp;signer)&#123;<br>      let obj = createDeleteableObject(caller);<br>       print(&amp;obj);<br>    &#125;<br><br>      #[test(caller = @0x88)]<br>    fun test3(caller: &amp;signer)&#123;<br>      let obj = createStickyObject(caller);<br>      print(&amp;obj);<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="Object-配置"><a href="#Object-配置" class="headerlink" title="Object  配置"></a>Object  配置</h4><p>一旦您创建了对象，您将收到一个<code>ConstructorRef</code>可用于生成其他<code>Ref</code>s 。<code>Refs</code>可在将来用于启用&#x2F;禁用&#x2F;执行某些对象功能，例如传输资源、传输对象本身或删除对象。</p>
+<ol>
+<li><p>允许删除对象 ( <code>DeleteRef</code>)</p>
+<p>对于使用默认方法（允许删除）创建的对象，您可以生成一个<code>DeleteRef</code>稍后可以使用的对象。这可以帮助消除混乱并获得存储退款。<code>DeleteRef</code>您不能为不可删除的对象创建。</p>
+</li>
+<li><p>一次性转账 ( <code>LinearTransferRef</code>)</p>
+<p>此外，如果创建者想要控制所有传输，以提供一次性使用的传输功能。这可用于通过从对象创建者到接收者的一次性传输来创建“灵魂绑定”对象。必须<code>LinearTransferRef</code>由对象的所有者使用。</p>
+</li>
+<li><p>禁用&#x2F;切换传输 ( <code>TransferRef</code>)</p>
+<p>默认情况下，所有对象都是可转让的。这可以通过 来更改，<code>TransferRef</code>来生成<code>object::generate_transfer_ref</code>。</p>
+</li>
+<li><p>添加可扩展性（<code>ExtendRef</code>)</p>
+</li>
+</ol>
+<p>  将对象变成可动态配置的，可以往里面添置新的 struct 资源。生成一个<code>ExtendRef</code>和<code>object::generate_extend_ref</code>。此引用可用于为该对象生成签名者。</p>
+<ol start="5">
+<li><p>添加资源</p>
+<p>使用<code>ConstructorRef</code>和<code>object::generate_signer</code>创建一个签名者，允许您将资源转移到对象上。这使用<code>move_to</code>，与将资源添加到帐户的功能相同</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/12/%E5%8C%BA%E5%9D%97%E9%93%BE/move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="cm360h2mc000iyois9omtc7j3" data-title="move 课程笔记" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-区块链/Aptos学习资源" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2024/06/22/%E5%8C%BA%E5%9D%97%E9%93%BE/Aptos%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/" class="article-date">
+  <time class="dt-published" datetime="2024-06-22T06:21:39.593Z" itemprop="datePublished">2024-06-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2024/06/22/%E5%8C%BA%E5%9D%97%E9%93%BE/Aptos%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/">Aptos学习资源</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Aptos学习资源"><a href="#Aptos学习资源" class="headerlink" title="Aptos学习资源"></a>Aptos学习资源</h1><h2 id="我的整理"><a href="#我的整理" class="headerlink" title="我的整理"></a>我的整理</h2><ul>
+<li>Aptos入门研报 [<a target="_blank" rel="noopener" href="https://404ll.github.io/2024/06/20/%E5%8C%BA%E5%9D%97%E9%93%BE/Move-on-Aptos-%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%85%A5%E9%97%A8/">Move on Aptos 初入门-研报 | Elemen的象牙塔 (404ll.github.io)</a>]</li>
+</ul>
+<h2 id="共学营学员资料"><a href="#共学营学员资料" class="headerlink" title="共学营学员资料"></a>共学营学员资料</h2><blockquote>
+<p>以下收录了Move On Aptos 共学营的全部资料</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://alcove-pro.notion.site/Move-on-Aptos-alcove-bc0e60f57caa4f2195e06f89bfaedf8e?pvs=4">Notion资料</a> 这个资料包括了新手入门的了解和各种文档，以及课程的代码</li>
+<li><a target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1-EmZXvuPuVH60XmbmFxUg1jDm6-uDDG2">Google 云盘共学视频</a> 视频包括了Move语法的学习和实战，节奏很慢，适合学习</li>
+<li><a target="_blank" rel="noopener" href="https://aptos.dev/">Aptos开发者文档</a> 文档比较详细的说明了如何安装环境和一些进阶语法，英文版可以配合谷歌浏览器的自动翻译</li>
+</ul>
+<p>还有一段共学老师说的话，我觉得很有道理，所以分享出来:</p>
+<p>“刚学一门语言会遇到很多新的语法和新的库接口，这是一定的。</p>
+<p>最好的方法是把代码逐行解读，把每一行弄懂（可以通过写注释，或者打印在纸上），这样坚持看 3 个项目的源码，就可以自己仿照着写项目了。</p>
+<p>写项目的时候又会遇到一些新的需求，就需要去看文档&#x2F;源码，等项目做出来了，这个时候你对一个语言的基本世界观就形成了。</p>
+<p>学新语言，忌求快。</p>
+<p>时刻牢记，慢就是快。”</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/22/%E5%8C%BA%E5%9D%97%E9%93%BE/Aptos%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/" data-id="cm360h2m50003yoisainp0td2" data-title="Aptos学习资源" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/%E8%B5%84%E6%BA%90%E6%94%B6%E5%BD%95/" rel="tag">资源收录</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-区块链/Move-on-Aptos-项目初入门" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2024/06/20/%E5%8C%BA%E5%9D%97%E9%93%BE/Move-on-Aptos-%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%85%A5%E9%97%A8/" class="article-date">
+  <time class="dt-published" datetime="2024-06-20T14:38:21.000Z" itemprop="datePublished">2024-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2024/06/20/%E5%8C%BA%E5%9D%97%E9%93%BE/Move-on-Aptos-%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%85%A5%E9%97%A8/">Move on Aptos 初入门-研报</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>研报前言： 如有引用，文章结尾yml会附上相关文章的来源，同时会写出信息源便于读者证实，同时希望可以给投研新手提供一些帮助。</p>
+</blockquote>
+<h1 id="Move-on-Aptos-初入门"><a href="#Move-on-Aptos-初入门" class="headerlink" title="Move on Aptos - 初入门"></a>Move on Aptos - 初入门</h1><hr>
+<h2 id="什么是-Aptos-？"><a href="#什么是-Aptos-？" class="headerlink" title="什么是 Aptos ？"></a>什么是 Aptos ？</h2><p>Aptos 是一个新兴的Layer1公链，脱胎于 Meta 的 Diem 和 Novi 项目，采用PoS（权益证明）机制，原生集成并使用 <em>Move 语言</em> 。Aptos 的设计注重安全性和可扩展性，通过独特的共识算法和并行执行技术，实现了高吞吐量、低延迟、安全可靠的特点。</p>
+<p>Aptos 的目标是为开发者提供一个高效、安全、可扩展的区块链平台，推动区块链技术的进一步发展和应用。</p>
+<h2 id="受人关注的技术亮点"><a href="#受人关注的技术亮点" class="headerlink" title="受人关注的技术亮点"></a>受人关注的技术亮点</h2><ul>
+<li>采用Move语言</li>
+<li>实现Aptos Keyless</li>
+</ul>
+<p>（Aptos创新性的技术远远不止这些，我只选取了部分技术进行解读）</p>
+<p>这些技术的引进，使得Aptos在其他同类公链中获得了一定的竞争优势。</p>
+<p>接下来让我们具体看看这些技术架构：</p>
+<h2 id="全新的智能合约语言-Move"><a href="#全新的智能合约语言-Move" class="headerlink" title="全新的智能合约语言-Move"></a>全新的智能合约语言-Move</h2><p>Move是Meta为区块链开发量身定制的专有语言，Aptos 区块链从 Diem 区块链中继承使用并不断发展 Move。</p>
+<h3 id="语言特点"><a href="#语言特点" class="headerlink" title="语言特点"></a><strong>语言特点</strong></h3><p>Move语言是一种面向对象编程的语言，比较贴切地形容为“资源为一等公民”，Move 强调了资源的稀缺性、保存和访问控制，在Move语言中，资源（resources）是一种特殊的数据类型，表示对外部资源（如文件、网络连接等）的引用和操作，具有可复制 （ copy )、可索引 ( key )、可毁灭 ( drop )、可储存 ( store )等四个不同的属性。</p>
+<p>通过进一步的学习，我认为与目前通用的智能合约语言（solidity，Rust)相比，Move语言上手的门槛相对较低， 它的语法更加的简单，编程模型也更加易懂。在实际编写的过程中比较突出的一点是：Move语言主要采用Module模型，在提高了组合性的同时使得系统的升级和优化变得更加简单。</p>
+<h2 id="简化用户进入Web3世界-Aptos-Keyless"><a href="#简化用户进入Web3世界-Aptos-Keyless" class="headerlink" title="简化用户进入Web3世界-Aptos Keyless"></a>简化用户进入Web3世界-Aptos Keyless</h2><p>最近，账户抽象新标准—Aptos Keyless 正式在Aptos主网上线，可以说这是Aptos区块链<strong>里程碑式的更新</strong>。</p>
+<p>在官方介绍中，Aptos Keyless 允许用户使用他们现有的谷歌账户来设置 Aptos 区块链账户，而不是使用传统的密钥或助记词，也就是说在Aptos上，用户不必特意创建钱包去交易，同时借助Google账号可以实现不同设备之间的丝滑使用。</p>
+<hr>
+<h3 id="Aptos-Keyless工作原理"><a href="#Aptos-Keyless工作原理" class="headerlink" title="Aptos Keyless工作原理"></a>Aptos Keyless工作原理</h3><p>Aptos Keyless 允许dapp使用 OIDC 提供商(如谷歌）进行用户身份验证，并生成一个包含用户身份、dApp 身份和临时公钥的<code>JWT</code>。通过用户身份和 dApp 身份的哈希值生成区块链账户地址。</p>
+<p>签名的 <code>JWT</code> 将区块链地址绑定到 <code>EPK</code>(临时公钥），并将交易签名权限委托给 <code>EPK</code>。用户可以使用与其区块链账户关联的<code> EPK</code> 对交易进行签名。如果用户丢失了 <code>ESK</code>（临时私钥），他们可以通过 OIDC 提供商重新登录来获取新的 <code>EPK</code>。</p>
+<blockquote>
+<p>OIDC 提供商指的是Open Connect 提供商，允许客户端应用程序（如网站、移动应用等）使用认证和授权服务来验证终端用户的身份，并获取访问资源的权限，常见的 OIDC 提供商包括 Google、Microsoft、Auth0、Okta 等，它们为开发者和组织提供了便捷的身份验证和授权服务，帮助应用程序实现安全的用户身份验证和资源访问控制。</p>
+</blockquote>
+<hr>
+<p>用户隐私方面：1. 不会透露用户google的邮件地址  2.对身份提供商隐藏用户的区块链地址和交易历史</p>
+<p>目前面临的挑战是如何保持用户隐私，因为公开<code> JWT</code> 可能会泄露用户身份，而公开<code> EPK</code> 可能会允许 OIDC 提供商跟踪用户在链上的交易。</p>
+<p>通过以上种种，我们足以窥见其革新性，传统繁琐的密钥管理和有“门槛”的Web3进入方式都将在这里得到解决。</p>
+<h2 id="Aptos的特性"><a href="#Aptos的特性" class="headerlink" title="Aptos的特性"></a>Aptos的特性</h2><p>Aptos 框架由 Aptos 区块链的核心库和配置组成，被定义为一个可定期升级的模块包，同时Aptos通过引入Block-STM并行执行引擎、Quorum Store内存池协议和集成Move语言等技术，实现了高性能、低gas、可升级的伟大成果。利用模块化设计的思路对项目进行部署，更进一步保证了项目的安全性和可操作性。</p>
+<h2 id="Aptos-与-Sui-有什么区别？"><a href="#Aptos-与-Sui-有什么区别？" class="headerlink" title="Aptos 与 Sui 有什么区别？"></a>Aptos 与 Sui 有什么区别？</h2><p>Aptos和Sui总是同时出现，那Sui到底与Aptos有什么关系呢？</p>
+<p><strong>来源方面</strong>：与Aptos 不同，Sui 不是 Diem 的派生版本，而是从头开始构建，充分利用固有的可扩展性和快速结算能力提供高吞吐量、低延迟和经济实惠的计算资源。</p>
+<p><strong>编程语言方面</strong>：Sui在原有的Move语言上添加了一个面向对象的存储系统，用于跟踪地址和交易等所有内容，更加有利于提供可扩展性。</p>
+<p><strong>技术架构方面</strong>：更不同的是Sui 在其执行层中采用了 Narwhal 和 Tusk 的共识技术来实现并行化。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>通过初步的了解，我们知道了Aptos的大致技术架构和展望，值得期待的是 Move语言是否会在未来获得更多的曝光量，而Aptos会不会迎来下一波牛市的崛起也让人拭目以待。</p>
+<p>目前Aptos正在发力培育亚太和华语地区的开发生态，目不暇接的共学营和黑客松也在等待着爱好者和开发者的垂青，同时处于早期发展阶段的 Aptos 也会提供相当多的建设机会给真正的信仰者，一起”Move on Aptos”!</p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://www.notion.so/buidlerdao/Aptos-Web3-fa04fe55b4364594ad0ee20e429cb3f6">Aptos官方白皮书（Notion在线阅读）</a><br>有关Sui与Aptos区别: <a target="_blank" rel="noopener" href="https://foresightnews.pro/article/detail/38911">https://foresightnews.pro/article/detail/38911</a><br>有关Aptos Keyless: <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg4NDYwOTQwNw==&mid=2247485476&idx=1&sn=2acad9ada9173b15aa75d8d766d94a61&chksm=ce47ff5b0a0e64cf430937879db62428b98dfef3d1bc146b3d68a32150cfcee3f56284da42c2&scene=126&sessionid=1718803508#rd">https://mp.weixin.qq.com/s?__biz=Mzg4NDYwOTQwNw==&amp;mid=2247485476&amp;idx=1&amp;sn=2acad9ada9173b15aa75d8d766d94a61&amp;chksm=ce47ff5b0a0e64cf430937879db62428b98dfef3d1bc146b3d68a32150cfcee3f56284da42c2&amp;scene=126&amp;sessionid=1718803508#rd</a><br>我的信息源:<br>    -foresight news  <a target="_blank" rel="noopener" href="https://foresightnews.pro/">https://foresightnews.pro/</a><br>    -Aptos官网  <a target="_blank" rel="noopener" href="https://aptosfoundation.org/">https://aptosfoundation.org/</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/20/%E5%8C%BA%E5%9D%97%E9%93%BE/Move-on-Aptos-%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%85%A5%E9%97%A8/" data-id="cm360h2ma000cyoish7kfanae" data-title="Move on Aptos 初入门-研报" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/%E7%A0%94%E6%8A%A5/" rel="tag">研报</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="extend next" rel="next" href="page/2/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="categories/move/">move</a></li><li class="category-list-item"><a class="category-list-link" href="categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="categories/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86/">区块链知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="tags/MYSQL/" rel="tag">MYSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/React/" rel="tag">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Uweb%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" rel="tag">Uweb笔记整理</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/http/" rel="tag">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/sui/" rel="tag">sui</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/%E7%A0%94%E6%8A%A5/" rel="tag">研报</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/%E8%B5%84%E6%BA%90%E6%94%B6%E5%BD%95/" rel="tag">资源收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="tags/MYSQL/" style="font-size: 10px;">MYSQL</a> <a href="tags/React/" style="font-size: 10px;">React</a> <a href="tags/Uweb%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" style="font-size: 10px;">Uweb笔记整理</a> <a href="tags/http/" style="font-size: 10px;">http</a> <a href="tags/sui/" style="font-size: 10px;">sui</a> <a href="tags/%E7%A0%94%E6%8A%A5/" style="font-size: 10px;">研报</a> <a href="tags/%E7%AC%94%E8%AE%B0/" style="font-size: 15px;">笔记</a> <a href="tags/%E8%B5%84%E6%BA%90%E6%94%B6%E5%BD%95/" style="font-size: 10px;">资源收录</a> <a href="tags/%E9%9A%8F%E7%AC%94/" style="font-size: 20px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2024/09/">九月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2024/08/">八月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2024/07/">七月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2024/06/">六月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2024/04/">四月 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="2024/09/30/%E5%8C%BA%E5%9D%97%E9%93%BE/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">sui-move学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="2024/09/30/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/">sui-move2</a>
+          </li>
+        
+          <li>
+            <a href="2024/09/18/%E5%89%8D%E7%AB%AF/react%E7%AC%94%E8%AE%B0/">React</a>
+          </li>
+        
+          <li>
+            <a href="2024/08/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/MYSQL%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">MYSQL入门学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="2024/07/31/%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/">区块链概述</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 Elemen<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
