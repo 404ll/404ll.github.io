@@ -20,30 +20,33 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Elemen的象牙塔">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="Spring boot-IOC|AOPIOC（控制反转）IOC 是一种设计原则，指的是控制权的反转。它的核心思想是将对象的创建和管理的控制权从程序中转移给外部容器或框架。这意味着，传统上程序中类之间的依赖关系是由程序代码手动创建和管理的，而在使用IOC时，框架或容器负责这些对象的创建和管理。通过IOC，程序的控制流程被反转，程序员不再显式地控制对象的创建和生命周期，而是交由容器（如Spring容器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SprintBoot - IOC|AOP">
+<meta property="og:url" content="http://example.com/2024/12/24/%E5%90%8E%E7%AB%AF/SprintBoot-IOC-AOP/index.html">
 <meta property="og:site_name" content="Elemen的象牙塔">
-<meta property="og:description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
+<meta property="og:description" content="Spring boot-IOC|AOPIOC（控制反转）IOC 是一种设计原则，指的是控制权的反转。它的核心思想是将对象的创建和管理的控制权从程序中转移给外部容器或框架。这意味着，传统上程序中类之间的依赖关系是由程序代码手动创建和管理的，而在使用IOC时，框架或容器负责这些对象的创建和管理。通过IOC，程序的控制流程被反转，程序员不再显式地控制对象的创建和生命周期，而是交由容器（如Spring容器">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-12-24T15:04:12.000Z">
+<meta property="article:modified_time" content="2024-12-24T15:06:21.924Z">
 <meta property="article:author" content="Elemen">
+<meta property="article:tag" content="后端">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2024/12/24/%E5%90%8E%E7%AB%AF/SprintBoot-IOC-AOP/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Elemen的象牙塔</title>
+  <title>SprintBoot - IOC|AOP | Elemen的象牙塔</title>
   
 
 
@@ -176,9 +179,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -194,10 +198,9 @@
       <meta itemprop="name" content="Elemen的象牙塔">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/24/%E5%90%8E%E7%AB%AF/SprintBoot-IOC-AOP/" class="post-title-link" itemprop="url">SprintBoot - IOC|AOP</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          SprintBoot - IOC|AOP
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -210,7 +213,14 @@
               <time title="创建时间：2024-12-24 23:04:12 / 修改时间：23:06:21" itemprop="dateCreated datePublished" datetime="2024-12-24T23:04:12+08:00">2024-12-24</time>
             </span>
 
-          <br>
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -235,7 +245,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Spring-boot-IOC-AOP"><a href="#Spring-boot-IOC-AOP" class="headerlink" title="Spring boot-IOC|AOP"></a>Spring boot-IOC|AOP</h1><h2 id="IOC（控制反转）"><a href="#IOC（控制反转）" class="headerlink" title="IOC（控制反转）"></a><strong>IOC（控制反转）</strong></h2><p>IOC 是一种设计原则，指的是控制权的反转。它的核心思想是将对象的创建和管理的控制权从程序中转移给外部容器或框架。这意味着，传统上程序中类之间的依赖关系是由程序代码手动创建和管理的，而在使用IOC时，框架或容器负责这些对象的创建和管理。通过IOC，程序的控制流程被反转，程序员不再显式地控制对象的创建和生命周期，而是交由容器（如Spring容器）来管理。</p>
+        <h1 id="Spring-boot-IOC-AOP"><a href="#Spring-boot-IOC-AOP" class="headerlink" title="Spring boot-IOC|AOP"></a>Spring boot-IOC|AOP</h1><h2 id="IOC（控制反转）"><a href="#IOC（控制反转）" class="headerlink" title="IOC（控制反转）"></a><strong>IOC（控制反转）</strong></h2><p>IOC 是一种设计原则，指的是控制权的反转。它的核心思想是将对象的创建和管理的控制权从程序中转移给外部容器或框架。这意味着，传统上程序中类之间的依赖关系是由程序代码手动创建和管理的，而在使用IOC时，框架或容器负责这些对象的创建和管理。通过IOC，程序的控制流程被反转，程序员不再显式地控制对象的创建和生命周期，而是交由容器（如Spring容器）来管理。</p>
 <h3 id="DI（依赖注入）"><a href="#DI（依赖注入）" class="headerlink" title="DI（依赖注入）"></a><strong>DI（依赖注入）</strong></h3><p>DI 是实现IOC的一种方式，是一种将依赖关系（即对象之间的依赖）注入到对象中的设计模式。DI 通过将一个对象的依赖（例如，它需要使用的服务、数据库连接等）传递给它的构造函数、字段或方法，来实现对象间的解耦。DI 是IOC的具体实现手段之一。</p>
 <h4 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h4><p>1、调用程序：不指定对象如何生成，通过标准（接口）使用。<br>2、配置文件：配置文件中需要注明哪些bean被注入，以及引用关系。<br>3、程序执行：由Spring容器通过配置文件生成所有的bean对象，从容器中取出对象进行执行。</p>
 <h4 id="举个例子："><a href="#举个例子：" class="headerlink" title="举个例子："></a>举个例子：</h4><ul>
@@ -466,814 +476,34 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">javaCopy code@Around(&quot;execution(* com.example.service.*.*(..))&quot;)<br>public Object aroundAdvice(ProceedingJoinPoint pjp) throws Throwable &#123;<br>    System.out.println(&quot;前置通知：方法执行前&quot;);<br><br>    // 获取方法名<br>    String methodName = pjp.getSignature().getName();<br>    System.out.println(&quot;方法名：&quot; + methodName);<br><br>    // 执行目标方法<br>    Object result = pjp.proceed();<br><br>    System.out.println(&quot;后置通知：方法执行后&quot;);<br><br>    return result;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h4 id="-1"><a href="#-1" class="headerlink" title></a></h4>
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag"># 后端</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/30/%E5%8C%BA%E5%9D%97%E9%93%BE/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Elemen">
-      <meta itemprop="description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elemen的象牙塔">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/09/30/%E5%8C%BA%E5%9D%97%E9%93%BE/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">sui-move学习笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-09-30 01:34:46" itemprop="dateCreated datePublished" datetime="2024-09-30T01:34:46+08:00">2024-09-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-10-11 20:02:38" itemprop="dateModified" datetime="2024-10-11T20:02:38+08:00">2024-10-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/move/" itemprop="url" rel="index"><span itemprop="name">move</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>9.7k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>9 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>sui-Move语法</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/09/30/%E5%8C%BA%E5%9D%97%E9%93%BE/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/30/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Elemen">
-      <meta itemprop="description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elemen的象牙塔">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/09/30/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/" class="post-title-link" itemprop="url">sui-move2</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-09-30 01:33:48" itemprop="dateCreated datePublished" datetime="2024-09-30T01:33:48+08:00">2024-09-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-12-05 16:31:39" itemprop="dateModified" datetime="2024-12-05T16:31:39+08:00">2024-12-05</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.6k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>做Dapp时常用的东西</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/09/30/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/09/30/%E5%8C%BA%E5%9D%97%E9%93%BE/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="sui-move学习笔记">
+      <i class="fa fa-chevron-left"></i> sui-move学习笔记
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/18/%E5%89%8D%E7%AB%AF/react%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Elemen">
-      <meta itemprop="description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elemen的象牙塔">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/09/18/%E5%89%8D%E7%AB%AF/react%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">React</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-09-18 11:31:52" itemprop="dateCreated datePublished" datetime="2024-09-18T11:31:52+08:00">2024-09-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-11-06 22:38:30" itemprop="dateModified" datetime="2024-11-06T22:38:30+08:00">2024-11-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>12k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>11 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>最近在学习前端，写一篇笔记来记录一些比较重要的知识点</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/09/18/%E5%89%8D%E7%AB%AF/react%E7%AC%94%E8%AE%B0/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/08/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/MYSQL%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Elemen">
-      <meta itemprop="description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elemen的象牙塔">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/08/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/MYSQL%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">MYSQL入门学习笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-08-11 22:43:17 / 修改时间：22:52:48" itemprop="dateCreated datePublished" datetime="2024-08-11T22:43:17+08:00">2024-08-11</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>4.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>仅为个人初学mysql使用的笔记</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/08/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/MYSQL%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/31/%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Elemen">
-      <meta itemprop="description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elemen的象牙塔">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/07/31/%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/" class="post-title-link" itemprop="url">区块链概述</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-07-31 23:03:51 / 修改时间：23:07:21" itemprop="dateCreated datePublished" datetime="2024-07-31T23:03:51+08:00">2024-07-31</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>个人整理的新手入门小文章step1</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/07/31/%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/http%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Elemen">
-      <meta itemprop="description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elemen的象牙塔">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/07/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/http%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">http学习笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-07-29 16:51:05" itemprop="dateCreated datePublished" datetime="2024-07-29T16:51:05+08:00">2024-07-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-08-09 16:57:18" itemprop="dateModified" datetime="2024-08-09T16:57:18+08:00">2024-08-09</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>简单学习http，语言比较通俗，内容也比较浅薄</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/07/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/http%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/18/%E5%8C%BA%E5%9D%97%E9%93%BE/Sui-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Elemen">
-      <meta itemprop="description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elemen的象牙塔">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/07/18/%E5%8C%BA%E5%9D%97%E9%93%BE/Sui-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/" class="post-title-link" itemprop="url">Sui-学习路径</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-07-18 23:56:07" itemprop="dateCreated datePublished" datetime="2024-07-18T23:56:07+08:00">2024-07-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-10-12 14:42:19" itemprop="dateModified" datetime="2024-10-12T14:42:19+08:00">2024-10-12</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>848</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>sui资源整合</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/07/18/%E5%8C%BA%E5%9D%97%E9%93%BE/Sui-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/12/%E5%8C%BA%E5%9D%97%E9%93%BE/move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Elemen">
-      <meta itemprop="description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elemen的象牙塔">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/07/12/%E5%8C%BA%E5%9D%97%E9%93%BE/move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">move 课程笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-07-12 00:00:00" itemprop="dateCreated datePublished" datetime="2024-07-12T00:00:00+08:00">2024-07-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-07-21 02:00:38" itemprop="dateModified" datetime="2024-07-21T02:00:38+08:00">2024-07-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/move/" itemprop="url" rel="index"><span itemprop="name">move</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>6.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>6 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>aptos-Move难点语法（个人向）</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/07/12/%E5%8C%BA%E5%9D%97%E9%93%BE/move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/06/22/%E5%8C%BA%E5%9D%97%E9%93%BE/Aptos%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Elemen">
-      <meta itemprop="description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elemen的象牙塔">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/06/22/%E5%8C%BA%E5%9D%97%E9%93%BE/Aptos%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/" class="post-title-link" itemprop="url">Aptos学习资源</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-06-22 14:21:39" itemprop="dateCreated datePublished" datetime="2024-06-22T14:21:39+08:00">2024-06-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-07-11 12:59:32" itemprop="dateModified" datetime="2024-07-11T12:59:32+08:00">2024-07-11</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>427</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>收录了一些学习资源</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/06/22/%E5%8C%BA%E5%9D%97%E9%93%BE/Aptos%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
 
 
@@ -1325,6 +555,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-boot-IOC-AOP"><span class="nav-number">1.</span> <span class="nav-text">Spring boot-IOC|AOP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IOC%EF%BC%88%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">IOC（控制反转）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DI%EF%BC%88%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%EF%BC%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">DI（依赖注入）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BE%E4%B8%AA%E4%BE%8B%E5%AD%90%EF%BC%9A"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">举个例子：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">AOP(面向切面编程)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="nav-number">1.2.1.</span> <span class="nav-text">核心概念：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.2.</span> <span class="nav-text">使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E6%B3%A8%E8%A7%A3%E5%AE%9A%E4%B9%89%E5%88%87%E9%9D%A2%E7%B1%BB"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">1.注解定义切面类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6pom-xml%EF%BC%8C%E5%8A%A0%E5%85%A5%E6%89%AB%E6%8F%8F%E7%94%9F%E6%88%90%E7%9B%B8%E5%85%B3%E7%9A%84bean"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">2. 修改配置文件pom.xml，加入扫描生成相关的bean</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E4%BE%9D%E8%B5%96%E9%A1%B9%E8%AF%B4%E6%98%8E"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">常用依赖项说明</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.2.2.3.1.</span> <span class="nav-text">&lt;aop:aspectj-autoproxy&gt;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#spring-context"><span class="nav-number">1.2.2.3.2.</span> <span class="nav-text">spring-context</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%EF%BC%9A"><span class="nav-number">1.2.2.3.2.1.</span> <span class="nav-text">作用：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E7%A4%BA%E4%BE%8B%EF%BC%9A"><span class="nav-number">1.2.2.3.2.2.</span> <span class="nav-text">依赖示例：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#spring-beans"><span class="nav-number">1.2.2.3.3.</span> <span class="nav-text">spring-beans</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%EF%BC%9A-1"><span class="nav-number">1.2.2.3.3.1.</span> <span class="nav-text">作用：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E7%A4%BA%E4%BE%8B%EF%BC%9A-1"><span class="nav-number">1.2.2.3.3.2.</span> <span class="nav-text">依赖示例：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#spring-aop"><span class="nav-number">1.2.2.3.4.</span> <span class="nav-text">spring-aop</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%EF%BC%9A-2"><span class="nav-number">1.2.2.3.4.1.</span> <span class="nav-text">作用：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E7%A4%BA%E4%BE%8B%EF%BC%9A-2"><span class="nav-number">1.2.2.3.4.2.</span> <span class="nav-text">依赖示例：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#spring-aspects"><span class="nav-number">1.2.2.3.5.</span> <span class="nav-text">spring-aspects</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%EF%BC%9A-3"><span class="nav-number">1.2.2.3.5.1.</span> <span class="nav-text">作用：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E7%A4%BA%E4%BE%8B%EF%BC%9A-3"><span class="nav-number">1.2.2.3.5.2.</span> <span class="nav-text">依赖示例：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#junit"><span class="nav-number">1.2.2.3.6.</span> <span class="nav-text">junit</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%EF%BC%9A-4"><span class="nav-number">1.2.2.3.6.1.</span> <span class="nav-text">作用：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E7%A4%BA%E4%BE%8B%EF%BC%9A-4"><span class="nav-number">1.2.2.3.6.2.</span> <span class="nav-text">依赖示例：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%844%E7%A7%8D%E5%88%9B%E5%BB%BABean%E7%9A%84%E6%B3%A8%E8%A7%A3%EF%BC%9A"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">常用的4种创建Bean的注解：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-Component"><span class="nav-number">1.2.2.4.1.</span> <span class="nav-text">1. @Component</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-Controller"><span class="nav-number">1.2.2.4.2.</span> <span class="nav-text">2. @Controller</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-Service"><span class="nav-number">1.2.2.4.3.</span> <span class="nav-text">3. @Service</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-Repository"><span class="nav-number">1.2.2.4.4.</span> <span class="nav-text">4. @Repository</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.2.2.4.5.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JoinPoint-%E7%B1%BB"><span class="nav-number">1.2.2.5.</span> <span class="nav-text">JoinPoint 类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.2.5.1.</span> <span class="nav-text">主要方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%80%82%E7%94%A8%E8%8C%83%E5%9B%B4"><span class="nav-number">1.2.2.5.2.</span> <span class="nav-text">适用范围</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ProceedingJoinPoint-%E7%B1%BB"><span class="nav-number">1.2.2.6.</span> <span class="nav-text">ProceedingJoinPoint 类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.2.6.1.</span> <span class="nav-text">核心方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%8E%AF%E7%BB%95%E9%80%9A%E7%9F%A5%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.2.6.1.1.</span> <span class="nav-text">环绕通知的使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-1"><span class="nav-number">1.2.2.7.</span> <span class="nav-text"></span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
