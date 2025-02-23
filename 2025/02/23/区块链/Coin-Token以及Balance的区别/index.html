@@ -20,17 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Elemen的象牙塔">
-<meta property="og:url" content="http://example.com/archives/2024/09/index.html">
+  <meta name="description" content="主要关于SUI-Move中 Coin Token以及Balance的区别，进行归纳">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Coin Token以及Balance的区别">
+<meta property="og:url" content="http://example.com/2025/02/23/%E5%8C%BA%E5%9D%97%E9%93%BE/Coin-Token%E4%BB%A5%E5%8F%8ABalance%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="Elemen的象牙塔">
-<meta property="og:description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
+<meta property="og:description" content="主要关于SUI-Move中 Coin Token以及Balance的区别，进行归纳">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2025/02/23/%E5%8C%BA%E5%9D%97%E9%93%BE/Coin-Token%E4%BB%A5%E5%8F%8ABalance%E7%9A%84%E5%8C%BA%E5%88%AB/image-20250223234022252-17403252296371.png">
+<meta property="article:published_time" content="2025-02-23T15:34:09.000Z">
+<meta property="article:modified_time" content="2025-02-23T16:08:24.774Z">
 <meta property="article:author" content="Elemen">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2025/02/23/%E5%8C%BA%E5%9D%97%E9%93%BE/Coin-Token%E4%BB%A5%E5%8F%8ABalance%E7%9A%84%E5%8C%BA%E5%88%AB/image-20250223234022252-17403252296371.png">
 
-<link rel="canonical" href="http://example.com/archives/2024/09/">
+<link rel="canonical" href="http://example.com/2025/02/23/%E5%8C%BA%E5%9D%97%E9%93%BE/Coin-Token%E4%BB%A5%E5%8F%8ABalance%E7%9A%84%E5%8C%BA%E5%88%AB/">
 
 
 <script id="page-configurations">
@@ -38,12 +42,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | Elemen的象牙塔</title>
+  <title>Coin Token以及Balance的区别 | Elemen的象牙塔</title>
   
 
 
@@ -176,90 +180,142 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 19 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/23/%E5%8C%BA%E5%9D%97%E9%93%BE/Coin-Token%E4%BB%A5%E5%8F%8ABalance%E7%9A%84%E5%8C%BA%E5%88%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Elemen">
+      <meta itemprop="description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Elemen的象牙塔">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Coin Token以及Balance的区别
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-02-23 23:34:09" itemprop="dateCreated datePublished" datetime="2025-02-23T23:34:09+08:00">2025-02-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-02-24 00:08:24" itemprop="dateModified" datetime="2025-02-24T00:08:24+08:00">2025-02-24</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>972</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+            <div class="post-description">主要关于SUI-Move中 Coin Token以及Balance的区别，进行归纳</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2024</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-09-30T01:34:46+08:00"
-              content="2024-09-30">
-          09-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/09/30/%E5%8C%BA%E5%9D%97%E9%93%BE/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">sui-move学习笔记</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-09-30T01:33:48+08:00"
-              content="2024-09-30">
-          09-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/09/30/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/" itemprop="url">
-            <span itemprop="name">sui-move2</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-09-18T11:31:52+08:00"
-              content="2024-09-18">
-          09-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/09/18/%E5%89%8D%E7%AB%AF/react%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">React</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <p>参考资料：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1MPrvYpE4z?spm_id_from=333.788.videopod.sections&vd_source=7815abf75f25008fd075daf46f5ff072">HOH水分子社区前端课</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.sui.io/standards">SUI官方文档</a></li>
+</ul>
+<hr>
+<h1 id="主要区别"><a href="#主要区别" class="headerlink" title="主要区别"></a>主要区别</h1><p><img src="/2025/02/23/%E5%8C%BA%E5%9D%97%E9%93%BE/Coin-Token%E4%BB%A5%E5%8F%8ABalance%E7%9A%84%E5%8C%BA%E5%88%AB/image-20250223234022252-17403252296371.png" alt="image-20250223234022252"></p>
+<h2 id="Coin"><a href="#Coin" class="headerlink" title="Coin"></a>Coin</h2><p>含义： 可以自由转让，自由流动，可包装(store)</p>
+<p>类似于rmb，拥有者可以自由地支配他，同时只要拥有TreasuryCap对象，就可以拥有铸造和销毁Coin的权利</p>
+<blockquote>
+<p>怎么理解可包装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">struct Foo has key &#123;<br>    id: UID,<br>    bar: Bar,<br>&#125;<br><br>struct Bar has store &#123;<br>    value: u64,<br>&#125;<br></code></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="Balance"><a href="#Balance" class="headerlink" title="Balance"></a>Balance</h2><p>比较简单，这里就不说了</p>
+<h2 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h2><p>当你相对用户的权限做一些限制的时候，可以发布一个Token，制定自己的代币经济模型</p>
+<p>含义：transfer，spend，conversion</p>
+<p>通过TokenPolicy自定义规则</p>
+<h3 id="public-公共操作"><a href="#public-公共操作" class="headerlink" title="public -公共操作"></a>public -公共操作</h3><p>Token有一系列公共和保护操作用来管理代币。公共操作对所有人可用，不需要任何授权。</p>
+<ul>
+<li>token::keep - 将代币发送给交易发送者</li>
+<li>token::join - 合并两个代币</li>
+<li>token::split - 将一个代币分成两个，指定分割的金额</li>
+<li>token::zero - 创建一个空（零余额）的代币</li>
+<li>token::destroy_zero - 销毁一个零余额的代币</li>
+</ul>
+<h3 id="Protected-保护操作"><a href="#Protected-保护操作" class="headerlink" title="Protected  - 保护操作"></a>Protected  - 保护操作</h3><p>注：默认是禁用的，可以在TokenPolicy中启用，并自定义规则</p>
+<p>保护操作是那些发出ActionRequest的操作。有三种主要的方法来解决ActionRequest，最常见的是通过TokenPolicy。</p>
+<ul>
+<li>token::transfer - 将代币转账到指定地址</li>
+<li>token::to_coin - 将token转换为coin</li>
+<li>token::from_coin - 将coin转换为token</li>
+<li>token::spend - 在指定地址花费代币</li>
+</ul>
+<blockquote>
+<p>💡Hot_Potato</p>
+<p>ActionRequest是一个没有任何能力的结构体也称作”Hot-Potato”,它涉及一个没有任何能力的结构体，称为 “hot potato”。这种结构体只能在其模块内进行打包和解包。Hot Potato Pattern 利用 PTB（Programmatic Transaction Block）机制，通常用于在交易结束之前强制用户完成特定业务逻辑的场景。</p>
+<p>简单来说，如果一个交易命令 A 返回一个 hot potato 值，则必须在同一个 PTB 中的任何后续命令 B 中消费它。最常见的用例是闪电贷（flashloan）。</p>
+</blockquote>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/12/25/SpringMVC/" rel="prev" title="SpringMVC">
+      <i class="fa fa-chevron-left"></i> SpringMVC
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -312,6 +368,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">主要区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Coin"><span class="nav-number">1.1.</span> <span class="nav-text">Coin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Balance"><span class="nav-number">1.2.</span> <span class="nav-text">Balance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Token"><span class="nav-number">1.3.</span> <span class="nav-text">Token</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#public-%E5%85%AC%E5%85%B1%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.1.</span> <span class="nav-text">public -公共操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Protected-%E4%BF%9D%E6%8A%A4%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.2.</span> <span class="nav-text">Protected  - 保护操作</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
