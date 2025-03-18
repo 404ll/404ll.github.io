@@ -1,62 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>SpringMVC</title>
-    <url>/2024/12/25/SpringMVC/</url>
-    <content><![CDATA[<h1 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h1><p><strong>Spring MVC</strong>（Spring Model-View-Controller）是一个基于 <strong>Java</strong> 的 Web 应用框架，是 <strong>Spring Framework</strong> 的一部分。Spring MVC 的设计灵感来源于传统的 <strong>MVC（Model-View-Controller）</strong> 设计模式，它用于构建 web 应用程序，并且将应用程序的表现层与业务逻辑层分开，促进了松耦合的开发。</p>
-<h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><ol>
-<li><strong>Model（模型）</strong></li>
-</ol>
-<ul>
-<li>表示应用程序的数据和业务逻辑，通常由 <strong>JavaBeans</strong> 或 <strong>POJO（Plain Old Java Object）</strong> 组成。</li>
-<li>负责处理数据并返回给视图层（View）。</li>
-</ul>
-<ol start="2">
-<li><strong>View（视图）</strong></li>
-</ol>
-<ul>
-<li>负责呈现数据的界面层，通常是 <strong>JSP（JavaServer Pages）</strong>、<strong>Thymeleaf</strong> 或 <strong>FreeMarker</strong> 等模板。</li>
-<li>视图层将显示由模型层提供的数据，并响应用户请求。</li>
-</ul>
-<ol start="3">
-<li><strong>Controller（控制器）</strong></li>
-</ol>
-<ul>
-<li>作为请求的入口点，接收并处理用户的请求，协调模型和视图之间的交互。</li>
-<li><strong>Controller</strong> 接收来自用户的请求，调用相应的业务逻辑（如服务层），并决定应该呈现哪个视图。</li>
-</ul>
-<h2 id="工作流程："><a href="#工作流程：" class="headerlink" title="工作流程："></a>工作流程：</h2><ol>
-<li><p>用户通过浏览器发送请求到 <strong>DispatcherServlet</strong>（前端控制器）。</p>
-</li>
-<li><p><strong>DispatcherServlet</strong> 将请求委派给合适的 <strong>Controller</strong>，该控制器处理业务逻辑。</p>
-</li>
-<li><p>控制器与 <strong>Model</strong> 交互，并将数据填充到 <strong>Model</strong> 中。</p>
-</li>
-<li><p>控制器返回一个逻辑视图名（例如 “home”），<strong>DispatcherServlet</strong> 根据视图解析器的配置，选择正确的视图（如 JSP 或 Thymeleaf）进行渲染。</p>
-</li>
-<li><p>最终，<strong>View</strong> 将数据呈现给用户。</p>
-<p><img src="/2024/12/25/SpringMVC/image.png" alt="image-20241225141556768"></p>
-</li>
-</ol>
-<h2 id="关键组件："><a href="#关键组件：" class="headerlink" title="关键组件："></a>关键组件：</h2><ul>
-<li><strong>DispatcherServlet</strong>：作为前端控制器，所有请求都由它进行统一的分发。</li>
-<li><strong>HandlerMapping</strong>：根据请求的 URL 映射到对应的控制器方法。</li>
-<li><strong>Controller</strong>：处理业务逻辑，响应用户请求。</li>
-<li><strong>ViewResolver</strong>：视图解析器，根据视图名称选择并渲染具体的视图。</li>
-<li><strong>ModelAndView</strong>：封装了模型数据和视图信息的对象。</li>
-</ul>
-<h2 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h2><ul>
-<li><strong>松耦合</strong>：Spring MVC 使用配置文件和注解解耦，便于灵活配置和扩展。</li>
-<li><strong>RESTful 支持</strong>：支持构建 RESTful Web 服务。</li>
-<li><strong>易于集成</strong>：Spring MVC 可以与其他技术（如 Hibernate、MyBatis、JPA 等）集成，支持多种视图技术（JSP、Thymeleaf、FreeMarker 等）。</li>
-<li><strong>灵活性</strong>：通过注解驱动的方式，可以简化开发，减少 XML 配置。</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>后端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>sui-move2</title>
     <url>/2024/09/30/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/sui-move%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%BF%9B%E9%98%B6%E7%89%88%EF%BC%89/</url>
     <content><![CDATA[<h1 id="sui-move"><a href="#sui-move" class="headerlink" title="sui -move"></a>sui -move</h1><h2 id="Sui-PTB-（可编程交易模块）"><a href="#Sui-PTB-（可编程交易模块）" class="headerlink" title="Sui-PTB （可编程交易模块）"></a>Sui-PTB （可编程交易模块）</h2><p>官方文档地址：<a href="https://docs.sui.io/concepts/transactions/prog-txn-blocks">https://docs.sui.io/concepts/transactions/prog-txn-blocks</a></p>
@@ -1961,7 +1905,7 @@ WHERE `emp_id` = (
 
 <h2 id="React-三要素"><a href="#React-三要素" class="headerlink" title="React 三要素"></a>React 三要素</h2><h3 id="1-组件（Component）"><a href="#1-组件（Component）" class="headerlink" title="1. 组件（Component）"></a>1. <strong>组件（Component）</strong></h3><p>组件是 React 的基础构建块，每个 React 应用都是由一个个组件组合而成的。React为每一个组件渲染一个视图，这些视图组成UI。每个组件都拥有自己的 “<strong>数据</strong>”  “<strong>（js）逻辑</strong>”  “<strong>外观</strong>”</p>
 <ul>
-<li><img src="https://raw.githubusercontent.com/404ll/My-images/main//img202411052000182.png" alt="image-20240920204607063-17268363750311"><strong>类组件</strong>：通过 ES6 的类来定义，包含状态（state)和生命周期方法。</li>
+<li><img src="/2024/09/18/%E5%89%8D%E7%AB%AF/react%E7%AC%94%E8%AE%B0/react.png" alt="react笔记/react"><strong>类组件</strong>：通过 ES6 的类来定义，包含状态（state)和生命周期方法。</li>
 <li><strong>函数组件</strong>：React 16.8 之后推荐的方式，使用函数定义组件并结合钩子（Hooks）来管理状态和生命周期。</li>
 </ul>
 <p>组件不可嵌套</p>
@@ -2201,8 +2145,153 @@ WHERE `emp_id` = (
 ]]></content>
   </entry>
   <entry>
+    <title>Javascript-异步</title>
+    <url>/2025/03/17/Javascript%E8%A6%81%E7%82%B9/</url>
+    <content><![CDATA[<h1 id="异步编程"><a href="#异步编程" class="headerlink" title="异步编程"></a>异步编程</h1><p>JavaScript 是单线程的，意味着它一次只能执行一个任务。如果遇到耗时操作（如网络请求），程序会“阻塞”，导致页面卡顿。为了解决这个问题，JavaScript 使用<strong>异步编程</strong>，让耗时操作在后台执行，同时继续执行其他代码。</p>
+<h4 id="异步的特点："><a href="#异步的特点：" class="headerlink" title="异步的特点："></a>异步的特点：</h4><ul>
+<li>不会阻塞后续代码的执行。</li>
+<li>耗时操作完成后，通过回调函数、Promise 或 async&#x2F;await 来处理结果。</li>
+</ul>
+<p>也就是实现异步编程有 3 种方法：回调函数、Promise 或 async&#x2F;await </p>
+<blockquote>
+<p>回调函数容易出现”回调地狱”的情况，所以目前不怎么依赖它来实现异步编程，我们简单介绍即可</p>
+</blockquote>
+<hr>
+<h2 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h2><p>回调函数本质就是一个函数，只是把它作为参数传递给了另一个函数，并在某个操作完成后被调用。回调函数的核心思想是：</p>
+<ul>
+<li><strong>延迟执行</strong>：在某个条件满足或某个操作完成后，才执行这个函数。</li>
+<li><strong>异步处理</strong>：常用于处理异步操作的结果。</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 1. 定义一个回调函数（取餐后的动作）</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">takeFood</span>(<span class="hljs-params">food</span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;取餐：&quot;</span> + food);<br>&#125;<br><br><span class="hljs-comment">// 2. 定义一个函数（点餐）</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">orderFood</span>(<span class="hljs-params">callback</span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;点餐：汉堡&quot;</span>);<br>    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>        <span class="hljs-keyword">const</span> food = <span class="hljs-string">&quot;汉堡&quot;</span>;<br>        <span class="hljs-title function_">callback</span>(food); <span class="hljs-comment">// 3秒后调用回调函数</span><br>    &#125;, <span class="hljs-number">3000</span>);<br>&#125;<br><br><span class="hljs-comment">// 3. 点餐，并告诉服务员取餐时调用 takeFood 函数</span><br><span class="hljs-title function_">orderFood</span>(takeFood);<br><br><span class="hljs-comment">// 4. 继续做其他事情</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;等待取餐中，先玩手机...&quot;</span>);<br></code></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><code class="hljs text">点餐：汉堡<br>等待取餐中，先玩手机...<br>取餐：汉堡<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><p>本质上 Promise 是一个函数返回的对象，我们可以在它上面绑定回调函数，这样我们就不需要在一开始把回调函数作为参数传入这个函数了,它表示一个异步操作的最终完成（或失败）及其结果值。你可以把它理解为一个“承诺”：</p>
+<ul>
+<li><strong>承诺</strong>：将来会完成某个操作（成功或失败）</li>
+<li><strong>结果</strong>：操作完成后，会返回一个值（或错误）</li>
+</ul>
+<h3 id="Promise-的三种状态"><a href="#Promise-的三种状态" class="headerlink" title="Promise 的三种状态"></a><strong>Promise 的三种状态</strong></h3><p>一个 Promise 对象有三种状态：</p>
+<ol>
+<li><strong>Pending（进行中）</strong>：初始状态，表示操作尚未完成。</li>
+<li><strong>Fulfilled（已成功）</strong>：表示操作成功完成，并返回结果值。</li>
+<li><strong>Rejected（已失败）</strong>：表示操作失败，并返回错误原因。</li>
+</ol>
+<p>一旦 Promise 的状态从 Pending 变为 Fulfilled 或 Rejected，就不可再改变。</p>
+<h3 id="then"><a href="#then" class="headerlink" title="then()"></a>then()</h3><p><code>.then()</code> 是 <strong>Promise</strong> 对象的一个方法，用于处理 Promise 成功完成后的结果。它是 JavaScript 中实现异步编程的核心工具之一，让代码更清晰、更易读</p>
+<h4 id="then-的作用"><a href="#then-的作用" class="headerlink" title=".then() 的作用"></a><strong><code>.then()</code> 的作用</strong></h4><ul>
+<li><strong>处理成功的结果</strong>：当 Promise 的状态从 Pending 变为 Fulfilled（即成功）时，<code>.then()</code> 中的回调函数会被调用。</li>
+<li><strong>链式调用</strong>：<code>.then()</code> 返回一个新的 Promise，可以继续调用下一个 <code>.then()</code>，从而实现多个异步操作的顺序执行。</li>
+</ul>
+<h4 id="then-的语法"><a href="#then-的语法" class="headerlink" title=".then()的语法"></a>.then()的语法</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">promise.then(onFulfilled, onRejected);<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>**<code>onFulfilled</code>**：一个回调函数，当 Promise 成功时调用。它接受一个参数，即 Promise 的成功结果。</li>
+<li>**<code>onRejected</code>**（可选）：一个回调函数，当 Promise 失败时调用。它接受一个参数，即 Promise 的失败原因。</li>
+</ul>
+<p>通常，我们只使用 <code>onFulfilled</code>，而用 <code>.catch()</code> 来处理失败的情况。</p>
+<p>链式调用-示例：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">doSomething</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> &#123;<br>    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">resolve</span>(<span class="hljs-string">&quot;第一步结果&quot;</span>), <span class="hljs-number">1000</span>);<br>  &#125;);<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">doSomethingElse</span>(<span class="hljs-params">result</span>) &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> &#123;<br>    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">resolve</span>(result + <span class="hljs-string">&quot; -&gt; 第二步结果&quot;</span>), <span class="hljs-number">1000</span>);<br>  &#125;);<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">doThirdThing</span>(<span class="hljs-params">result</span>) &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> &#123;<br>    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">resolve</span>(result + <span class="hljs-string">&quot; -&gt; 第三步结果&quot;</span>), <span class="hljs-number">1000</span>);<br>  &#125;);<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">failureCallback</span>(<span class="hljs-params">error</span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&quot;出错：&quot;</span>, error);<br>&#125;<br><br><span class="hljs-title function_">doSomething</span>()<br>  .<span class="hljs-title function_">then</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">result</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-title function_">doSomethingElse</span>(result);<br>  &#125;)<br>  .<span class="hljs-title function_">then</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">newResult</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-title function_">doThirdThing</span>(newResult);<br>  &#125;)<br>  .<span class="hljs-title function_">then</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">finalResult</span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`得到最终结果：<span class="hljs-subst">$&#123;finalResult&#125;</span>`</span>);<br>  &#125;)<br>  .<span class="hljs-title function_">catch</span>(failureCallback);<br></code></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><code class="hljs text">得到最终结果：第一步结果 -&gt; 第二步结果 -&gt; 第三步结果<br></code></pre></td></tr></table></figure>
+
+<h2 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async<code>/</code>await</h2><p>async&#x2F;await 是 JavaScript 中用于简化异步编程的<strong>语法糖</strong>。它基于 Promise，但让异步代码的写法更像同步代码，从而更容易理解和维护。</p>
+<p><strong>async</strong>：用于声明一个异步函数。异步函数会隐式返回一个 Promise</p>
+<p><strong>await</strong>：用于等待一个 Promise 完成（即 Promise 的状态变为 resolved）。await 只能在 async 函数中使用</p>
+<p>promise章节中的代码用async<code>/</code>await简写如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">async function main() &#123;<br>  try &#123;<br>    const result1 = await doSomething(); // 等待第一步完成<br>    const result2 = await doSomethingElse(result1); // 等待第二步完成<br>    const finalResult = await doThirdThing(result2); // 等待第三步完成<br>    console.log(`得到最终结果：$&#123;finalResult&#125;`);<br>  &#125; catch (error) &#123;<br>    failureCallback(error); // 捕获错误<br>  &#125;<br>&#125;<br><br>// 调用 main 函数<br>main();<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>💡关于语法糖<br>不改变语言的功能：语法糖只是提供了一种更简洁的写法，底层实现仍然是原有的语法或机制。</p>
+<p>提高代码的可读性：语法糖通常会让代码更直观、更易理解。</p>
+<p>减少代码量：语法糖可以帮助开发者用更少的代码实现相同的功能。</p>
+</blockquote>
+<hr>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>闭包是指一个函数能够“记住”并访问它定义时的环境，即使这个函数在定义时的环境之外执行。即 <code>闭包 = 函数 + 引用环境</code></p>
+<h3 id="闭包的核心"><a href="#闭包的核心" class="headerlink" title="闭包的核心"></a>闭包的核心</h3><ol>
+<li><p><strong>函数嵌套</strong>：</p>
+<ul>
+<li>闭包通常发生在函数嵌套的情况下，即一个函数内部定义了另一个函数。</li>
+</ul>
+</li>
+<li><p><strong>访问外部变量</strong>：</p>
+<ul>
+<li>内部函数可以访问外部函数的变量，即使外部函数已经执行完毕。</li>
+</ul>
+</li>
+<li><p><strong>“记住”环境</strong>：</p>
+<ul>
+<li>闭包会“记住”它定义时的环境（即外部函数的作用域），即使外部函数已经执行完毕。</li>
+</ul>
+</li>
+</ol>
+<p>示例 1：简单的闭包</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">outer</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">const</span> message = <span class="hljs-string">&quot;Hello, Closure!&quot;</span>; <span class="hljs-comment">// 外部函数的变量</span><br><br>    <span class="hljs-keyword">function</span> <span class="hljs-title function_">inner</span>(<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(message); <span class="hljs-comment">// 内部函数访问外部函数的变量</span><br>    &#125;<br><br>    <span class="hljs-keyword">return</span> inner; <span class="hljs-comment">// 返回内部函数</span><br>&#125;<br><br><span class="hljs-keyword">const</span> innerFunc = <span class="hljs-title function_">outer</span>(); <span class="hljs-comment">// outer 执行完毕</span><br><span class="hljs-title function_">innerFunc</span>(); <span class="hljs-comment">// 输出: Hello, Closure!</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>outer</code> 函数内部有一个变量 <code>message</code>。</li>
+<li><code>inner</code> 函数使用了 <code>message</code>。</li>
+<li>即使 <code>outer</code> 函数执行完毕，<code>inner</code> 函数仍然可以访问 <code>message</code>，这就是闭包。</li>
+</ul>
+<h3 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h3><ol>
+<li><p><strong>记住变量</strong>：</p>
+<ul>
+<li>闭包可以让函数“记住”它定义时的变量，即使外部函数已经执行完毕。</li>
+</ul>
+</li>
+<li><p><strong>创建私有变量</strong>：</p>
+<ul>
+<li>闭包可以用来隐藏变量，避免被外部直接修改。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">createPerson</span>(<span class="hljs-params">name</span>) &#123;<br>    <span class="hljs-keyword">let</span> age = <span class="hljs-number">0</span>; <span class="hljs-comment">// 私有变量</span><br><br>    <span class="hljs-keyword">return</span> &#123;<br>        <span class="hljs-attr">getName</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>            <span class="hljs-keyword">return</span> name;<br>        &#125;,<br>        <span class="hljs-attr">getAge</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>            <span class="hljs-keyword">return</span> age;<br>        &#125;,<br>        <span class="hljs-attr">celebrateBirthday</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>            age++;<br>        &#125;<br>    &#125;;<br>&#125;<br><br><span class="hljs-keyword">const</span> person = <span class="hljs-title function_">createPerson</span>(<span class="hljs-string">&quot;Alice&quot;</span>);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(person.<span class="hljs-title function_">getName</span>()); <span class="hljs-comment">// 输出: Alice</span><br>person.<span class="hljs-title function_">celebrateBirthday</span>();<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(person.<span class="hljs-title function_">getAge</span>()); <span class="hljs-comment">// 输出: 1</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>实现模块化</strong>：</p>
+<ul>
+<li>闭包可以用来隐藏内部实现细节，只暴露必要的功能。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-variable language_">module</span> = (<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">const</span> privateVariable = <span class="hljs-string">&quot;I am private&quot;</span>;<br><br>    <span class="hljs-keyword">return</span> &#123;<br>        <span class="hljs-attr">publicMethod</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(privateVariable);<br>        &#125;<br>    &#125;;<br>&#125;)();<br><br><span class="hljs-variable language_">module</span>.<span class="hljs-title function_">publicMethod</span>(); <span class="hljs-comment">// 输出: I am private</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="闭包的注意事项"><a href="#闭包的注意事项" class="headerlink" title="闭包的注意事项"></a>闭包的注意事项</h3><ol>
+<li><strong>内存泄漏</strong>：<ul>
+<li>闭包会一直“记住”外部函数的变量，即使这些变量已经不再需要了。如果闭包用得太多，可能会导致内存占用过高。</li>
+<li>解决方法：在不需要时手动解除引用。</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">outer</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">const</span> largeData = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Array</span>(<span class="hljs-number">1000000</span>).<span class="hljs-title function_">fill</span>(<span class="hljs-string">&quot;data&quot;</span>);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Closure!&quot;</span>);<br>    &#125;;<br>&#125;<br><br><span class="hljs-keyword">const</span> innerFunc = <span class="hljs-title function_">outer</span>();<br><span class="hljs-comment">// 不再需要时解除引用</span><br>innerFunc = <span class="hljs-literal">null</span>;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h1><p>JavaScript 是单线程的，这意味着它一次只能执行一个任务。如果所有任务都是同步的，那么一个耗时操作会阻塞整个程序的执行。为了解决这个问题，JavaScript 引入了异步操作和事件循环。</p>
+<p>事件循环负责协调异步任务的执行。它的核心任务是：</p>
+<ul>
+<li><strong>监控调用栈（Call Stack）</strong>：调用栈是 JavaScript 执行同步代码的地方。</li>
+<li><strong>管理任务队列（Task Queues）</strong>：任务队列用于存储待执行的异步任务。</li>
+<li><strong>在调用栈为空时，将任务队列中的任务推入调用栈执行</strong>。</li>
+</ul>
+<p>❗我个人用这个用的比较少，后续在nodejs中会继续学习</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TailWindCss</title>
+    <url>/2025/03/02/%E5%89%8D%E7%AB%AF/TailWindCss/</url>
+    <content><![CDATA[<h1 id="TailWind"><a href="#TailWind" class="headerlink" title="TailWind"></a>TailWind</h1><h3 id="安装-tailwindcss"><a href="#安装-tailwindcss" class="headerlink" title="安装 tailwindcss"></a>安装 tailwindcss</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs powershell">npm install <span class="hljs-literal">-D</span> tailwindcss<br>npx tailwindcss init<br></code></pre></td></tr></table></figure>
+
+<p>创建<code>tailwind.config.js</code> 配置文件</p>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>在 <code>tailwind.config.js</code> 配置文件中添加所有模板文件的路径。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">/** <span class="hljs-doctag">@type</span> &#123;<span class="hljs-type">import(&#x27;tailwindcss&#x27;).Config</span>&#125; */</span><br><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = &#123;<br>  <span class="hljs-attr">content</span>: [<span class="hljs-string">&quot;./src/**/*.&#123;html,js&#125;&quot;</span>],  <span class="hljs-comment">// 根据项目实际文件类型调整</span><br>  <span class="hljs-attr">theme</span>: &#123;<br>    <span class="hljs-attr">extend</span>: &#123;&#125;,<br>  &#125;,<br>  <span class="hljs-attr">plugins</span>: [],<br>&#125;<br></code></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
     <title>在x分钟内学会go</title>
-    <url>/2025/02/25/%E5%9C%A8x%E5%88%86%E9%92%9F%E5%86%85%E5%AD%A6%E4%BC%9Ago/</url>
+    <url>/2025/02/25/%E5%90%8E%E7%AB%AF/%E5%9C%A8x%E5%88%86%E9%92%9F%E5%86%85%E5%AD%A6%E4%BC%9Ago/</url>
     <content><![CDATA[<p>参考资料：</p>
 <ul>
 <li><a href="https://learnxinyminutes.com/go/">https://learnxinyminutes.com/go/</a></li>
@@ -2282,5 +2371,61 @@ WHERE `emp_id` = (
 </li>
 </ol>
 ]]></content>
+  </entry>
+  <entry>
+    <title>SpringMVC</title>
+    <url>/2024/12/25/%E5%90%8E%E7%AB%AF/SpringMVC/</url>
+    <content><![CDATA[<h1 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h1><p><strong>Spring MVC</strong>（Spring Model-View-Controller）是一个基于 <strong>Java</strong> 的 Web 应用框架，是 <strong>Spring Framework</strong> 的一部分。Spring MVC 的设计灵感来源于传统的 <strong>MVC（Model-View-Controller）</strong> 设计模式，它用于构建 web 应用程序，并且将应用程序的表现层与业务逻辑层分开，促进了松耦合的开发。</p>
+<h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><ol>
+<li><strong>Model（模型）</strong></li>
+</ol>
+<ul>
+<li>表示应用程序的数据和业务逻辑，通常由 <strong>JavaBeans</strong> 或 <strong>POJO（Plain Old Java Object）</strong> 组成。</li>
+<li>负责处理数据并返回给视图层（View）。</li>
+</ul>
+<ol start="2">
+<li><strong>View（视图）</strong></li>
+</ol>
+<ul>
+<li>负责呈现数据的界面层，通常是 <strong>JSP（JavaServer Pages）</strong>、<strong>Thymeleaf</strong> 或 <strong>FreeMarker</strong> 等模板。</li>
+<li>视图层将显示由模型层提供的数据，并响应用户请求。</li>
+</ul>
+<ol start="3">
+<li><strong>Controller（控制器）</strong></li>
+</ol>
+<ul>
+<li>作为请求的入口点，接收并处理用户的请求，协调模型和视图之间的交互。</li>
+<li><strong>Controller</strong> 接收来自用户的请求，调用相应的业务逻辑（如服务层），并决定应该呈现哪个视图。</li>
+</ul>
+<h2 id="工作流程："><a href="#工作流程：" class="headerlink" title="工作流程："></a>工作流程：</h2><ol>
+<li><p>用户通过浏览器发送请求到 <strong>DispatcherServlet</strong>（前端控制器）。</p>
+</li>
+<li><p><strong>DispatcherServlet</strong> 将请求委派给合适的 <strong>Controller</strong>，该控制器处理业务逻辑。</p>
+</li>
+<li><p>控制器与 <strong>Model</strong> 交互，并将数据填充到 <strong>Model</strong> 中。</p>
+</li>
+<li><p>控制器返回一个逻辑视图名（例如 “home”），<strong>DispatcherServlet</strong> 根据视图解析器的配置，选择正确的视图（如 JSP 或 Thymeleaf）进行渲染。</p>
+</li>
+<li><p>最终，<strong>View</strong> 将数据呈现给用户。</p>
+<p><img src="/2024/12/25/%E5%90%8E%E7%AB%AF/SpringMVC/image.png" alt="image-20241225141556768"></p>
+</li>
+</ol>
+<h2 id="关键组件："><a href="#关键组件：" class="headerlink" title="关键组件："></a>关键组件：</h2><ul>
+<li><strong>DispatcherServlet</strong>：作为前端控制器，所有请求都由它进行统一的分发。</li>
+<li><strong>HandlerMapping</strong>：根据请求的 URL 映射到对应的控制器方法。</li>
+<li><strong>Controller</strong>：处理业务逻辑，响应用户请求。</li>
+<li><strong>ViewResolver</strong>：视图解析器，根据视图名称选择并渲染具体的视图。</li>
+<li><strong>ModelAndView</strong>：封装了模型数据和视图信息的对象。</li>
+</ul>
+<h2 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h2><ul>
+<li><strong>松耦合</strong>：Spring MVC 使用配置文件和注解解耦，便于灵活配置和扩展。</li>
+<li><strong>RESTful 支持</strong>：支持构建 RESTful Web 服务。</li>
+<li><strong>易于集成</strong>：Spring MVC 可以与其他技术（如 Hibernate、MyBatis、JPA 等）集成，支持多种视图技术（JSP、Thymeleaf、FreeMarker 等）。</li>
+<li><strong>灵活性</strong>：通过注解驱动的方式，可以简化开发，减少 XML 配置。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>后端</tag>
+      </tags>
   </entry>
 </search>
