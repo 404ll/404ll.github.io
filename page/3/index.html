@@ -182,130 +182,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/10/%E5%8C%BA%E5%9D%97%E9%93%BE/AVS%E4%BB%A5%E5%8F%8AEigenLayer%E8%A7%A3%E6%9E%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Elemen">
-      <meta itemprop="description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elemen的象牙塔">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/05/10/%E5%8C%BA%E5%9D%97%E9%93%BE/AVS%E4%BB%A5%E5%8F%8AEigenLayer%E8%A7%A3%E6%9E%90/" class="post-title-link" itemprop="url">AVS以及EigenLayer解析</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-05-10 02:43:13" itemprop="dateCreated datePublished" datetime="2024-05-10T02:43:13+08:00">2024-05-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-06-05 21:27:52" itemprop="dateModified" datetime="2024-06-05T21:27:52+08:00">2024-06-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">区块链知识</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="一、-AVS赛道的逻辑和它出现的底层原因（Restaking与AVS到底有没有区别？各层级机制）"><a href="#一、-AVS赛道的逻辑和它出现的底层原因（Restaking与AVS到底有没有区别？各层级机制）" class="headerlink" title="一、 AVS赛道的逻辑和它出现的底层原因（Restaking与AVS到底有没有区别？各层级机制）"></a><strong>一、 AVS赛道的逻辑和它出现的底层原因（Restaking与AVS到底有没有区别？各层级机制）</strong></h2><p>AVS全称主动验证服务，其龙头是EigenLayer，在直播当天（北京时间2024年4月30日）刚刚公布了自己的代币计划。</p>
-<h3 id="1-AVS赛道的逻辑及其底层原因"><a href="#1-AVS赛道的逻辑及其底层原因" class="headerlink" title="1. AVS赛道的逻辑及其底层原因:"></a>1. AVS赛道的逻辑及其底层原因:</h3><p>共识在区块链中至关重要，以太坊节点提供的服务在过去仅仅包括交易排序交易执行，但是其他服务来自于其他的服务商（跨链桥、预言机等等），其他的服务商资产量不够，所以很容易被攻击，最终导致了DApp的用户遭受损失。</p>
-<p>AVS赛道的逻辑是通过将区块链本身的安全性桥接到主动验证服务商身上，利用以太坊的高级安全性来赋能这些服务商，从而将以太坊的安全性扩展到这些中间件身上。这样做的底层原因是为了弥补区块链中共识机制下的短板，使其得到补足。</p>
-<h3 id="2-Eigenlayer代币经济学"><a href="#2-Eigenlayer代币经济学" class="headerlink" title="2. Eigenlayer代币经济学"></a><strong>2. Eigenlayer代币经济学</strong></h3><p>从分配的角度来看，超过一半（55%）的代币分配给了EigenLayer团队和投资者，而余下的分配给了社区；从应用的角度来看，EigenLayer代币的使用涉及到与DeFi协议的交互，其中可能包括借贷、交易和提供流动性等操作。但是代币分配给了少数人，这可能导致代币解锁后的抛售压力增加。</p>
-<p><strong>空投</strong>：将再质押的代币九成给到平台交互用户，一成给到defi协议的用户，但是中国、美国的用户被限制。</p>
-<p><strong>代币的价值</strong>：基于流通量和市值来推断，可能会有一定的不确定性。保守估计18元，目前场外9-12元</p>
-<p><strong>Puffer是否被限制在10%：</strong>实际是一个误解。只是大户直接存入的量更大，导致他们挖得的积分比较多，从而分配到的空投也比较多。Puffer实际上并没有设定一个10%的限制，而是根据积分的累积来分配代币，大概只有10%来自于Defi那些东西。</p>
-<h2 id="二．EigenLayer的锁仓逻辑"><a href="#二．EigenLayer的锁仓逻辑" class="headerlink" title="二．EigenLayer的锁仓逻辑"></a>二．<strong>EigenLayer的锁仓逻辑</strong></h2><p>EigenLayer的代币锁仓逻辑通过不可转移的代币和可质押的机制，建立稳定的社区基础，避免短期波动，以支持项目的长期发展。</p>
-<ol>
-<li><p>代币不可转移：在锁仓期间，代币持有者无法将其代币转移到其他地址或进行交易。避免短期内的代币大规模流通，从而稳定价格和社区生态。</p>
-</li>
-<li><p>质押机制：代币持有者可以选择将代币质押，尽管代币不可转移，但质押允许持有者保留代币的所有权，并获得相应的回报或权益。</p>
-</li>
-</ol>
-<h2 id="三．为什么Eigenlayer-这么受关注？"><a href="#三．为什么Eigenlayer-这么受关注？" class="headerlink" title="三．为什么Eigenlayer 这么受关注？"></a><strong>三．为什么Eigenlayer 这么受关注？</strong></h2><ol>
-<li><p>独特地位：作为AVS和Restaking项目的龙头，EigenLayer在DeFi领域占据了独特的地位</p>
-</li>
-<li><p>提供安全性保障：EigenLayer允许用户质押资产，为其他DeFi协议提供安全性保障</p>
-</li>
-<li><p>高度锁仓的代币设计：EigenLayer采取了措施确保代币的稳定性和可持续性，这对项目的长期发展产生积极影响。</p>
-</li>
-</ol>
-<p><strong>五．AVS与模块化区块链有什么关联？</strong></p>
-<p>AVS与模块化区块链都是为了提高区块链网络的效率和安全性而采取的一种方法。</p>
-<p><strong>模块化区块链</strong>：将区块链网络的不同功能模块分离开来，使得每个模块可以独立运行，相互之间不产生影响。提高系统的可扩展性和灵活性，同时降低了开发和维护的难度。</p>
-<p><strong>AVS</strong>：由于零知识证明的验证成本比较高，通过质押的方式提高节点执行作恶的成本，让应用更加安全，同时加快验证交易的速度。质押的代币可以被用来执行网络中的任务，并作为一种激励来防止恶意行为。提高区块链网络的安全性，同时也为参与者提供了一种获利的机会。</p>
-<h2 id="四．EigenLayer和Restaking有什么比较好的方向？"><a href="#四．EigenLayer和Restaking有什么比较好的方向？" class="headerlink" title="四．EigenLayer和Restaking有什么比较好的方向？"></a><strong>四．EigenLayer和Restaking有什么比较好的方向？</strong></h2><ol>
-<li><p>提供更有效率的解决方案：在市场上已有的服务效率较低的情况下，可以提供更有效率的解决方案。例如，结合密码学安全性和Restaking技术，对交易进行分类处理：采用零知识证明（zk）验证重要交易，采用Restaking验证一般性交易。这种方法可以让大量zk项目运作起来，提高整体效率。</p>
-</li>
-<li><p>与融资充足的项目合作：与已经融资充足且有潜力的项目合作，利用它们的业务机会。特别是在技术尚未成熟但市场机会已经出现的情况下，与这些项目合作，提供简单或者价值较低的交易验证服务，从而抓住市场机会。</p>
-</li>
-</ol>
-<h2 id="五．Eigenlayer150-亿美金的锁仓量是否已经超过了-AvS-安全性的实际需求"><a href="#五．Eigenlayer150-亿美金的锁仓量是否已经超过了-AvS-安全性的实际需求" class="headerlink" title="五．Eigenlayer150 亿美金的锁仓量是否已经超过了 AvS 安全性的实际需求?"></a><strong>五．Eigenlayer150 亿美金的锁仓量是否已经超过了 AvS 安全性的实际需求?</strong></h2><p>这种情况可能是一个动态平衡。在项目初期，可能会有大量锁仓，主要是因为一些人想要获取更多的积分，而另一些人则想要做空。这导致了锁仓量的虚高。随着时间的推移，项目会发展壮大，空投活动逐渐减少，资金也会流向其他地方。因此，锁仓量可能会减少并达到一个动态平衡点。</p>
-<h2 id><a href="#" class="headerlink" title></a></h2><h2 id="六．EigenLayer-为什么不选Solana而选择以太坊？"><a href="#六．EigenLayer-为什么不选Solana而选择以太坊？" class="headerlink" title="六．EigenLayer 为什么不选Solana而选择以太坊？"></a>六．EigenLayer <strong>为什么不选Solana而选择以太坊？</strong></h2><p>以太坊具有较长的共识历史，其安全性更高。同时以太坊网络上已经存在着大量的节点和质押资产，形成了一个相对稳定和安全的生态系统，这对于项目的发展和用户的信任至关重要。相比之下Solana的不确定性更大，安全性更低，流动性更差，Defi生态不太强</p>
-<h2 id="七．ETH的EigenLayer和BTC的Babylon的区别是什么？"><a href="#七．ETH的EigenLayer和BTC的Babylon的区别是什么？" class="headerlink" title="七．ETH的EigenLayer和BTC的Babylon的区别是什么？"></a>七．ETH的EigenLayer和BTC的Babylon的区别是什么？</h2><p>EigenLayer和Babylon在解决的问题和定位上存在一些不同</p>
-<p>Babylon致力于解决比特币的闲置和无法获得利息的问题。它通过一种名为”remo-staking”的操作，使得持有比特币的用户能够在不离开比特币网络的情况下参与质押，从而获得一定的收益。</p>
-<p>EigenLayer更加关注以太坊网络上已经质押了资产的用户，为他们提供一个在不需要牺牲安全性的前提下，可以为其他中间层提供质押服务的机会，EigenLayer致力于解决以太坊网络中质押者的机会成本问题，以及降低中间层支付高昂资金成本的问题，从而提高质押网络的效率。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/04/25/%E5%89%8D%E7%AB%AF/JavaScript%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -397,101 +273,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/04/25/%E5%89%8D%E7%AB%AF/HTML%E8%A1%A8%E5%8D%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Elemen">
-      <meta itemprop="description" content="博客的初衷是记录自己的学习情况，希望自己可以坚持下去">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elemen的象牙塔">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/04/25/%E5%89%8D%E7%AB%AF/HTML%E8%A1%A8%E5%8D%95/" class="post-title-link" itemprop="url">HTML表单</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-04-25 15:40:18" itemprop="dateCreated datePublished" datetime="2024-04-25T15:40:18+08:00">2024-04-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-05-24 11:56:46" itemprop="dateModified" datetime="2024-05-24T11:56:46+08:00">2024-05-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML/" itemprop="url" rel="index"><span itemprop="name">HTML</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>主要后面Javascript 的学习会涉及到表单</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/04/25/%E5%89%8D%E7%AB%AF/HTML%E8%A1%A8%E5%8D%95/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -561,7 +342,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -572,7 +353,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -619,12 +400,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">91k</span>
+    <span title="站点总字数">87k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:23</span>
+    <span title="站点阅读时长">1:19</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
