@@ -28,8 +28,9 @@
 <meta property="og:description" content="主要关于SUI-Move中 Coin Token的区别进行归纳，方便合约中使用时进行选择">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2025/02/23/%E5%8C%BA%E5%9D%97%E9%93%BE/Coin-Token%E4%BB%A5%E5%8F%8ABalance%E7%9A%84%E5%8C%BA%E5%88%AB/CoinBalanceToken.png">
+<meta property="og:image" content="http://example.com/2025/02/23/%E5%8C%BA%E5%9D%97%E9%93%BE/Coin-Token%E4%BB%A5%E5%8F%8ABalance%E7%9A%84%E5%8C%BA%E5%88%AB/api%E5%8C%BA%E5%88%AB-17471474544153.png">
 <meta property="article:published_time" content="2025-02-23T15:34:09.000Z">
-<meta property="article:modified_time" content="2025-05-13T13:04:05.737Z">
+<meta property="article:modified_time" content="2025-05-13T14:45:33.565Z">
 <meta property="article:author" content="Elemen">
 <meta property="article:tag" content="move智能合约">
 <meta name="twitter:card" content="summary">
@@ -218,7 +219,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-13 21:04:05" itemprop="dateModified" datetime="2025-05-13T21:04:05+08:00">2025-05-13</time>
+                <time title="修改时间：2025-05-13 22:45:33" itemprop="dateModified" datetime="2025-05-13T22:45:33+08:00">2025-05-13</time>
               </span>
 
           
@@ -234,14 +235,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>972</span>
+              <span>5.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>5 分钟</span>
             </span>
             <div class="post-description">主要关于SUI-Move中 Coin Token的区别进行归纳，方便合约中使用时进行选择</div>
 
@@ -259,19 +260,146 @@
 <li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1MPrvYpE4z?spm_id_from=333.788.videopod.sections&vd_source=7815abf75f25008fd075daf46f5ff072">HOH水分子社区前端课</a></li>
 <li><a target="_blank" rel="noopener" href="https://docs.sui.io/standards">SUI官方文档</a></li>
 </ul>
-<hr>
-<h1 id="主要区别"><a href="#主要区别" class="headerlink" title="主要区别"></a>主要区别</h1><p><img src="/2025/02/23/%E5%8C%BA%E5%9D%97%E9%93%BE/Coin-Token%E4%BB%A5%E5%8F%8ABalance%E7%9A%84%E5%8C%BA%E5%88%AB/CoinBalanceToken.png" alt="CoinBalanceToken"></p>
-<h2 id="Coin"><a href="#Coin" class="headerlink" title="Coin"></a>Coin</h2><p>含义： 可以自由转让，自由流动，可包装(store)</p>
-<p>类似于rmb，拥有者可以自由地支配他，同时只要拥有TreasuryCap对象，就可以拥有铸造和销毁Coin的权利</p>
+<h1 id="主要区别"><a href="#主要区别" class="headerlink" title="主要区别"></a>主要区别</h1><table>
+<thead>
+<tr>
+<th align="left">特性</th>
+<th align="left"><code>sui::token</code></th>
+<th align="left"><code>sui::coin</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>系统类型</strong></td>
+<td align="left">闭环系统</td>
+<td align="left">开环系统</td>
+</tr>
+<tr>
+<td align="left"><strong>权限控制</strong></td>
+<td align="left">双层(TokenPolicyCap + TreasuryCap)</td>
+<td align="left">单层(TreasuryCap)</td>
+</tr>
+<tr>
+<td align="left"><strong>操作验证</strong></td>
+<td align="left">必须通过策略规则验证</td>
+<td align="left">无需验证</td>
+</tr>
+<tr>
+<td align="left"><strong>代币转移</strong></td>
+<td align="left">需要创建和确认ActionRequest</td>
+<td align="left">直接转移</td>
+</tr>
+<tr>
+<td align="left"><strong>供应量控制</strong></td>
+<td align="left">更精细(支持暂存余额)</td>
+<td align="left">直接增减</td>
+</tr>
+<tr>
+<td align="left"><strong>灵活性</strong></td>
+<td align="left">支持自定义规则和操作</td>
+<td align="left">固定操作集</td>
+</tr>
+<tr>
+<td align="left"><strong>适用场景</strong></td>
+<td align="left">监管严格的应用</td>
+<td align="left">通用代币</td>
+</tr>
+</tbody></table>
+<p><strong>结构区别</strong></p>
+<img src="/2025/02/23/%E5%8C%BA%E5%9D%97%E9%93%BE/Coin-Token%E4%BB%A5%E5%8F%8ABalance%E7%9A%84%E5%8C%BA%E5%88%AB/CoinBalanceToken.png" alt="CoinBalanceToken" style="zoom:80%;">
+
+<p><strong>API区别</strong></p>
+<img src="/2025/02/23/%E5%8C%BA%E5%9D%97%E9%93%BE/Coin-Token%E4%BB%A5%E5%8F%8ABalance%E7%9A%84%E5%8C%BA%E5%88%AB/api区别-17471474544153.png" alt="api区别" style="zoom: 80%;">
+
+
+
+<h2 id="Coin-Open-loop-fungible-token"><a href="#Coin-Open-loop-fungible-token" class="headerlink" title="Coin -  Open-loop fungible token"></a>Coin -  Open-loop fungible token</h2><p><strong>💡含义</strong>： 可以自由转让，能和其他Coin实现互换，自由流动，key+store(可包装）。类似于rmb，拥有者可以自由地支配他</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">struct Coin&lt;phantom T&gt; has key, store &#123; id: UID, balance: Balance&lt;T&gt; &#125;<br></code></pre></td></tr></table></figure>
+
+
+
 <blockquote>
+<p>一般称 Coin 为“币”，称 Token 为 “代币”</p>
 <p>怎么理解可包装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">struct Foo has key &#123;<br>    id: UID,<br>    bar: Bar,<br>&#125;<br><br>struct Bar has store &#123;<br>    value: u64,<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">struct Foo has key &#123;<br> id: UID,<br> bar: Bar,<br>&#125;<br><br>struct Bar has store &#123;<br> value: u64,<br>&#125;<br></code></pre></td></tr></table></figure>
 </blockquote>
-<h2 id="Balance"><a href="#Balance" class="headerlink" title="Balance"></a>Balance</h2><p>比较简单，这里就不说了</p>
-<h2 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h2><p>当你相对用户的权限做一些限制的时候，可以发布一个Token，制定自己的代币经济模型</p>
-<p>含义：transfer，spend，conversion</p>
-<p>通过TokenPolicy自定义规则</p>
-<h3 id="public-公共操作"><a href="#public-公共操作" class="headerlink" title="public -公共操作"></a>public -公共操作</h3><p>Token有一系列公共和保护操作用来管理代币。公共操作对所有人可用，不需要任何授权。</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a><strong>使用</strong></h3><p>具体使用可以结合官方仓库中sui::coin的模块进行学习</p>
+<p><strong>创建代币</strong>：采用coin::create_currency，返回一个<code>treasury</code>和<code>metadate</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">let (treasury_cap, metadata) = coin::create_currency&lt;HOH&gt;(<br>       otw,<br>       DECIMALS,<br>       SYMBOLS, <br>       NAME, <br>       DESCRIPTION, <br>       option::some(new_unsafe_from_bytes(ICON_URL)), <br>       ctx<br>   );<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>metadate</code>主要包括一个coin所拥有的字节</p>
+<ul>
+<li><pre><code class="move">  public struct CoinMetadata&lt;phantom T&gt; has key, store &#123;
+      id: UID,
+      ///定义了如何将链上存储的整数值 N 转换为用户友好的小数格式（如 UI 显示或交易所报价）
+      ///decimals 仅用于显示逻辑，链上存储的 value 始终是整数
+      decimals: u8,
+      name: string::String,
+      /// 代币符号
+      symbol: ascii::String,
+      description: string::String,
+      /// 代币图片
+      icon_url: Option&lt;Url&gt;
+  &#125;
+  //为什么需要 decimals？
+  //1.不同代币可能有不同的最小单位（如 BTC 用 8 位小数，USDC 用 6 位）。//decimals 确保前端能正确解析。
+  //2.避免浮点数问题
+  //链上只存整数（如 7002），通过 decimals 在链下转换为小数，避免浮点数计算的复杂性。
+  //3.兼容性
+  //与 ERC-20 等标准的小数位设计一致，减少跨链或跨协议时的适配成本
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p><code>TreasuryCap</code>代表了一个代币的mint和burn权限，通常由项目方或者治理人拥有，用于初始代币分发、增发代币、代币销毁、代币供应量管理等</p>
+<ul>
+<li><pre><code class="move">public struct TreasuryCap&lt;phantom T&gt; has key, store &#123;
+    id: UID,
+    ///代币的总供应量
+    total_supply: Supply&lt;T&gt;
+&#125;
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext"><br><br>一个比较完整Coin示例如下：<br><br>```move<br>module my_coin::my_coin &#123;<br>    use sui::coin::&#123;Self, TreasuryCap, Coin&#125;;<br>    use sui::transfer;<br>    use sui::tx_context::TxContext;<br><br>    // 1. 定义代币类型（需 one-time witness 模式）<br>    struct MY_COIN has drop &#123;&#125;<br><br>    // 2. 初始化函数（设置初始供应量）<br>    public entry fun init(<br>        ctx: &amp;mut TxContext<br>    ) &#123;<br>        let (treasury_cap, metadata) = coin::create_currency(<br>            MY_COIN &#123;&#125;, // one-time witness<br>            9,          // decimals（例如 9 位小数）<br>            b&quot;MYC&quot;,     // symbol<br>            b&quot;My Coin&quot;, // name<br>            b&quot;My custom coin&quot;, // description<br>            none(),     // icon_url（可选）<br>            ctx<br>        );<br><br>        // 3. 设置初始供应量：铸造 1_000_000_000 个代币（假设 1 个整单位 = 1 MYC）<br>        let total_supply = 1_000_000_000;<br>        let initial_coins = coin::mint(&amp;mut treasury_cap, total_supply, ctx);<br><br>        // 4. 将初始代币发送到指定地址（例如项目方地址）<br>        let recipient = @0x123; // 替换为实际地址<br>        transfer::public_transfer(initial_coins, recipient);<br><br>        // 5. 转移 TreasuryCap 到安全地址（如治理合约）<br>        transfer::public_transfer(treasury_cap, @0x456);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Token-Closed-Loop-Token"><a href="#Token-Closed-Loop-Token" class="headerlink" title="Token - Closed-Loop Token"></a>Token - Closed-Loop Token</h2><p><strong>💡含义</strong>：当你相对用户的权限做一些限制的时候，可以发布一个Token，制定自己的代币经济模型，来限制可以使用代币的应用程序，以及转账、消费和交换的规则；类似于创建一个受到限制和监控的银行账户</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">struct Token&lt;phantom T&gt; has key &#123; id: UID, balance: Balance&lt;T&gt; &#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>🔦与Coin不同</strong>：Token 则仅具备<code>key</code>功能，无法被包装、存储为动态字段或自由转账（除非有自定义策略）。由于此限制，Token<strong>只能由账户拥有</strong>，无法存储在应用程序中，但可以“spend”,这个下文会讲到。</p>
+<p><strong>重要模块</strong>：<code>TokenPolicyCap</code> <code>TreasuryCap </code> <code>ActionRequest</code></p>
+<ul>
+<li><p><code>TokenPolicyCap</code>：定义 <code>Token</code> 的操作规则。它包含了哪些操作是允许的，以及每个操作需要满足的规则集合</p>
+<ul>
+<li><pre><code class="move">public struct TokenPolicy&lt;phantom T&gt; has key &#123;
+    id: UID,                          // `TokenPolicy` 的唯一标识符。
+    spent_balance: Balance&lt;T&gt;,        // 用户在 &quot;spend&quot; 操作中消耗的余额。
+    rules: VecMap&lt;String, VecSet&lt;TypeName&gt;&gt;, // 定义每个操作的规则集合。
+&#125;
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext"><br>- `TreasuryCap`：这里和Coin模块中的是一致的，不过多解释<br><br>- `ActionRequest`：每一个受监管的行为发生的时候，都会发出一个`ActionRequest`，同时ActionRequest需要一个`confirm_request`来解决 ，在 `confirm_request` 或 `confirm_request_mut` 中，`ActionRequest` 会与 `TokenPolicy` 的规则进行匹配，确保操作符合策略<br><br>  - ```move<br>    public struct ActionRequest&lt;phantom T&gt; &#123;<br>        name: String,                     // 操作的名称，例如 &quot;transfer&quot; 或 &quot;spend&quot;。<br>        amount: u64,                      // 操作涉及的金额。<br>        sender: address,                  // 操作的发起者地址。<br>        recipient: Option&lt;address&gt;,       // 接收者地址，仅在 &quot;transfer&quot; 操作中存在。<br>        spent_balance: Option&lt;Balance&lt;T&gt;&gt;, // 操作中消耗的余额，仅在 &quot;spend&quot; 操作中存在。<br>        approvals: VecSet&lt;TypeName&gt;,      // 已完成规则的批准集合。<br>    &#125;<br></code></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>💡Hot_Potato</p>
+<p>ActionRequest是一个没有任何能力的结构体也称作”Hot-Potato”,它涉及一个没有任何能力的结构体，称为 “hot potato”。这种结构体只能在其模块内进行打包和解包。Hot Potato Pattern 利用 PTB（Programmatic Transaction Block）机制，通常用于在交易结束之前强制用户完成特定业务逻辑的场景。</p>
+<p>简单来说，如果一个交易命令 A 返回一个 hot potato 值，则必须在同一个 PTB 中的任何后续命令 B 中消费它。最常见的用例是闪电贷（flashloan）。</p>
+</blockquote>
+<h3 id="典型工作流程"><a href="#典型工作流程" class="headerlink" title="典型工作流程"></a>典型工作流程</h3><ol>
+<li><p>初始化：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">let (policy, policy_cap) = token::new_policy(&amp;treasury_cap, ctx);<br>token::share_policy(policy);<br>/// 创建一个新的 `TokenPolicy` 和一个匹配的 `TokenPolicyCap`。<br>/// 然后必须使用 `share_policy` 方法共享 `TokenPolicy`。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>设置规则：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">///允许transfer操作可以自由使用<br>token::allow(&amp;mut policy, &amp;policy_cap, b&quot;transfer&quot;, ctx);<br>///为transfer操作添加一个规则<br>token::add_rule_config(rule_witness, &amp;mut policy, &amp;policy_cap, config, ctx);<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>执行操作：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">let request = token::transfer(token, recipient, ctx);<br>let (_, amount, sender, _) = token::confirm_request(&amp;policy, request, ctx);<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="Public-公共操作"><a href="#Public-公共操作" class="headerlink" title="Public  - 公共操作"></a>Public  - 公共操作</h3><p>Token有一系列公共和保护操作用来管理代币。公共操作对所有人可用，不需要任何授权。</p>
 <ul>
 <li>token::keep - 将代币发送给交易发送者</li>
 <li>token::join - 合并两个代币</li>
@@ -279,7 +407,7 @@
 <li>token::zero - 创建一个空（零余额）的代币</li>
 <li>token::destroy_zero - 销毁一个零余额的代币</li>
 </ul>
-<h3 id="Protected-保护操作"><a href="#Protected-保护操作" class="headerlink" title="Protected  - 保护操作"></a>Protected  - 保护操作</h3><p>注：默认是禁用的，可以在TokenPolicy中启用，并自定义规则</p>
+<h3 id="Protected-受监管的操作"><a href="#Protected-受监管的操作" class="headerlink" title="Protected  - 受监管的操作"></a>Protected  - 受监管的操作</h3><p>注：默认是禁用的，可以在TokenPolicy中启用，并自定义规则</p>
 <p>保护操作是那些发出ActionRequest的操作。有三种主要的方法来解决ActionRequest，最常见的是通过TokenPolicy。</p>
 <ul>
 <li>token::transfer - 将代币转账到指定地址</li>
@@ -287,11 +415,27 @@
 <li>token::from_coin - 将coin转换为token</li>
 <li>token::spend - 在指定地址花费代币</li>
 </ul>
-<blockquote>
-<p>💡Hot_Potato</p>
-<p>ActionRequest是一个没有任何能力的结构体也称作”Hot-Potato”,它涉及一个没有任何能力的结构体，称为 “hot potato”。这种结构体只能在其模块内进行打包和解包。Hot Potato Pattern 利用 PTB（Programmatic Transaction Block）机制，通常用于在交易结束之前强制用户完成特定业务逻辑的场景。</p>
-<p>简单来说，如果一个交易命令 A 返回一个 hot potato 值，则必须在同一个 PTB 中的任何后续命令 B 中消费它。最常见的用例是闪电贷（flashloan）。</p>
-</blockquote>
+<h3 id="Spend"><a href="#Spend" class="headerlink" title="Spend"></a>Spend</h3><p><strong>💡含义</strong>: 由于<code>Token</code>类型不具备这种<code>store</code>能力，因此无法将它们存储在另一个对象中。因此，<code>Coin</code>类似 的消费方式无法实现——接受<code>Token</code>付款的应用程序无法将其添加到其余额中。为了解决这个问题，<code>Token</code>有一种<code>spend</code>方法，允许在一个应用程序中消费它，然后将其作为 spent_balance交付<code>TokenPolicy</code>或者立即使用 TreasuryCap&#96;进行销毁。</p>
+<h4 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h4><p>解构 <code>Token</code>，提取其唯一标识符和余额 (<code>id</code> 和 <code>balance</code>)，删除 <code>Token</code> 对象后，调用 <code>new_request</code> 创建 <code>ActionRequest</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs move">public fun spend&lt;T&gt;(token: Token&lt;T&gt;, ctx: &amp;mut TxContext): ActionRequest&lt;T&gt;;<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li><strong>实现 <code>Token</code> 的消费逻辑</strong>:<ul>
+<li><code>spend</code> 函数允许用户销毁 <code>Token</code>，并将其余额记录为消费余额。</li>
+<li>这是 <code>Token</code> 模块中一个重要的操作，支持多种应用场景。</li>
+</ul>
+</li>
+<li><strong>与 <code>TokenPolicy</code> 的规则集成</strong>:<ul>
+<li><code>spend</code> 操作必须符合 <code>TokenPolicy</code> 的规则，确保消费操作受到严格控制。</li>
+<li>通过规则验证机制，可以灵活定义哪些消费操作是允许的。</li>
+</ul>
+</li>
+<li><strong>支持供应量管理</strong>:<ul>
+<li>消费的余额会被记录在 <code>TokenPolicy.spent_balance</code> 中。</li>
+<li>只有 <code>TreasuryCap</code> 的所有者可以通过 <code>flush</code> 函数减少供应量，从而实现对 <code>Token</code> 总供应量的精细管理。</li>
+</ul>
+</li>
+</ol>
 
     </div>
 
@@ -375,7 +519,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">主要区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Coin"><span class="nav-number">1.1.</span> <span class="nav-text">Coin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Balance"><span class="nav-number">1.2.</span> <span class="nav-text">Balance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Token"><span class="nav-number">1.3.</span> <span class="nav-text">Token</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#public-%E5%85%AC%E5%85%B1%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.1.</span> <span class="nav-text">public -公共操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Protected-%E4%BF%9D%E6%8A%A4%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.2.</span> <span class="nav-text">Protected  - 保护操作</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">主要区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Coin-Open-loop-fungible-token"><span class="nav-number">1.1.</span> <span class="nav-text">Coin -  Open-loop fungible token</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.1.1.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Token-Closed-Loop-Token"><span class="nav-number">1.2.</span> <span class="nav-text">Token - Closed-Loop Token</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">1.2.1.</span> <span class="nav-text">典型工作流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Public-%E5%85%AC%E5%85%B1%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.2.</span> <span class="nav-text">Public  - 公共操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Protected-%E5%8F%97%E7%9B%91%E7%AE%A1%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.3.</span> <span class="nav-text">Protected  - 受监管的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spend"><span class="nav-number">1.2.4.</span> <span class="nav-text">Spend</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-1"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -447,12 +591,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">87k</span>
+    <span title="站点总字数">91k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:19</span>
+    <span title="站点阅读时长">1:23</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
