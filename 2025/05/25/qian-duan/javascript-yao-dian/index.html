@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"404ll.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="因为最近在学习nodejs，因此回顾一下需要Javascript中需要用到的概念">
+  <meta name="description" content="有关Promise&amp;async&#x2F;await&amp;闭包&amp;Webworker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript-异步">
-<meta property="og:url" content="https://404ll.github.io/2025/03/17/qian-duan/javascript-yao-dian/index.html">
+<meta property="og:url" content="https://404ll.github.io/2025/05/25/qian-duan/javascript-yao-dian/index.html">
 <meta property="og:site_name" content="Elemen的象牙塔">
-<meta property="og:description" content="因为最近在学习nodejs，因此回顾一下需要Javascript中需要用到的概念">
+<meta property="og:description" content="有关Promise&amp;async&#x2F;await&amp;闭包&amp;Webworker">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-03-17T15:05:50.000Z">
-<meta property="article:modified_time" content="2025-03-18T11:10:48.554Z">
+<meta property="article:published_time" content="2025-05-25T15:05:50.000Z">
+<meta property="article:modified_time" content="2025-05-27T04:15:13.808Z">
 <meta property="article:author" content="Elemen">
 <meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://404ll.github.io/2025/03/17/qian-duan/javascript-yao-dian/">
+<link rel="canonical" href="https://404ll.github.io/2025/05/25/qian-duan/javascript-yao-dian/">
 
 
 <script id="page-configurations">
@@ -193,7 +193,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://404ll.github.io/2025/03/17/qian-duan/javascript-yao-dian/">
+    <link itemprop="mainEntityOfPage" href="https://404ll.github.io/2025/05/25/qian-duan/javascript-yao-dian/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -216,14 +216,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2025-03-17 23:05:50" itemprop="dateCreated datePublished" datetime="2025-03-17T23:05:50+08:00">2025-03-17</time>
+              <time title="创建时间：2025-05-25 23:05:50" itemprop="dateCreated datePublished" datetime="2025-05-25T23:05:50+08:00">2025-05-25</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-03-18 19:10:48" itemprop="dateModified" datetime="2025-03-18T19:10:48+08:00">2025-03-18</time>
+                <time title="修改时间：2025-05-27 12:15:13" itemprop="dateModified" datetime="2025-05-27T12:15:13+08:00">2025-05-27</time>
               </span>
 
           
@@ -239,16 +239,16 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.8k</span>
+              <span>6.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>6 分钟</span>
             </span>
-            <div class="post-description">因为最近在学习nodejs，因此回顾一下需要Javascript中需要用到的概念</div>
+            <div class="post-description">有关Promise&async/await&闭包&Webworker</div>
 
         </div>
       </header>
@@ -377,14 +377,150 @@
 <figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">outer</span>(<span class="params"></span>) {</span><br><span class="line">    <span class="keyword">const</span> largeData = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">1000000</span>).<span class="title function_">fill</span>(<span class="string">"data"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params"></span>) {</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">"Closure!"</span>);</span><br><span class="line">    };</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> innerFunc = <span class="title function_">outer</span>();</span><br><span class="line"><span class="comment">// 不再需要时解除引用</span></span><br><span class="line">innerFunc = <span class="literal">null</span>;</span><br></pre></td></tr></tbody></table></figure>
 
 <hr>
-<h1 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h1><p>JavaScript 是单线程的，这意味着它一次只能执行一个任务。如果所有任务都是同步的，那么一个耗时操作会阻塞整个程序的执行。为了解决这个问题，JavaScript 引入了异步操作和事件循环。</p>
-<p>事件循环负责协调异步任务的执行。它的核心任务是：</p>
-<ul>
-<li><strong>监控调用栈（Call Stack）</strong>：调用栈是 JavaScript 执行同步代码的地方。</li>
-<li><strong>管理任务队列（Task Queues）</strong>：任务队列用于存储待执行的异步任务。</li>
-<li><strong>在调用栈为空时，将任务队列中的任务推入调用栈执行</strong>。</li>
+<h1 id="🖥️-JavaScript的单线程和异步并发原理"><a href="#🖥️-JavaScript的单线程和异步并发原理" class="headerlink" title="🖥️ JavaScript的单线程和异步并发原理"></a>🖥️ JavaScript的单线程和异步并发原理</h1><h2 id="1-JavaScript是单线程的"><a href="#1-JavaScript是单线程的" class="headerlink" title="1. JavaScript是单线程的"></a>1. <strong>JavaScript是单线程的</strong></h2><ul>
+<li>只有一个执行线程（主线程）执行代码，任何时刻只能执行一个任务。</li>
+<li>这就意味着，代码是<strong>逐行执行</strong>，同步任务一个接一个。</li>
 </ul>
-<p>❗我个人用这个用的比较少，后续在nodejs中会继续学习</p>
+<hr>
+<h2 id="2-为什么需要异步？"><a href="#2-为什么需要异步？" class="headerlink" title="2. 为什么需要异步？"></a>2. <strong>为什么需要异步？</strong></h2><ul>
+<li>有些操作耗时，比如网络请求、文件读取、定时器。</li>
+<li>如果这些操作都是同步执行，JS主线程会被堵塞，页面卡死。</li>
+<li>所以引入<strong>异步机制</strong>，避免阻塞，提升用户体验。</li>
+</ul>
+<hr>
+<h2 id="3-事件循环（Event-Loop）机制"><a href="#3-事件循环（Event-Loop）机制" class="headerlink" title="3. 事件循环（Event Loop）机制"></a>3. <strong>事件循环（Event Loop）机制</strong></h2><p>核心就是：</p>
+<ul>
+<li>主线程有一个任务栈（Call Stack），同步任务进栈执行，执行完出栈。</li>
+<li>异步任务（比如setTimeout、Promise等）会被放入<strong>任务队列</strong>（Task Queue / Microtask Queue）。</li>
+<li>事件循环不断检查任务栈是否为空，空了就去任务队列里取任务执行。</li>
+</ul>
+<hr>
+<h2 id="4-任务队列分两种"><a href="#4-任务队列分两种" class="headerlink" title="4. 任务队列分两种"></a>4. <strong>任务队列分两种</strong></h2><ul>
+<li><strong>宏任务（Macrotasks）</strong>：setTimeout、setInterval、I/O、UI渲染等。</li>
+<li><strong>微任务（Microtasks）</strong>：Promise的.then/catch/finally，MutationObserver等。</li>
+</ul>
+<p>事件循环的规则：</p>
+<ol>
+<li>执行主线程的同步代码（任务栈）。</li>
+<li>主线程空了，执行所有微任务队列里的任务。</li>
+<li>微任务清空后，执行一个宏任务。</li>
+<li>重复以上步骤。</li>
+</ol>
+<hr>
+<h2 id="5-并发效果但不是并行"><a href="#5-并发效果但不是并行" class="headerlink" title="5. 并发效果但不是并行"></a>5. <strong>并发效果但不是并行</strong></h2><p>虽然只有一个线程，异步任务通过事件循环机制，实现了<strong>逻辑上的并发</strong>：</p>
+<ul>
+<li>你发起多个异步请求，浏览器会帮你管理它们。</li>
+<li>JS主线程不等待结果，继续执行其他代码。</li>
+<li>异步操作完成后，回调函数排入任务队列，等待主线程空闲时执行。</li>
+</ul>
+<p>所以，看起来是“多个任务同时进行”，其实是“任务轮流执行”，这就是<strong>并发</strong>，而不是硬件层面的<strong>并行</strong>。</p>
+<hr>
+<h2 id="6-举例说明"><a href="#6-举例说明" class="headerlink" title="6. 举例说明"></a>6. <strong>举例说明</strong></h2><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">'start'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> {</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">'timeout'</span>);</span><br><span class="line">}, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> {</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">'promise'</span>);</span><br><span class="line">});</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">'end'</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>执行顺序是：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">start</span><br><span class="line">end</span><br><span class="line">promise</span><br><span class="line">timeout</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li><code>console.log('start')</code> 同步执行。</li>
+<li><code>setTimeout</code> 的回调是宏任务，先放到宏任务队列。</li>
+<li><code>Promise.then</code> 的回调是微任务，放到微任务队列。</li>
+<li><code>console.log('end')</code> 同步执行。</li>
+<li>主线程空了，先执行所有微任务（打印 ‘promise’）。</li>
+<li>再执行宏任务（打印 ‘timeout’）。</li>
+</ul>
+<hr>
+<h2 id="7-总结"><a href="#7-总结" class="headerlink" title="7. 总结"></a>7. <strong>总结</strong></h2><table>
+<thead>
+<tr>
+<th>术语</th>
+<th>JS中体现</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单线程</td>
+<td>JS只有一个主执行线程</td>
+</tr>
+<tr>
+<td>并发</td>
+<td>异步任务通过事件循环交替执行</td>
+</tr>
+<tr>
+<td>并行</td>
+<td>需要多核CPU或Web Worker支持</td>
+</tr>
+<tr>
+<td>事件循环</td>
+<td>管理同步/异步任务的执行顺序</td>
+</tr>
+<tr>
+<td>微任务/宏任务队列</td>
+<td>按优先级执行异步回调</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="进阶内容之-Web-Worker-——-JavaScript的多线程实现"><a href="#进阶内容之-Web-Worker-——-JavaScript的多线程实现" class="headerlink" title="进阶内容之 Web Worker —— JavaScript的多线程实现"></a>进阶内容之 Web Worker —— JavaScript的多线程实现</h2><h3 id="1-什么是-Web-Worker？"><a href="#1-什么是-Web-Worker？" class="headerlink" title="1. 什么是 Web Worker？"></a>1. 什么是 Web Worker？</h3><ul>
+<li>Web Worker 是浏览器提供的 <strong>后台线程</strong>，可以在主线程之外运行脚本。</li>
+<li>这样，耗时的计算或任务不会阻塞页面主线程，提升性能和用户体验。</li>
+<li>主线程和 Worker 线程是 <strong>独立的线程</strong>，它们之间通过消息传递通信。</li>
+</ul>
+<h5 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h5><ul>
+<li><strong>Web Worker</strong> 是浏览器给JavaScript的“多线程”支持，帮助实现并行。</li>
+<li>主线程和 Worker 线程相互独立，通过消息传递交流。</li>
+<li>解决了 JS 单线程阻塞的问题，提升性能和响应速度。</li>
+</ul>
+<hr>
+<h3 id="2-为什么需要-Web-Worker？"><a href="#2-为什么需要-Web-Worker？" class="headerlink" title="2. 为什么需要 Web Worker？"></a>2. 为什么需要 Web Worker？</h3><ul>
+<li>JavaScript 本身是单线程，耗时任务（大计算、复杂数据处理）会阻塞UI，导致页面卡顿。</li>
+<li>使用 Web Worker，可以把耗时任务放到后台线程，主线程继续响应用户操作。</li>
+</ul>
+<hr>
+<h3 id="3-Web-Worker-的基本用法"><a href="#3-Web-Worker-的基本用法" class="headerlink" title="3. Web Worker 的基本用法"></a>3. Web Worker 的基本用法</h3><h4 id="主线程代码（main-js）"><a href="#主线程代码（main-js）" class="headerlink" title="主线程代码（main.js）"></a>主线程代码（main.js）</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">jsCopy code// 创建一个Worker，指定运行的脚本文件worker.js</span><br><span class="line">const worker = new Worker('worker.js');</span><br><span class="line"></span><br><span class="line">// 监听Worker发送来的消息</span><br><span class="line">worker.onmessage = function(event) {</span><br><span class="line">  console.log('从worker收到消息:', event.data);</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line">// 向Worker发送消息</span><br><span class="line">worker.postMessage('开始计算');</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h4 id="Worker线程代码（worker-js）"><a href="#Worker线程代码（worker-js）" class="headerlink" title="Worker线程代码（worker.js）"></a>Worker线程代码（worker.js）</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">jsCopy code// 监听主线程发送的消息</span><br><span class="line">onmessage = function(event) {</span><br><span class="line">  console.log('Worker收到消息:', event.data);</span><br><span class="line"></span><br><span class="line">  // 执行一些耗时计算，比如大循环</span><br><span class="line">  let count = 0;</span><br><span class="line">  for (let i = 0; i &lt; 1e9; i++) {</span><br><span class="line">    count += i;</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  // 计算完，向主线程发送结果</span><br><span class="line">  postMessage('计算完成，结果是：' + count);</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h3 id="4-Web-Worker-的特点"><a href="#4-Web-Worker-的特点" class="headerlink" title="4. Web Worker 的特点"></a>4. Web Worker 的特点</h3><ul>
+<li>运行在独立线程，拥有自己的运行环境。</li>
+<li>不能访问 DOM 和全局变量，只能通过消息通信。</li>
+<li>只能用有限的API（比如不能直接操作window、document）。</li>
+<li>适合做大量计算、数据处理、图像处理等。</li>
+</ul>
+<hr>
+<h3 id="5-Web-Worker-vs-主线程"><a href="#5-Web-Worker-vs-主线程" class="headerlink" title="5. Web Worker vs 主线程"></a>5. Web Worker vs 主线程</h3><table>
+<thead>
+<tr>
+<th>比较项</th>
+<th>主线程</th>
+<th>Web Worker</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>线程数</td>
+<td>单线程</td>
+<td>独立多线程</td>
+</tr>
+<tr>
+<td>DOM访问</td>
+<td>可以直接访问DOM</td>
+<td>不能访问DOM，只能通信</td>
+</tr>
+<tr>
+<td>阻塞风险</td>
+<td>大量计算会阻塞UI</td>
+<td>不阻塞UI，后台运行</td>
+</tr>
+<tr>
+<td>通信方式</td>
+<td>直接操作变量/函数</td>
+<td>通过 <code>postMessage</code> 传递消息</td>
+</tr>
+<tr>
+<td>使用场景</td>
+<td>UI渲染、事件响应</td>
+<td>复杂计算、数据处理</td>
+</tr>
+</tbody></table>
 
     </div>
 
@@ -403,12 +539,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2025/03/02/qian-duan/tailwindcss/" rel="prev" title="TailWindCss">
-      <i class="fa fa-chevron-left"></i> TailWindCss
+    <a href="/2025/05/25/ji-suan-ji-wang-luo-ji-chu/postweb-xiang-guan-ji-wang-zhi-shi/" rel="prev" title="web相关-计网知识">
+      <i class="fa fa-chevron-left"></i> web相关-计网知识
     </a></div>
       <div class="post-nav-item">
-    <a href="/2025/04/14/qian-duan/yi-ba-suo-zhi-nextjs/" rel="next" title="一把梭之NextJs">
-      一把梭之NextJs <i class="fa fa-chevron-right"></i>
+    <a href="/2025/05/26/ji-suan-ji-wang-luo-ji-chu/kua-yu-tong-yuan/" rel="next" title="跨域&同源">
+      跨域&同源 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -468,7 +604,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">异步编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">异步的特点：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">回调函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise"><span class="nav-number">1.2.</span> <span class="nav-text">Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-%E7%9A%84%E4%B8%89%E7%A7%8D%E7%8A%B6%E6%80%81"><span class="nav-number">1.2.1.</span> <span class="nav-text">Promise 的三种状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#then"><span class="nav-number">1.2.2.</span> <span class="nav-text">then()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#then-%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">.then() 的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#then-%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">.then()的语法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#async-await"><span class="nav-number">1.3.</span> <span class="nav-text">async&#x2F;await</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AD%E5%8C%85"><span class="nav-number">1.4.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E6%A0%B8%E5%BF%83"><span class="nav-number">1.4.1.</span> <span class="nav-text">闭包的核心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.4.2.</span> <span class="nav-text">闭包的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">1.4.3.</span> <span class="nav-text">闭包的注意事项</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF"><span class="nav-number">2.</span> <span class="nav-text">事件循环</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">异步编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">异步的特点：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">回调函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise"><span class="nav-number">1.2.</span> <span class="nav-text">Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-%E7%9A%84%E4%B8%89%E7%A7%8D%E7%8A%B6%E6%80%81"><span class="nav-number">1.2.1.</span> <span class="nav-text">Promise 的三种状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#then"><span class="nav-number">1.2.2.</span> <span class="nav-text">then()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#then-%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">.then() 的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#then-%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">.then()的语法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#async-await"><span class="nav-number">1.3.</span> <span class="nav-text">async&#x2F;await</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AD%E5%8C%85"><span class="nav-number">1.4.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E6%A0%B8%E5%BF%83"><span class="nav-number">1.4.1.</span> <span class="nav-text">闭包的核心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.4.2.</span> <span class="nav-text">闭包的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">1.4.3.</span> <span class="nav-text">闭包的注意事项</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%96%A5%EF%B8%8F-JavaScript%E7%9A%84%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%BC%82%E6%AD%A5%E5%B9%B6%E5%8F%91%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">🖥️ JavaScript的单线程和异步并发原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-JavaScript%E6%98%AF%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%9A%84"><span class="nav-number">2.1.</span> <span class="nav-text">1. JavaScript是单线程的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E5%BC%82%E6%AD%A5%EF%BC%9F"><span class="nav-number">2.2.</span> <span class="nav-text">2. 为什么需要异步？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%EF%BC%88Event-Loop%EF%BC%89%E6%9C%BA%E5%88%B6"><span class="nav-number">2.3.</span> <span class="nav-text">3. 事件循环（Event Loop）机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97%E5%88%86%E4%B8%A4%E7%A7%8D"><span class="nav-number">2.4.</span> <span class="nav-text">4. 任务队列分两种</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%B9%B6%E5%8F%91%E6%95%88%E6%9E%9C%E4%BD%86%E4%B8%8D%E6%98%AF%E5%B9%B6%E8%A1%8C"><span class="nav-number">2.5.</span> <span class="nav-text">5. 并发效果但不是并行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E4%B8%BE%E4%BE%8B%E8%AF%B4%E6%98%8E"><span class="nav-number">2.6.</span> <span class="nav-text">6. 举例说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E6%80%BB%E7%BB%93"><span class="nav-number">2.7.</span> <span class="nav-text">7. 总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6%E5%86%85%E5%AE%B9%E4%B9%8B-Web-Worker-%E2%80%94%E2%80%94-JavaScript%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.8.</span> <span class="nav-text">进阶内容之 Web Worker —— JavaScript的多线程实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF-Web-Worker%EF%BC%9F"><span class="nav-number">2.8.1.</span> <span class="nav-text">1. 什么是 Web Worker？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8"><span class="nav-number">2.8.1.0.1.</span> <span class="nav-text">作用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81-Web-Worker%EF%BC%9F"><span class="nav-number">2.8.2.</span> <span class="nav-text">2. 为什么需要 Web Worker？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Web-Worker-%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-number">2.8.3.</span> <span class="nav-text">3. Web Worker 的基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BB%E7%BA%BF%E7%A8%8B%E4%BB%A3%E7%A0%81%EF%BC%88main-js%EF%BC%89"><span class="nav-number">2.8.3.1.</span> <span class="nav-text">主线程代码（main.js）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Worker%E7%BA%BF%E7%A8%8B%E4%BB%A3%E7%A0%81%EF%BC%88worker-js%EF%BC%89"><span class="nav-number">2.8.3.2.</span> <span class="nav-text">Worker线程代码（worker.js）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Web-Worker-%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">2.8.4.</span> <span class="nav-text">4. Web Worker 的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Web-Worker-vs-%E4%B8%BB%E7%BA%BF%E7%A8%8B"><span class="nav-number">2.8.5.</span> <span class="nav-text">5. Web Worker vs 主线程</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -482,7 +618,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -541,12 +677,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">98k</span>
+    <span title="站点总字数">101k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:29</span>
+    <span title="站点阅读时长">1:32</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
