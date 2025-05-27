@@ -20,19 +20,21 @@
     var CONFIG = {"hostname":"404ll.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="快速上手TailWind Css">
+  <meta name="description" content="原型与原型链">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TailWindCss">
-<meta property="og:url" content="https://404ll.github.io/2025/03/02/qian-duan/tailwindcss/index.html">
+<meta property="og:title" content="JavaScript-原型和原型链">
+<meta property="og:url" content="https://404ll.github.io/2025/05/27/qian-duan/javascript-yuan-xing-he-yuan-xing-lian/index.html">
 <meta property="og:site_name" content="Elemen的象牙塔">
-<meta property="og:description" content="快速上手TailWind Css">
+<meta property="og:description" content="原型与原型链">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-03-02T11:14:33.000Z">
-<meta property="article:modified_time" content="2025-03-02T11:50:27.533Z">
+<meta property="og:image" content="https://404ll.github.io/2025/05/27/qian-duan/javascript-yuan-xing-he-yuan-xing-lian/image-20250527130709416.png">
+<meta property="article:published_time" content="2025-05-27T05:04:53.000Z">
+<meta property="article:modified_time" content="2025-05-27T05:15:52.137Z">
 <meta property="article:author" content="Elemen">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://404ll.github.io/2025/05/27/qian-duan/javascript-yuan-xing-he-yuan-xing-lian/image-20250527130709416.png">
 
-<link rel="canonical" href="https://404ll.github.io/2025/03/02/qian-duan/tailwindcss/">
+<link rel="canonical" href="https://404ll.github.io/2025/05/27/qian-duan/javascript-yuan-xing-he-yuan-xing-lian/">
 
 
 <script id="page-configurations">
@@ -45,7 +47,7 @@
   };
 </script>
 
-  <title>TailWindCss | Elemen的象牙塔</title>
+  <title>JavaScript-原型和原型链 | Elemen的象牙塔</title>
   
 
 
@@ -192,7 +194,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://404ll.github.io/2025/03/02/qian-duan/tailwindcss/">
+    <link itemprop="mainEntityOfPage" href="https://404ll.github.io/2025/05/27/qian-duan/javascript-yuan-xing-he-yuan-xing-lian/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -205,7 +207,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          TailWindCss
+          JavaScript-原型和原型链
         </h1>
 
         <div class="post-meta">
@@ -216,7 +218,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2025-03-02 19:14:33 / 修改时间：19:50:27" itemprop="dateCreated datePublished" datetime="2025-03-02T19:14:33+08:00">2025-03-02</time>
+              <time title="创建时间：2025-05-27 13:04:53 / 修改时间：13:15:52" itemprop="dateCreated datePublished" datetime="2025-05-27T13:04:53+08:00">2025-05-27</time>
             </span>
 
           
@@ -232,7 +234,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>338</span>
+              <span>951</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -241,7 +243,7 @@
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               <span>1 分钟</span>
             </span>
-            <div class="post-description">快速上手TailWind Css</div>
+            <div class="post-description">原型与原型链</div>
 
         </div>
       </header>
@@ -252,12 +254,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="TailWind"><a href="#TailWind" class="headerlink" title="TailWind"></a>TailWind</h1><h3 id="安装-tailwindcss"><a href="#安装-tailwindcss" class="headerlink" title="安装 tailwindcss"></a>安装 tailwindcss</h3><figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="literal">-D</span> tailwindcss</span><br><span class="line">npx tailwindcss init</span><br></pre></td></tr></tbody></table></figure>
+        <h2 id="原型与原型链的理解"><a href="#原型与原型链的理解" class="headerlink" title="原型与原型链的理解"></a>原型与原型链的理解</h2><p><img src="/2025/05/27/qian-duan/javascript-yuan-xing-he-yuan-xing-lian/image-20250527130709416.png" alt="image-20250527130709416"></p>
+<p>在 JavaScript 中，每个对象都有一个“隐藏属性”指向另一个对象，这个对象就是它的<strong>原型</strong>，我们可以通过 <code>__proto__</code> 来访问它。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = { <span class="attr">name</span>: <span class="string">'小明'</span> };</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj.<span class="property">__proto__</span>); <span class="comment">// [Object: null prototype] {...}</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>创建<code>tailwind.config.js</code> 配置文件</p>
-<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>在 <code>tailwind.config.js</code> 配置文件中添加所有模板文件的路径。</p>
-<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** <span class="doctag">@type</span> {<span class="type">import('tailwindcss').Config</span>} */</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = {</span><br><span class="line">  <span class="attr">content</span>: [<span class="string">"./src/**/*.{html,js}"</span>],  <span class="comment">// 根据项目实际文件类型调整</span></span><br><span class="line">  <span class="attr">theme</span>: {</span><br><span class="line">    <span class="attr">extend</span>: {},</span><br><span class="line">  },</span><br><span class="line">  <span class="attr">plugins</span>: [],</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>这表示 <code>obj</code> 是通过 <code>Object</code> 构造函数创建的，它的原型是 <code>Object.prototype</code>。JavaScript 在访问对象的属性时，如果对象本身没有，就会从它的原型上找。</p>
+<hr>
+<h3 id="什么是原型链？"><a href="#什么是原型链？" class="headerlink" title="什么是原型链？"></a>什么是原型链？</h3><p>对象的 <code>__proto__</code> 属性（实际标准中叫 <code>[[Prototype]]</code>）会一直向上指向另一个对象，直到指向 <code>null</code> 为止，这条向上查找的路径就叫做<strong>原型链</strong>。</p>
+<p>例子：</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params"></span>) {}</span><br><span class="line"><span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">sayHi</span> = <span class="keyword">function</span>(<span class="params"></span>) {</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">'Hi'</span>);</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">p.<span class="title function_">sayHi</span>(); <span class="comment">// Hi</span></span><br></pre></td></tr></tbody></table></figure>
 
+<p>这里的查找过程是：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p → p.__proto__（Person.prototype）→ Person.prototype.__proto__（Object.prototype）→ null</span><br></pre></td></tr></tbody></table></figure>
+
+<p>只要找到为止就停下来，如果链条末端也没有（即 <code>null</code>），就返回 <code>undefined</code>。</p>
+<hr>
+<h3 id="构造函数、prototype-和实例对象的关系"><a href="#构造函数、prototype-和实例对象的关系" class="headerlink" title="构造函数、prototype 和实例对象的关系"></a>构造函数、prototype 和实例对象的关系</h3><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Animal</span>(<span class="params"></span>) {}</span><br><span class="line"><span class="keyword">const</span> dog = <span class="keyword">new</span> <span class="title class_">Animal</span>();</span><br></pre></td></tr></tbody></table></figure>
+
+<p>它们之间的关系可以总结为：</p>
+<ul>
+<li><code>dog.__proto__ === Animal.prototype</code></li>
+<li><code>Animal.prototype.constructor === Animal</code></li>
+</ul>
+<p>这意味着构造函数通过 <code>.prototype</code> 定义了实例对象共享的属性或方法，实例对象通过 <code>__proto__</code> 访问到这些内容。</p>
+<hr>
+<h3 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h3><ul>
+<li>每个对象都有 <code>__proto__</code>，指向它的原型对象；</li>
+<li>每个函数都有 <code>prototype</code>，创建出来的对象的 <code>__proto__</code> 就是这个 <code>prototype</code>；</li>
+<li>对象的属性查找是沿着原型链逐级查找的；</li>
+<li>原型链的尽头是 <code>null</code>。</li>
+</ul>
 
     </div>
 
@@ -273,13 +300,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2025/02/25/hou-duan/zai-x-fen-zhong-nei-xue-hui-go/" rel="prev" title="在x分钟内学会go">
-      <i class="fa fa-chevron-left"></i> 在x分钟内学会go
+    <a href="/2025/05/27/ji-suan-ji-wang-luo-ji-chu/bing-xing-bing-fa-xian-cheng-jin-cheng/" rel="prev" title="并行&并发&线程&进程">
+      <i class="fa fa-chevron-left"></i> 并行&并发&线程&进程
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2025/04/14/qian-duan/yi-ba-suo-zhi-nextjs/" rel="next" title="一把梭之NextJs">
-      一把梭之NextJs <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -338,7 +362,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TailWind"><span class="nav-number">1.</span> <span class="nav-text">TailWind</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-tailwindcss"><span class="nav-number">1.0.1.</span> <span class="nav-text">安装 tailwindcss</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">配置</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">原型与原型链的理解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8E%9F%E5%9E%8B%E9%93%BE%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">什么是原型链？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E3%80%81prototype-%E5%92%8C%E5%AE%9E%E4%BE%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">1.2.</span> <span class="nav-text">构造函数、prototype 和实例对象的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B"><span class="nav-number">1.3.</span> <span class="nav-text">总结一下</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
